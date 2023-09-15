@@ -1,5 +1,5 @@
 work_dir: ./work_dir/ntu60_cv/actclr_joint/pretext/
-weights:  /mnt/netdisk/linlilang/AimCLR-main/work_dir/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt
+weights:  ./AimCLR-main/work_dir/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt
 
 ignore_weights: [queue]
 rename_weights: [encoder_q.encoder_k]
@@ -7,8 +7,8 @@ rename_weights: [encoder_q.encoder_k]
 # feeder
 train_feeder: feeder.ntu_feeder.Feeder_triple
 train_feeder_args:
-  data_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy
-  label_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl
+  data_path: ./CrosSCLR/data/NTU60_frame50/xview/train_position.npy
+  label_path: ./CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl
   shear_amplitude: 0.5
   temperal_padding_ratio: 6
   mmap: True
@@ -16,15 +16,15 @@ train_feeder_args:
 # memory feeder for knn
 mem_train_feeder: feeder.ntu_feeder.Feeder_single
 mem_train_feeder_args:
-  data_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy
-  label_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl
+  data_path: ./CrosSCLR/data/NTU60_frame50/xview/train_position.npy
+  label_path: ./CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl
   shear_amplitude: 0.5
   temperal_padding_ratio: 6
   mmap: True
 mem_test_feeder: feeder.ntu_feeder.Feeder_single
 mem_test_feeder_args:
-  data_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/val_position.npy
-  label_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/val_label.pkl 
+  data_path: ./CrosSCLR/data/NTU60_frame50/xview/val_position.npy
+  label_path: ./CrosSCLR/data/NTU-RGB-D/xview/val_label.pkl 
   shear_amplitude: 0.5
   temperal_padding_ratio: 6
   mmap: True
