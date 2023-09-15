@@ -338,14 +338,11 @@ class actclr(nn.Module):
             im_k_mean = im_k.mean(dim=0, keepdim=True)
             [k_mean_feat] = self.encoder_k(im_k_mean)
             
-            kp, k, ks, _ = self.encoder_k(im_k, key=True, mean_feat=k_mean_feat, slot=True)  # keys: NxC
+            k, ks, _ = self.encoder_k(im_k, key=True, mean_feat=k_mean_feat)  # keys: NxC
             k = k * 0.5 + ks * 0.5
             
             k = F.normalize(k, dim=1)
             k = self._batch_unshuffle_ddp(k, idx_k_unshuffle)
-            
-            kp = F.normalize(kp, dim=-1)
-            kp = self._batch_unshuffle_ddp(kp, idx_k_unshuffle)
             
             kn = k @ self.queue.clone().detach()
             
@@ -353,18 +350,10 @@ class actclr(nn.Module):
             _, _, pm = self.encoder_q(im_p, key=True, mean_feat=k_mean_feat)
             
         N, C, T, V, M = im_q.shape
-        qp, q = self.encoder_q(self.actionlet_swap(im_q, im_q_extreme, qm), slot=True, mask=qm)  # NxC
+        [q] = self.encoder_q(self.actionlet_swap(im_q, im_q_extreme, qm))  # NxC
         q = F.normalize(q, dim=1)
         qn = (q @ self.queue.clone().detach()) ** 2
         qn_topk, kn_topk = self.select_topk(qn, kn)
-        
-        qp = F.normalize(qp, dim=-1)
-        logits = torch.einsum('nkc,ngc->nkg', [qp, kp])
-        logits /= self.T
-        logits_mask = (logits.sum(dim=-1) != 0).float()
-        logits = torch.softmax(logits, dim=-1)
-        entropy = -(logits * torch.log(logits + 1e-5)).sum(dim=-1)
-        entropy_mask = (entropy * logits_mask).sum() / (logits_mask.sum() + 1e-5) 
         
         im_pt = self.ske_trans(im_p, epoch)
         randidx, im_ps, mask = self.ske_swap(im_pt, epoch)
@@ -384,5 +373,5 @@ class actclr(nn.Module):
         pcn_topk, kcn_topk = self.select_topk(pcn, kcn)
 
         self._dequeue_and_enqueue(k)
-        global_loss = kld(qn_topk, kn_topk) + kld(qtn_topk, kn_topk) + kld(pcn_topk, kcn_topk) + entropy_mask
+        global_loss = kld(qn_topk, kn_topk) + kld(qtn_topk, kn_topk) + kld(pcn_topk, kcn_topk)
         return global_loss

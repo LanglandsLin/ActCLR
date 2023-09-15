@@ -5,8 +5,6 @@ import torch.nn.functional as F
 from net.utils.tgcn import ConvTemporalGraphical
 from net.utils.graph import Graph
 
-from slot_attention import SlotAttention
-
 import random
 
 trunk_ori_index = [4, 3, 21, 2, 1]
@@ -61,12 +59,6 @@ class Model(nn.Module):
             st_gcn(hidden_channels * 4, hidden_dim, kernel_size, 1, **kwargs),
         ))
         self.fc = nn.Linear(hidden_dim, num_class)
-        
-        self.slot_attn = SlotAttention(
-                            num_slots = 16,
-                            dim = 256,
-                            iters = 5   # iterations of attention, defaults to 3
-                        )
 
         # initialize parameters for edge importance weighting
         if edge_importance_weighting:
@@ -105,16 +97,9 @@ class Model(nn.Module):
             cam[:, :, :, body_part] = cam[:, :, :, body_part].mean(dim=-1, keepdim=True)
         cam = cam.clip(0, 1)
         return (cam).float().detach()
-    
-    def slot_attention(self, x, mask):
-        p = (x * (mask > 0).float())
-        p = p.permute(0, 2, 3, 1).contiguous()
-        p = p.view(p.size(0), -1, p.size(-1))
-        p = self.slot_attn(p)
-        return p
         
 
-    def forward(self, x, key=False, mean_feat=None, slot=False, mask=None):
+    def forward(self, x, key=False, mean_feat=None):
 
         # data normalization
         N, C, T, V, M = x.size()
@@ -138,32 +123,16 @@ class Model(nn.Module):
             pc = self.fc(pc)
             pc = pc.view(pc.size(0), -1)
             
-                
-            if slot:
-                p = self.slot_attention(x, m)
-                NM, K, _ = p.size()
-                p = p.view(N, M, K, -1).reshape(N, M * K, -1)
-                p = self.fc(p)
-                output.append(p)
-                
-            else:
-                x = F.avg_pool2d(x, x.size()[2:])
-                x = x.view(N, M, -1).mean(dim=1)
+            x = F.avg_pool2d(x, x.size()[2:])
+            x = x.view(N, M, -1).mean(dim=1)
 
-                # prediction
-                x = self.fc(x)
-                x = x.view(x.size(0), -1)
+            # prediction
+            x = self.fc(x)
+            x = x.view(x.size(0), -1)
             
             output.extend([x, pc, m])
             
         else:
-            # global pooling
-            if slot and mask is not None:
-                p = self.slot_attention(x, mask)
-                NM, K, _ = p.size()
-                p = p.view(N, M, K, -1).reshape(N, M * K, -1)
-                p = self.fc(p)
-                output.append(p)
                 
             x = F.avg_pool2d(x, x.size()[2:])
             x = x.view(N, M, -1).mean(dim=1)
