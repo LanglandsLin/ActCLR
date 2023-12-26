@@ -39,7 +39,7 @@ def kld(inputs, targets):
 class actclr(nn.Module):
     def __init__(self, base_encoder=None, pretrain=True, feature_dim=128, queue_size=32768,
                  momentum=0.999, Temperature=0.07, mlp=True, in_channels=3, hidden_channels=64,
-                 hidden_dim=256, num_class=60, dropout=0.5,
+                 hidden_dim=256, num_class=60, dropout=0.5, mode='joint',
                  graph_args={'layout': 'ntu-rgb+d', 'strategy': 'spatial'},
                  edge_importance_weighting=True, **kwargs):
         """
@@ -61,6 +61,8 @@ class actclr(nn.Module):
             self.K = queue_size
             self.m = momentum
             self.T = Temperature
+            
+            self.mode = mode
 
             self.encoder_q = base_encoder(in_channels=in_channels, hidden_channels=hidden_channels,
                                           hidden_dim=hidden_dim, num_class=feature_dim,
@@ -210,7 +212,8 @@ class actclr(nn.Module):
         return z
 
     @torch.no_grad()
-    def ske_trans(self, x, epoch=None):
+    def ske_trans(self, x):
+        
         N, C, T, V, M = x.size()
 
         # generate swap swap idx
@@ -219,22 +222,30 @@ class actclr(nn.Module):
         randidx = (idx + n) % N
 
         xst = x.clone()
-        # # begin swap
-        # xst = (xst - xst.mean(dim=(3), keepdim=True)) / (xst.std(dim=(2), keepdim=True) + 1e-3) * xst[randidx].std(dim=(2), keepdim=True) + xst[randidx].mean(dim=(3), keepdim=True)
-        # return xst
-        Bone = [(21, 21), (2, 21), (3, 21), (9, 21), (5, 21), (1, 2), (4, 3), (6, 5), (7, 6), (8, 7),
+        
+        if self.mode == 'joint':
+            Bone = [(21, 21), (2, 21), (3, 21), (9, 21), (5, 21), (1, 2), (4, 3), (6, 5), (7, 6), (8, 7),
             (10, 9), (11, 10), (12, 11), (13, 1), (14, 13), (15, 14), (16, 15), (17, 1),
             (18, 17), (19, 18), (20, 19), (23, 8), (22, 23), (25, 12), (24, 25)]
 
 
-        for v1, v2 in Bone:
-            xst[:, :, :, v1 - 1, :] = x[:, :, :, v1 - 1, :] - x[:, :, :, v2 - 1, :]
+            for v1, v2 in Bone:
+                xst[:, :, :, v1 - 1, :] = x[:, :, :, v1 - 1, :] - x[:, :, :, v2 - 1, :]
 
-        for v1, v2 in Bone:
-            x[:, :, :, v1 - 1, :] = x[:, :, :, v2 - 1, :] + xst[:, :, :, v1 - 1, :] * (torch.sqrt((xst[randidx, :, :, v1 - 1, :] ** 2).sum(dim=(-1), keepdim=True) + 1e-5) / torch.sqrt((xst[:, :, :, v1 - 1, :] ** 2).sum(dim=(-1), keepdim=True) + 1e-5)) ** (100 / (epoch + 400))
+            for v1, v2 in Bone:
+                x[:, :, :, v1 - 1, :] = x[:, :, :, v2 - 1, :] + xst[:, :, :, v1 - 1, :] * (torch.sqrt((xst[randidx, :, :, v1 - 1, :] ** 2).sum(dim=(1), keepdim=True) + 1e-5) / torch.sqrt((xst[:, :, :, v1 - 1, :] ** 2).sum(dim=(1), keepdim=True) + 1e-5))
+                
+            return x
+        
+        if self.mode == 'motion':
+            # begin swap
+            xst = (xst - xst.mean(dim=(3), keepdim=True)) / (xst.std(dim=(2), keepdim=True) + 1e-3) * xst[randidx].std(dim=(2), keepdim=True) + xst[randidx].mean(dim=(3), keepdim=True)
+            return xst
+        
+        if self.mode == 'bone':
 
-
-        return x
+            xst = xst / torch.sqrt((xst ** 2).sum(dim=(1), keepdim=True) + 1e-5) * torch.sqrt((xst[randidx, :, :, :, :] ** 2).sum(dim=(1), keepdim=True) + 1e-5)
+            return xst
 
     def select_topk(self, q, k):
         k[k > 0.95] = -1
@@ -329,7 +340,6 @@ class actclr(nn.Module):
             return self.encoder_q(im_q)
         
 
-        # self._weight_noisy()
         # Compute key features
         with torch.no_grad():  # no gradient to keys
             self._momentum_update_key_encoder()  # update the key encoder
