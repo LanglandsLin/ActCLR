@@ -30,6 +30,7 @@ $ CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nnodes=1 --nproc_per_node=4 main.py pr
 
 ## Linear Evaluation
 
+The linear evaluation process can be executed by running the script located in the `skeleton_recognition` directory.
 Example for linear evaluation of **3s-ActCLR**. You can change `.yaml` files in `config/ntu60/linear_eval` folder.
 ```bash
 # Linear_eval on NTU RGB+D xview

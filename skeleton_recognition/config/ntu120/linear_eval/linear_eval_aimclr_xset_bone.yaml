@@ -1,0 +1,61 @@
+work_dir:  ./work_dir/master/ntu120_cv/aimclr_bone/linear_eval
+
+# weights: /data/gty/released_model/ntu120_xset_bone.pt
+weights:  /mnt/netdisk/linlilang/NoisyDINO/work_dir/bottleneck/ntu120_cv/aimclr_bone/pretext/pretrain_150/queue_65536/topk_8192/ks_0.5/noise_0.05/clip_1.0/mask_predict/mask_forward/graph_aug/qscore_sim/gpu_4/epoch350_model.pt
+ignore_weights: [encoder_q.fc, encoder_k, queue, mu, kappa, alpha, encoder_q.slot_attn, to_q, to_v, to_k, slot_attn, decoder_r, encoder_q.dense, decoder_m, prototypes]
+
+
+# feeder
+train_feeder: feeder.ntu_feeder.Feeder_single
+train_feeder_args:
+  data_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU120_frame50/xset/train_position.npy
+  label_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D_120/xset/train_label.pkl
+  shear_amplitude: -1
+  temperal_padding_ratio: -1
+  mmap: True
+test_feeder: feeder.ntu_feeder.Feeder_single
+test_feeder_args:
+  data_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU120_frame50/xset/val_position.npy
+  label_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D_120/xset/val_label.pkl
+  shear_amplitude: -1
+  temperal_padding_ratio: -1
+  mmap: True
+
+# model
+model: net.aimclr.AimCLR
+model_args:
+  base_encoder: net.st_gcn.Model
+  pretrain: False
+  # feature_dim: 128
+  # queue_size: 32768
+  # momentum: 0.999
+  # Temperature: 0.07
+  # mlp: True
+  in_channels: 3
+  hidden_channels: 16
+  hidden_dim: 256
+  num_class: 120
+  dropout: 0.5
+  graph_args:
+    layout: 'ntu-rgb+d'
+    strategy: 'spatial'
+  edge_importance_weighting: True
+
+# optim
+nesterov: False
+weight_decay: 0.0
+base_lr: 24.
+optimizer: SGD
+step: [80, 120]
+
+# training
+device: [7]
+batch_size: 1024
+test_batch_size: 1024
+num_epoch: 150
+stream: 'bone'
+
+# log
+save_interval: -1
+eval_interval: 5
+# knn_interval: -1
