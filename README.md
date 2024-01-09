@@ -33,7 +33,7 @@ $ CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nnodes=1 --nproc_per_node=4 main.py pr
 Example for linear evaluation of **3s-ActCLR**. You can change `.yaml` files in `config/ntu60/linear_eval` folder.
 ```bash
 # Linear_eval on NTU RGB+D xview
-$ CUDA_VISIBLE_DEVICES=0 torchrun --nnodes=1 --nproc_per_node=1 python main.py linear_evaluation --config config/ntu60/linear_eval/linear_eval_actclr_xview_joint.yaml
+$ python main.py linear_evaluation --config config/ntu60/linear_eval/linear_eval_actclr_xview_joint.yaml
 ```
 
 ## Results
