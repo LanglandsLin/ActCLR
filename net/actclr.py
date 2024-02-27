@@ -365,7 +365,7 @@ class actclr(nn.Module):
         qn = (q @ self.queue.clone().detach()) ** 2
         qn_topk, kn_topk = self.select_topk(qn, kn)
         
-        im_pt = self.ske_trans(im_p, epoch)
+        im_pt = self.ske_trans(im_p)
         randidx, im_ps, mask = self.ske_swap(im_pt, epoch)
         [qt] = self.encoder_q(self.actionlet_swap(im_pt, im_ps, pm))
         qt = F.normalize(qt, dim=1)

@@ -1,4 +1,4 @@
-# command line: main.py --local_rank=3 pretrain_actclr --config ./config/ntu60/pretext/pretext_actclr_xview_joint.yaml
+# command line: main.py pretrain_actclr --config ./config/ntu60/pretext/pretext_actclr_xview_joint.yaml
 
 KNN_show:
 - 50
@@ -53,6 +53,7 @@ model_args:
     hidden_dim: 256
     in_channels: 3
     mlp: true
+    mode: joint
     momentum: 0.999
     num_class: 60
     pretrain: true
@@ -86,5 +87,5 @@ train_feeder_args:
     temperal_padding_ratio: 6
 use_gpu: true
 weight_decay: 0.0001
-weights: /mnt/netdisk/linlilang/AimCLR-main/work_dir/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt
+weights: /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt
 work_dir: ./work_dir/ntu60_cv/actclr_joint/pretext/
