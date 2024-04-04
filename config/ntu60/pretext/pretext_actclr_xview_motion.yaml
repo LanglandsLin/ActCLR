@@ -53,7 +53,7 @@ model_args:
 # optim
 nesterov: False
 weight_decay: 1e-4
-base_lr: 0.1
+base_lr: 0.4
 optimizer: SGD
 step: [250]
 

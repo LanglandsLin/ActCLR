@@ -1,4 +1,4 @@
-work_dir: ./work_dir/ntu60_cv/actclr_joint/pretext
+work_dir: ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1
 weights:  /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt
 
 ignore_weights: [queue]
@@ -53,7 +53,7 @@ model_args:
 # optim
 nesterov: False
 weight_decay: 1e-4
-base_lr: 0.4
+base_lr: 0.1
 optimizer: SGD
 step: [250]
 
