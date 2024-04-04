@@ -1,7 +1,7 @@
-work_dir:  ./work_dir/ntu60_cv/aimclr_joint/linear_eval/
+work_dir:  ./work_dir/ntu60_cv/aimclr_joint/linear_eval/gpu_1/epoch300/
 
 # weights: /data/gty/released_model/ntu60_xview_joint.pt
-weights:  /mnt/netdisk/linlilang/ActCLR/work_dir/ntu60_cv/actclr_joint/pretext/epoch350_model.pt
+weights:  /mnt/netdisk/linlilang/ActCLR/work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch300_model.pt
 ignore_weights: [encoder_q.fc, encoder_k, queue, mu, kappa, alpha, encoder_q.slot_attn, to_q, to_v, to_k, slot_attn, decoder_r, encoder_q.dense, decoder_m, prototypes]
 
 # feeder
@@ -48,7 +48,7 @@ optimizer: SGD
 step: [80]
 
 # training
-device: [0]
+device: [1]
 batch_size: 1024
 test_batch_size: 1024
 num_epoch: 100

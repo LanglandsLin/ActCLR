@@ -1,0 +1,2712 @@
+[02.27.24|11:06:37] diff --git a/config/ntu60/pretext/pretext_actclr_xview_joint.yaml b/config/ntu60/pretext/pretext_actclr_xview_joint.yaml
+index 988fc65..c5cf598 100644
+--- a/config/ntu60/pretext/pretext_actclr_xview_joint.yaml
++++ b/config/ntu60/pretext/pretext_actclr_xview_joint.yaml
+@@ -1,4 +1,4 @@
+-work_dir: ./work_dir/ntu60_cv/actclr_joint/pretext/
++work_dir: ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1
+ weights:  /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt
+ 
+ ignore_weights: [queue]
+diff --git a/src.zip b/src.zip
+index eda204d..8b52976 100644
+Binary files a/src.zip and b/src.zip differ
+diff --git a/work_dir/ntu60_cv/actclr_joint/pretext/log.txt b/work_dir/ntu60_cv/actclr_joint/pretext/log.txt
+index 7fc0f79..64b9cb8 100644
+--- a/work_dir/ntu60_cv/actclr_joint/pretext/log.txt
++++ b/work_dir/ntu60_cv/actclr_joint/pretext/log.txt
+@@ -6855,3 +6855,19 @@ Binary files a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.17
+ [02.27.24|10:34:21] 	Iter 0 Done. | loss: 2.8665 | lr: 0.400000
+ [02.27.24|10:35:20] 	Iter 100 Done. | loss: 13.9324 | lr: 0.400000
+ [02.27.24|10:37:13] 	Iter 200 Done. | loss: 12.5810 | lr: 0.400000
++[02.27.24|11:05:39] diff --git a/src.zip b/src.zip
++index eda204d..9d52475 100644
++Binary files a/src.zip and b/src.zip differ
++diff --git a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 b/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7
++index e69de29..61b35f1 100644
++Binary files a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 and b/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 differ
++
++[02.27.24|11:05:40] Load weights from /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt.
++[02.27.24|11:05:40] Parameters:
++{'work_dir': './work_dir/ntu60_cv/actclr_joint/pretext/', 'config': './config/ntu60/pretext/pretext_actclr_xview_joint.yaml', 'phase': 'train', 'save_result': True, 'start_epoch': 0, 'num_epoch': 350, 'use_gpu': True, 'device': [4], 'log_interval': 100, 'save_interval': 5, 'eval_interval': -1, 'save_log': True, 'print_log': True, 'pavi_log': False, 'knn_interval': 5, 'train_feeder': 'feeder.ntu_feeder.Feeder_triple', 'test_feeder': 'feeder.feeder', 'num_worker': 4, 'train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'test_feeder_args': {}, 'mem_train_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_test_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'mem_test_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/val_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/val_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'batch_size': 128, 'test_batch_size': 128, 'debug': False, 'model': 'net.actclr.actclr', 'model_args': {'base_encoder': 'net.st_gcn.Model', 'pretrain': True, 'feature_dim': 128, 'queue_size': 65536, 'momentum': 0.999, 'Temperature': 0.07, 'mlp': True, 'in_channels': 3, 'hidden_channels': 16, 'hidden_dim': 256, 'num_class': 60, 'dropout': 0.5, 'mode': 'joint', 'graph_args': {'layout': 'ntu-rgb+d', 'strategy': 'spatial'}, 'edge_importance_weighting': True}, 'weights': '/mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt', 'ignore_weights': ['queue'], 'rename_weights': ['encoder_q.encoder_k'], 'knn_k': [10, 20, 40], 'knn_classes': 60, 'knn_t': 0.1, 'KNN_show': [50, 100, 150, 200, 250, 300], 'base_lr': 0.4, 'step': [250], 'optimizer': 'SGD', 'nesterov': False, 'weight_decay': 0.0001, 'stream': 'joint', 'mining_epoch': 500, 'topk': 1}
++
++[02.27.24|11:05:40] ---------- Networks initialized -------------
++[02.27.24|11:05:40] [Network] Total number of parameters : 1.840 M
++[02.27.24|11:05:40] -----------------------------------------------
++[02.27.24|11:05:43] Training epoch: 1
++[02.27.24|11:05:48] 	Iter 0 Done. | loss: 2.8665 | lr: 0.400000
+diff --git a/work_dir/ntu60_cv/actclr_joint/pretext/train/events.out.tfevents.1709001250.STRUCT-TitanX7 b/work_dir/ntu60_cv/actclr_joint/pretext/train/events.out.tfevents.1709001250.STRUCT-TitanX7
+deleted file mode 100644
+index 2f695eb..0000000
+Binary files a/work_dir/ntu60_cv/actclr_joint/pretext/train/events.out.tfevents.1709001250.STRUCT-TitanX7 and /dev/null differ
+diff --git a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 b/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7
+deleted file mode 100644
+index e69de29..0000000
+
+[02.27.24|11:06:37] Load weights from /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt.
+[02.27.24|11:06:38] Parameters:
+{'work_dir': './work_dir/ntu60_cv/actclr_joint/pretext/gpu_1', 'config': './config/ntu60/pretext/pretext_actclr_xview_joint.yaml', 'phase': 'train', 'save_result': True, 'start_epoch': 0, 'num_epoch': 350, 'use_gpu': True, 'device': [4], 'log_interval': 100, 'save_interval': 5, 'eval_interval': -1, 'save_log': True, 'print_log': True, 'pavi_log': False, 'knn_interval': 5, 'train_feeder': 'feeder.ntu_feeder.Feeder_triple', 'test_feeder': 'feeder.feeder', 'num_worker': 4, 'train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'test_feeder_args': {}, 'mem_train_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_test_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'mem_test_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/val_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/val_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'batch_size': 128, 'test_batch_size': 128, 'debug': False, 'model': 'net.actclr.actclr', 'model_args': {'base_encoder': 'net.st_gcn.Model', 'pretrain': True, 'feature_dim': 128, 'queue_size': 65536, 'momentum': 0.999, 'Temperature': 0.07, 'mlp': True, 'in_channels': 3, 'hidden_channels': 16, 'hidden_dim': 256, 'num_class': 60, 'dropout': 0.5, 'mode': 'joint', 'graph_args': {'layout': 'ntu-rgb+d', 'strategy': 'spatial'}, 'edge_importance_weighting': True}, 'weights': '/mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt', 'ignore_weights': ['queue'], 'rename_weights': ['encoder_q.encoder_k'], 'knn_k': [10, 20, 40], 'knn_classes': 60, 'knn_t': 0.1, 'KNN_show': [50, 100, 150, 200, 250, 300], 'base_lr': 0.4, 'step': [250], 'optimizer': 'SGD', 'nesterov': False, 'weight_decay': 0.0001, 'stream': 'joint', 'mining_epoch': 500, 'topk': 1}
+
+[02.27.24|11:06:38] ---------- Networks initialized -------------
+[02.27.24|11:06:38] [Network] Total number of parameters : 1.840 M
+[02.27.24|11:06:38] -----------------------------------------------
+[02.27.24|11:06:41] Training epoch: 1
+[02.27.24|11:06:45] 	Iter 0 Done. | loss: 2.8665 | lr: 0.400000
+[02.27.24|11:07:45] 	Iter 100 Done. | loss: 13.9324 | lr: 0.400000
+[02.27.24|11:08:45] 	Iter 200 Done. | loss: 12.5810 | lr: 0.400000
+[02.27.24|11:09:41] 	train_mean_loss: 13.477818953747652
+[02.27.24|11:09:41] Training epoch: 2
+[02.27.24|11:09:47] 	Iter 300 Done. | loss: 11.0308 | lr: 0.400000
+[02.27.24|11:10:47] 	Iter 400 Done. | loss: 9.6489 | lr: 0.400000
+[02.27.24|11:11:48] 	Iter 500 Done. | loss: 8.0032 | lr: 0.400000
+[02.27.24|11:12:40] 	train_mean_loss: 8.969690180149207
+[02.27.24|11:12:41] Training epoch: 3
+[02.27.24|11:12:50] 	Iter 600 Done. | loss: 7.7849 | lr: 0.400000
+[02.27.24|11:13:50] 	Iter 700 Done. | loss: 7.3627 | lr: 0.400000
+[02.27.24|11:14:51] 	Iter 800 Done. | loss: 6.6637 | lr: 0.400000
+[02.27.24|11:15:40] 	train_mean_loss: 7.061025079415769
+[02.27.24|11:15:40] Training epoch: 4
+[02.27.24|11:15:52] 	Iter 900 Done. | loss: 6.3792 | lr: 0.400000
+[02.27.24|11:16:53] 	Iter 1000 Done. | loss: 6.2321 | lr: 0.400000
+[02.27.24|11:17:53] 	Iter 1100 Done. | loss: 5.5221 | lr: 0.400000
+[02.27.24|11:18:39] 	train_mean_loss: 6.111558333546126
+[02.27.24|11:18:39] Training epoch: 5
+[02.27.24|11:18:55] 	Iter 1200 Done. | loss: 5.5490 | lr: 0.400000
+[02.27.24|11:19:56] 	Iter 1300 Done. | loss: 5.7376 | lr: 0.400000
+[02.27.24|11:20:56] 	Iter 1400 Done. | loss: 5.0104 | lr: 0.400000
+[02.27.24|11:21:38] 	train_mean_loss: 5.775645455535577
+[02.27.24|11:21:39] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch5_model.pt.
+[02.27.24|11:21:39] KNN eval epoch 5
+[02.27.24|11:22:24] KNN - 10 current: 66.72%, best: 66.72%
+[02.27.24|11:22:24] KNN - 20 current: 65.49%, best: 65.49%
+[02.27.24|11:22:24] KNN - 40 current: 64.22%, best: 64.22%
+[02.27.24|11:22:24] Training epoch: 6
+[02.27.24|11:22:44] 	Iter 1500 Done. | loss: 5.3520 | lr: 0.400000
+[02.27.24|11:23:44] 	Iter 1600 Done. | loss: 5.3360 | lr: 0.400000
+[02.27.24|11:24:45] 	Iter 1700 Done. | loss: 5.6591 | lr: 0.400000
+[02.27.24|11:25:23] 	train_mean_loss: 5.471114870642318
+[02.27.24|11:25:24] Training epoch: 7
+[02.27.24|11:25:48] 	Iter 1800 Done. | loss: 5.4018 | lr: 0.400000
+[02.27.24|11:26:48] 	Iter 1900 Done. | loss: 5.6990 | lr: 0.400000
+[02.27.24|11:27:48] 	Iter 2000 Done. | loss: 5.7521 | lr: 0.400000
+[02.27.24|11:28:23] 	train_mean_loss: 5.295454649698167
+[02.27.24|11:28:23] Training epoch: 8
+[02.27.24|11:28:50] 	Iter 2100 Done. | loss: 4.9347 | lr: 0.400000
+[02.27.24|11:29:50] 	Iter 2200 Done. | loss: 4.4517 | lr: 0.400000
+[02.27.24|11:30:50] 	Iter 2300 Done. | loss: 4.8371 | lr: 0.400000
+[02.27.24|11:31:21] 	train_mean_loss: 5.125491226611494
+[02.27.24|11:31:21] Training epoch: 9
+[02.27.24|11:31:52] 	Iter 2400 Done. | loss: 4.9197 | lr: 0.400000
+[02.27.24|11:32:52] 	Iter 2500 Done. | loss: 4.6755 | lr: 0.400000
+[02.27.24|11:33:54] 	Iter 2600 Done. | loss: 5.0262 | lr: 0.400000
+[02.27.24|11:34:22] 	train_mean_loss: 4.992434529220166
+[02.27.24|11:34:22] Training epoch: 10
+[02.27.24|11:34:56] 	Iter 2700 Done. | loss: 5.1102 | lr: 0.400000
+[02.27.24|11:35:57] 	Iter 2800 Done. | loss: 4.3816 | lr: 0.400000
+[02.27.24|11:36:57] 	Iter 2900 Done. | loss: 4.5222 | lr: 0.400000
+[02.27.24|11:37:21] 	train_mean_loss: 4.929518921845625
+[02.27.24|11:37:22] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch10_model.pt.
+[02.27.24|11:37:22] KNN eval epoch 10
+[02.27.24|11:37:59] KNN - 10 current: 70.48%, best: 70.48%
+[02.27.24|11:37:59] KNN - 20 current: 69.71%, best: 69.71%
+[02.27.24|11:37:59] KNN - 40 current: 68.30%, best: 68.30%
+[02.27.24|11:37:59] Training epoch: 11
+[02.27.24|11:38:37] 	Iter 3000 Done. | loss: 5.6055 | lr: 0.400000
+[02.27.24|11:39:39] 	Iter 3100 Done. | loss: 5.6281 | lr: 0.400000
+[02.27.24|11:40:39] 	Iter 3200 Done. | loss: 4.8602 | lr: 0.400000
+[02.27.24|11:41:00] 	train_mean_loss: 4.854019178825171
+[02.27.24|11:41:00] Training epoch: 12
+[02.27.24|11:41:42] 	Iter 3300 Done. | loss: 4.3176 | lr: 0.400000
+[02.27.24|11:42:42] 	Iter 3400 Done. | loss: 5.1571 | lr: 0.400000
+[02.27.24|11:43:42] 	Iter 3500 Done. | loss: 4.7436 | lr: 0.400000
+[02.27.24|11:43:58] 	train_mean_loss: 4.808096997591914
+[02.27.24|11:43:59] Training epoch: 13
+[02.27.24|11:44:44] 	Iter 3600 Done. | loss: 4.8608 | lr: 0.400000
+[02.27.24|11:45:44] 	Iter 3700 Done. | loss: 5.3231 | lr: 0.400000
+[02.27.24|11:46:44] 	Iter 3800 Done. | loss: 4.6475 | lr: 0.400000
+[02.27.24|11:46:57] 	train_mean_loss: 4.753299699348657
+[02.27.24|11:46:57] Training epoch: 14
+[02.27.24|11:47:46] 	Iter 3900 Done. | loss: 4.6564 | lr: 0.400000
+[02.27.24|11:48:46] 	Iter 4000 Done. | loss: 4.6394 | lr: 0.400000
+[02.27.24|11:49:48] 	Iter 4100 Done. | loss: 4.6303 | lr: 0.400000
+[02.27.24|11:49:57] 	train_mean_loss: 4.711629073636061
+[02.27.24|11:49:57] Training epoch: 15
+[02.27.24|11:50:50] 	Iter 4200 Done. | loss: 4.9378 | lr: 0.400000
+[02.27.24|11:51:51] 	Iter 4300 Done. | loss: 4.1375 | lr: 0.400000
+[02.27.24|11:52:51] 	Iter 4400 Done. | loss: 4.7916 | lr: 0.400000
+[02.27.24|11:52:59] 	train_mean_loss: 4.635649433752307
+[02.27.24|11:53:02] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch15_model.pt.
+[02.27.24|11:53:02] KNN eval epoch 15
+[02.27.24|11:53:39] KNN - 10 current: 69.42%, best: 70.48%
+[02.27.24|11:53:41] KNN - 20 current: 68.89%, best: 69.71%
+[02.27.24|11:53:42] KNN - 40 current: 68.03%, best: 68.30%
+[02.27.24|11:53:42] Training epoch: 16
+[02.27.24|11:54:38] 	Iter 4500 Done. | loss: 4.9211 | lr: 0.400000
+[02.27.24|11:55:39] 	Iter 4600 Done. | loss: 4.6382 | lr: 0.400000
+[02.27.24|11:56:39] 	Iter 4700 Done. | loss: 5.0203 | lr: 0.400000
+[02.27.24|11:56:41] 	train_mean_loss: 4.644079935793974
+[02.27.24|11:56:41] Training epoch: 17
+[02.27.24|11:57:41] 	Iter 4800 Done. | loss: 4.3356 | lr: 0.400000
+[02.27.24|11:58:41] 	Iter 4900 Done. | loss: 4.4202 | lr: 0.400000
+[02.27.24|11:59:41] 	train_mean_loss: 4.623636696614375
+[02.27.24|11:59:41] Training epoch: 18
+[02.27.24|11:59:44] 	Iter 5000 Done. | loss: 5.1916 | lr: 0.400000
+[02.27.24|12:00:44] 	Iter 5100 Done. | loss: 4.3048 | lr: 0.400000
+[02.27.24|12:01:44] 	Iter 5200 Done. | loss: 4.6972 | lr: 0.400000
+[02.27.24|12:02:38] 	train_mean_loss: 4.618941256789123
+[02.27.24|12:02:39] Training epoch: 19
+[02.27.24|12:02:45] 	Iter 5300 Done. | loss: 4.5799 | lr: 0.400000
+[02.27.24|12:03:45] 	Iter 5400 Done. | loss: 4.2855 | lr: 0.400000
+[02.27.24|12:04:45] 	Iter 5500 Done. | loss: 4.6530 | lr: 0.400000
+[02.27.24|12:05:36] 	train_mean_loss: 4.602558664724129
+[02.27.24|12:05:36] Training epoch: 20
+[02.27.24|12:05:46] 	Iter 5600 Done. | loss: 5.1597 | lr: 0.400000
+[02.27.24|12:06:47] 	Iter 5700 Done. | loss: 4.4811 | lr: 0.400000
+[02.27.24|12:07:46] 	Iter 5800 Done. | loss: 4.1338 | lr: 0.400000
+[02.27.24|12:08:34] 	train_mean_loss: 4.56698849330954
+[02.27.24|12:08:36] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch20_model.pt.
+[02.27.24|12:08:36] KNN eval epoch 20
+[02.27.24|12:09:12] KNN - 10 current: 68.89%, best: 70.48%
+[02.27.24|12:09:12] KNN - 20 current: 67.69%, best: 69.71%
+[02.27.24|12:09:12] KNN - 40 current: 66.49%, best: 68.30%
+[02.27.24|12:09:12] Training epoch: 21
+[02.27.24|12:09:26] 	Iter 5900 Done. | loss: 4.3549 | lr: 0.400000
+[02.27.24|12:10:27] 	Iter 6000 Done. | loss: 4.7144 | lr: 0.400000
+[02.27.24|12:11:26] 	Iter 6100 Done. | loss: 4.3016 | lr: 0.400000
+[02.27.24|12:12:11] 	train_mean_loss: 4.55508942263467
+[02.27.24|12:12:11] Training epoch: 22
+[02.27.24|12:12:29] 	Iter 6200 Done. | loss: 4.6303 | lr: 0.400000
+[02.27.24|12:13:29] 	Iter 6300 Done. | loss: 4.2214 | lr: 0.400000
+[02.27.24|12:14:29] 	Iter 6400 Done. | loss: 4.2706 | lr: 0.400000
+[02.27.24|12:15:09] 	train_mean_loss: 4.523076419927636
+[02.27.24|12:15:09] Training epoch: 23
+[02.27.24|12:15:30] 	Iter 6500 Done. | loss: 4.1948 | lr: 0.400000
+[02.27.24|12:16:30] 	Iter 6600 Done. | loss: 4.7046 | lr: 0.400000
+[02.27.24|12:17:31] 	Iter 6700 Done. | loss: 4.7159 | lr: 0.400000
+[02.27.24|12:18:08] 	train_mean_loss: 4.491244795371075
+[02.27.24|12:18:08] Training epoch: 24
+[02.27.24|12:18:33] 	Iter 6800 Done. | loss: 4.1578 | lr: 0.400000
+[02.27.24|12:19:33] 	Iter 6900 Done. | loss: 4.2533 | lr: 0.400000
+[02.27.24|12:20:34] 	Iter 7000 Done. | loss: 4.3826 | lr: 0.400000
+[02.27.24|12:21:07] 	train_mean_loss: 4.492951976198729
+[02.27.24|12:21:07] Training epoch: 25
+[02.27.24|12:21:35] 	Iter 7100 Done. | loss: 3.8210 | lr: 0.400000
+[02.27.24|12:22:35] 	Iter 7200 Done. | loss: 3.9175 | lr: 0.400000
+[02.27.24|12:23:35] 	Iter 7300 Done. | loss: 3.9433 | lr: 0.400000
+[02.27.24|12:24:05] 	train_mean_loss: 4.4690174042773085
+[02.27.24|12:24:06] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch25_model.pt.
+[02.27.24|12:24:06] KNN eval epoch 25
+[02.27.24|12:24:42] KNN - 10 current: 68.99%, best: 70.48%
+[02.27.24|12:24:43] KNN - 20 current: 68.19%, best: 69.71%
+[02.27.24|12:24:43] KNN - 40 current: 66.91%, best: 68.30%
+[02.27.24|12:24:43] Training epoch: 26
+[02.27.24|12:25:14] 	Iter 7400 Done. | loss: 4.2189 | lr: 0.400000
+[02.27.24|12:26:14] 	Iter 7500 Done. | loss: 4.3946 | lr: 0.400000
+[02.27.24|12:27:14] 	Iter 7600 Done. | loss: 4.4125 | lr: 0.400000
+[02.27.24|12:27:40] 	train_mean_loss: 4.4512098419423
+[02.27.24|12:27:41] Training epoch: 27
+[02.27.24|12:28:16] 	Iter 7700 Done. | loss: 4.2855 | lr: 0.400000
+[02.27.24|12:29:17] 	Iter 7800 Done. | loss: 4.9653 | lr: 0.400000
+[02.27.24|12:30:16] 	Iter 7900 Done. | loss: 4.5534 | lr: 0.400000
+[02.27.24|12:30:41] 	train_mean_loss: 4.385687396639869
+[02.27.24|12:30:43] Training epoch: 28
+[02.27.24|12:31:22] 	Iter 8000 Done. | loss: 4.2756 | lr: 0.400000
+[02.27.24|12:32:22] 	Iter 8100 Done. | loss: 4.7349 | lr: 0.400000
+[02.27.24|12:33:23] 	Iter 8200 Done. | loss: 4.0466 | lr: 0.400000
+[02.27.24|12:33:41] 	train_mean_loss: 4.444596210304572
+[02.27.24|12:33:42] Training epoch: 29
+[02.27.24|12:34:24] 	Iter 8300 Done. | loss: 4.0943 | lr: 0.400000
+[02.27.24|12:35:24] 	Iter 8400 Done. | loss: 4.2973 | lr: 0.400000
+[02.27.24|12:36:26] 	Iter 8500 Done. | loss: 4.9427 | lr: 0.400000
+[02.27.24|12:36:41] 	train_mean_loss: 4.3471504433625405
+[02.27.24|12:36:41] Training epoch: 30
+[02.27.24|12:37:27] 	Iter 8600 Done. | loss: 3.9693 | lr: 0.400000
+[02.27.24|12:38:29] 	Iter 8700 Done. | loss: 4.7485 | lr: 0.400000
+[02.27.24|12:39:30] 	Iter 8800 Done. | loss: 4.7354 | lr: 0.400000
+[02.27.24|12:39:42] 	train_mean_loss: 4.374596015125716
+[02.27.24|12:39:43] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch30_model.pt.
+[02.27.24|12:39:43] KNN eval epoch 30
+[02.27.24|12:40:20] KNN - 10 current: 71.19%, best: 71.19%
+[02.27.24|12:40:22] KNN - 20 current: 70.25%, best: 70.25%
+[02.27.24|12:40:24] KNN - 40 current: 69.23%, best: 69.23%
+[02.27.24|12:40:26] Training epoch: 31
+[02.27.24|12:41:16] 	Iter 8900 Done. | loss: 3.6000 | lr: 0.400000
+[02.27.24|12:42:16] 	Iter 9000 Done. | loss: 4.0930 | lr: 0.400000
+[02.27.24|12:43:16] 	Iter 9100 Done. | loss: 4.4597 | lr: 0.400000
+[02.27.24|12:43:24] 	train_mean_loss: 4.415278105508714
+[02.27.24|12:43:24] Training epoch: 32
+[02.27.24|12:44:18] 	Iter 9200 Done. | loss: 4.5706 | lr: 0.400000
+[02.27.24|12:45:19] 	Iter 9300 Done. | loss: 4.0300 | lr: 0.400000
+[02.27.24|12:46:24] 	Iter 9400 Done. | loss: 3.9346 | lr: 0.400000
+[02.27.24|12:46:31] 	train_mean_loss: 4.380342063449678
+[02.27.24|12:46:31] Training epoch: 33
+[02.27.24|12:47:28] 	Iter 9500 Done. | loss: 4.1462 | lr: 0.400000
+[02.27.24|12:48:28] 	Iter 9600 Done. | loss: 4.1241 | lr: 0.400000
+[02.27.24|12:49:28] 	Iter 9700 Done. | loss: 4.4003 | lr: 0.400000
+[02.27.24|12:49:29] 	train_mean_loss: 4.348041227074708
+[02.27.24|12:49:29] Training epoch: 34
+[02.27.24|12:50:30] 	Iter 9800 Done. | loss: 4.5360 | lr: 0.400000
+[02.27.24|12:51:30] 	Iter 9900 Done. | loss: 4.0083 | lr: 0.400000
+[02.27.24|12:52:27] 	train_mean_loss: 4.318306094935151
+[02.27.24|12:52:27] Training epoch: 35
+[02.27.24|12:52:32] 	Iter 10000 Done. | loss: 3.9334 | lr: 0.400000
+[02.27.24|12:53:32] 	Iter 10100 Done. | loss: 4.1584 | lr: 0.400000
+[02.27.24|12:54:32] 	Iter 10200 Done. | loss: 3.8941 | lr: 0.400000
+[02.27.24|12:55:26] 	train_mean_loss: 4.3271004018329435
+[02.27.24|12:55:28] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch35_model.pt.
+[02.27.24|12:55:28] KNN eval epoch 35
+[02.27.24|12:56:05] KNN - 10 current: 69.75%, best: 71.19%
+[02.27.24|12:56:05] KNN - 20 current: 69.16%, best: 70.25%
+[02.27.24|12:56:05] KNN - 40 current: 67.72%, best: 69.23%
+[02.27.24|12:56:05] Training epoch: 36
+[02.27.24|12:56:13] 	Iter 10300 Done. | loss: 3.8411 | lr: 0.400000
+[02.27.24|12:57:13] 	Iter 10400 Done. | loss: 4.6495 | lr: 0.400000
+[02.27.24|12:58:13] 	Iter 10500 Done. | loss: 3.9903 | lr: 0.400000
+[02.27.24|12:59:03] 	train_mean_loss: 4.344921489151156
+[02.27.24|12:59:03] Training epoch: 37
+[02.27.24|12:59:14] 	Iter 10600 Done. | loss: 3.7320 | lr: 0.400000
+[02.27.24|13:00:15] 	Iter 10700 Done. | loss: 4.2707 | lr: 0.400000
+[02.27.24|13:01:14] 	Iter 10800 Done. | loss: 4.2928 | lr: 0.400000
+[02.27.24|13:02:01] 	train_mean_loss: 4.286995076808799
+[02.27.24|13:02:01] Training epoch: 38
+[02.27.24|13:02:16] 	Iter 10900 Done. | loss: 4.6114 | lr: 0.400000
+[02.27.24|13:03:16] 	Iter 11000 Done. | loss: 4.2795 | lr: 0.400000
+[02.27.24|13:04:17] 	Iter 11100 Done. | loss: 4.3567 | lr: 0.400000
+[02.27.24|13:05:00] 	train_mean_loss: 4.362539944194612
+[02.27.24|13:05:00] Training epoch: 39
+[02.27.24|13:05:19] 	Iter 11200 Done. | loss: 4.7203 | lr: 0.400000
+[02.27.24|13:06:19] 	Iter 11300 Done. | loss: 3.9593 | lr: 0.400000
+[02.27.24|13:07:19] 	Iter 11400 Done. | loss: 3.8073 | lr: 0.400000
+[02.27.24|13:07:58] 	train_mean_loss: 4.319332994571348
+[02.27.24|13:07:58] Training epoch: 40
+[02.27.24|13:08:20] 	Iter 11500 Done. | loss: 4.3820 | lr: 0.400000
+[02.27.24|13:09:21] 	Iter 11600 Done. | loss: 3.8312 | lr: 0.400000
+[02.27.24|13:10:21] 	Iter 11700 Done. | loss: 4.3200 | lr: 0.400000
+[02.27.24|13:10:56] 	train_mean_loss: 4.315428831950337
+[02.27.24|13:10:58] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch40_model.pt.
+[02.27.24|13:10:58] KNN eval epoch 40
+[02.27.24|13:11:35] KNN - 10 current: 71.65%, best: 71.65%
+[02.27.24|13:11:35] KNN - 20 current: 70.94%, best: 70.94%
+[02.27.24|13:11:35] KNN - 40 current: 70.34%, best: 70.34%
+[02.27.24|13:11:35] Training epoch: 41
+[02.27.24|13:12:01] 	Iter 11800 Done. | loss: 5.5901 | lr: 0.400000
+[02.27.24|13:13:02] 	Iter 11900 Done. | loss: 4.3201 | lr: 0.400000
+[02.27.24|13:14:03] 	Iter 12000 Done. | loss: 5.2300 | lr: 0.400000
+[02.27.24|13:14:35] 	train_mean_loss: 4.3573593979790095
+[02.27.24|13:14:35] Training epoch: 42
+[02.27.24|13:15:04] 	Iter 12100 Done. | loss: 4.6323 | lr: 0.400000
+[02.27.24|13:16:05] 	Iter 12200 Done. | loss: 4.3547 | lr: 0.400000
+[02.27.24|13:17:05] 	Iter 12300 Done. | loss: 4.7694 | lr: 0.400000
+[02.27.24|13:17:33] 	train_mean_loss: 4.340921827725002
+[02.27.24|13:17:34] Training epoch: 43
+[02.27.24|13:18:07] 	Iter 12400 Done. | loss: 4.6644 | lr: 0.400000
+[02.27.24|13:19:08] 	Iter 12500 Done. | loss: 3.8945 | lr: 0.400000
+[02.27.24|13:20:08] 	Iter 12600 Done. | loss: 4.2170 | lr: 0.400000
+[02.27.24|13:20:33] 	train_mean_loss: 4.299369752812548
+[02.27.24|13:20:33] Training epoch: 44
+[02.27.24|13:21:10] 	Iter 12700 Done. | loss: 4.0932 | lr: 0.400000
+[02.27.24|13:22:10] 	Iter 12800 Done. | loss: 4.6355 | lr: 0.400000
+[02.27.24|13:23:10] 	Iter 12900 Done. | loss: 4.2410 | lr: 0.400000
+[02.27.24|13:23:31] 	train_mean_loss: 4.264650454326552
+[02.27.24|13:23:31] Training epoch: 45
+[02.27.24|13:24:12] 	Iter 13000 Done. | loss: 3.5371 | lr: 0.400000
+[02.27.24|13:25:12] 	Iter 13100 Done. | loss: 3.8962 | lr: 0.400000
+[02.27.24|13:26:12] 	Iter 13200 Done. | loss: 4.0579 | lr: 0.400000
+[02.27.24|13:26:30] 	train_mean_loss: 4.311100071790267
+[02.27.24|13:26:32] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch45_model.pt.
+[02.27.24|13:26:32] KNN eval epoch 45
+[02.27.24|13:27:09] KNN - 10 current: 71.32%, best: 71.65%
+[02.27.24|13:27:09] KNN - 20 current: 71.11%, best: 71.11%
+[02.27.24|13:27:09] KNN - 40 current: 69.74%, best: 70.34%
+[02.27.24|13:27:09] Training epoch: 46
+[02.27.24|13:27:54] 	Iter 13300 Done. | loss: 4.0088 | lr: 0.400000
+[02.27.24|13:28:54] 	Iter 13400 Done. | loss: 4.2409 | lr: 0.400000
+[02.27.24|13:29:54] 	Iter 13500 Done. | loss: 3.9905 | lr: 0.400000
+[02.27.24|13:30:08] 	train_mean_loss: 4.240623944470672
+[02.27.24|13:30:08] Training epoch: 47
+[02.27.24|13:30:55] 	Iter 13600 Done. | loss: 3.8321 | lr: 0.400000
+[02.27.24|13:31:56] 	Iter 13700 Done. | loss: 4.5415 | lr: 0.400000
+[02.27.24|13:32:56] 	Iter 13800 Done. | loss: 4.3548 | lr: 0.400000
+[02.27.24|13:33:06] 	train_mean_loss: 4.276296358530213
+[02.27.24|13:33:06] Training epoch: 48
+[02.27.24|13:33:58] 	Iter 13900 Done. | loss: 4.2798 | lr: 0.400000
+[02.27.24|13:34:58] 	Iter 14000 Done. | loss: 3.7727 | lr: 0.400000
+[02.27.24|13:35:58] 	Iter 14100 Done. | loss: 4.2104 | lr: 0.400000
+[02.27.24|13:36:05] 	train_mean_loss: 4.214165088270797
+[02.27.24|13:36:05] Training epoch: 49
+[02.27.24|13:37:00] 	Iter 14200 Done. | loss: 4.6796 | lr: 0.400000
+[02.27.24|13:38:00] 	Iter 14300 Done. | loss: 4.9726 | lr: 0.400000
+[02.27.24|13:39:01] 	Iter 14400 Done. | loss: 4.7947 | lr: 0.400000
+[02.27.24|13:39:04] 	train_mean_loss: 4.27479020835591
+[02.27.24|13:39:04] Training epoch: 50
+[02.27.24|13:40:02] 	Iter 14500 Done. | loss: 4.0900 | lr: 0.400000
+[02.27.24|13:41:02] 	Iter 14600 Done. | loss: 4.8946 | lr: 0.400000
+[02.27.24|13:42:02] 	train_mean_loss: 4.261361591669978
+[02.27.24|13:42:03] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch50_model.pt.
+[02.27.24|13:42:03] KNN eval epoch 50
+[02.27.24|13:42:41] KNN - 10 current: 70.08%, best: 71.65%
+[02.27.24|13:42:41] KNN - 20 current: 69.78%, best: 71.11%
+[02.27.24|13:42:41] KNN - 40 current: 68.67%, best: 70.34%
+[02.27.24|13:42:41] Training epoch: 51
+[02.27.24|13:42:43] 	Iter 14700 Done. | loss: 4.5948 | lr: 0.400000
+[02.27.24|13:43:43] 	Iter 14800 Done. | loss: 3.5676 | lr: 0.400000
+[02.27.24|13:44:43] 	Iter 14900 Done. | loss: 4.1520 | lr: 0.400000
+[02.27.24|13:45:39] 	train_mean_loss: 4.226053126815225
+[02.27.24|13:45:39] Training epoch: 52
+[02.27.24|13:45:44] 	Iter 15000 Done. | loss: 4.8313 | lr: 0.400000
+[02.27.24|13:46:45] 	Iter 15100 Done. | loss: 4.3879 | lr: 0.400000
+[02.27.24|13:47:45] 	Iter 15200 Done. | loss: 3.8200 | lr: 0.400000
+[02.27.24|13:48:38] 	train_mean_loss: 4.297561065680315
+[02.27.24|13:48:38] Training epoch: 53
+[02.27.24|13:48:47] 	Iter 15300 Done. | loss: 4.3460 | lr: 0.400000
+[02.27.24|13:49:48] 	Iter 15400 Done. | loss: 3.8597 | lr: 0.400000
+[02.27.24|13:50:48] 	Iter 15500 Done. | loss: 4.2820 | lr: 0.400000
+[02.27.24|13:51:39] 	train_mean_loss: 4.325576060483245
+[02.27.24|13:51:39] Training epoch: 54
+[02.27.24|13:51:52] 	Iter 15600 Done. | loss: 4.1153 | lr: 0.400000
+[02.27.24|13:52:53] 	Iter 15700 Done. | loss: 4.1145 | lr: 0.400000
+[02.27.24|13:53:53] 	Iter 15800 Done. | loss: 4.5394 | lr: 0.400000
+[02.27.24|13:54:39] 	train_mean_loss: 4.27475308479906
+[02.27.24|13:54:39] Training epoch: 55
+[02.27.24|13:54:55] 	Iter 15900 Done. | loss: 3.9992 | lr: 0.400000
+[02.27.24|13:55:56] 	Iter 16000 Done. | loss: 3.9010 | lr: 0.400000
+[02.27.24|13:56:55] 	Iter 16100 Done. | loss: 4.2474 | lr: 0.400000
+[02.27.24|13:57:38] 	train_mean_loss: 4.258072282992253
+[02.27.24|13:57:40] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch55_model.pt.
+[02.27.24|13:57:40] KNN eval epoch 55
+[02.27.24|13:58:17] KNN - 10 current: 72.43%, best: 72.43%
+[02.27.24|13:58:17] KNN - 20 current: 72.14%, best: 72.14%
+[02.27.24|13:58:17] KNN - 40 current: 70.89%, best: 70.89%
+[02.27.24|13:58:17] Training epoch: 56
+[02.27.24|13:58:37] 	Iter 16200 Done. | loss: 4.2575 | lr: 0.400000
+[02.27.24|13:59:37] 	Iter 16300 Done. | loss: 4.0938 | lr: 0.400000
+[02.27.24|14:00:37] 	Iter 16400 Done. | loss: 4.0650 | lr: 0.400000
+[02.27.24|14:01:15] 	train_mean_loss: 4.310397824462579
+[02.27.24|14:01:15] Training epoch: 57
+[02.27.24|14:01:39] 	Iter 16500 Done. | loss: 4.2778 | lr: 0.400000
+[02.27.24|14:02:39] 	Iter 16600 Done. | loss: 3.8569 | lr: 0.400000
+[02.27.24|14:03:39] 	Iter 16700 Done. | loss: 3.7634 | lr: 0.400000
+[02.27.24|14:04:13] 	train_mean_loss: 4.258893433071318
+[02.27.24|14:04:13] Training epoch: 58
+[02.27.24|14:04:40] 	Iter 16800 Done. | loss: 4.0906 | lr: 0.400000
+[02.27.24|14:05:41] 	Iter 16900 Done. | loss: 4.1171 | lr: 0.400000
+[02.27.24|14:06:42] 	Iter 17000 Done. | loss: 4.6540 | lr: 0.400000
+[02.27.24|14:07:12] 	train_mean_loss: 4.3076497640739495
+[02.27.24|14:07:12] Training epoch: 59
+[02.27.24|14:07:43] 	Iter 17100 Done. | loss: 4.2457 | lr: 0.400000
+[02.27.24|14:08:43] 	Iter 17200 Done. | loss: 4.0306 | lr: 0.400000
+[02.27.24|14:09:43] 	Iter 17300 Done. | loss: 3.9895 | lr: 0.400000
+[02.27.24|14:10:10] 	train_mean_loss: 4.251463122919303
+[02.27.24|14:10:10] Training epoch: 60
+[02.27.24|14:10:45] 	Iter 17400 Done. | loss: 4.6892 | lr: 0.400000
+[02.27.24|14:11:45] 	Iter 17500 Done. | loss: 4.3196 | lr: 0.400000
+[02.27.24|14:12:45] 	Iter 17600 Done. | loss: 3.7671 | lr: 0.400000
+[02.27.24|14:13:09] 	train_mean_loss: 4.311697703640477
+[02.27.24|14:13:11] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch60_model.pt.
+[02.27.24|14:13:11] KNN eval epoch 60
+[02.27.24|14:13:48] KNN - 10 current: 70.52%, best: 72.43%
+[02.27.24|14:13:48] KNN - 20 current: 69.89%, best: 72.14%
+[02.27.24|14:13:48] KNN - 40 current: 69.23%, best: 70.89%
+[02.27.24|14:13:48] Training epoch: 61
+[02.27.24|14:14:26] 	Iter 17700 Done. | loss: 4.3430 | lr: 0.400000
+[02.27.24|14:15:26] 	Iter 17800 Done. | loss: 4.1388 | lr: 0.400000
+[02.27.24|14:16:27] 	Iter 17900 Done. | loss: 3.9791 | lr: 0.400000
+[02.27.24|14:16:47] 	train_mean_loss: 4.24863148627638
+[02.27.24|14:16:47] Training epoch: 62
+[02.27.24|14:17:29] 	Iter 18000 Done. | loss: 4.2449 | lr: 0.400000
+[02.27.24|14:18:29] 	Iter 18100 Done. | loss: 4.2935 | lr: 0.400000
+[02.27.24|14:19:29] 	Iter 18200 Done. | loss: 4.3754 | lr: 0.400000
+[02.27.24|14:19:45] 	train_mean_loss: 4.300689664016775
+[02.27.24|14:19:46] Training epoch: 63
+[02.27.24|14:20:31] 	Iter 18300 Done. | loss: 4.8556 | lr: 0.400000
+[02.27.24|14:21:31] 	Iter 18400 Done. | loss: 4.2776 | lr: 0.400000
+[02.27.24|14:22:31] 	Iter 18500 Done. | loss: 4.2223 | lr: 0.400000
+[02.27.24|14:22:44] 	train_mean_loss: 4.323666589600699
+[02.27.24|14:22:44] Training epoch: 64
+[02.27.24|14:23:33] 	Iter 18600 Done. | loss: 3.9760 | lr: 0.400000
+[02.27.24|14:24:33] 	Iter 18700 Done. | loss: 3.8654 | lr: 0.400000
+[02.27.24|14:25:33] 	Iter 18800 Done. | loss: 4.5641 | lr: 0.400000
+[02.27.24|14:25:42] 	train_mean_loss: 4.308700659648091
+[02.27.24|14:25:42] Training epoch: 65
+[02.27.24|14:26:35] 	Iter 18900 Done. | loss: 4.7047 | lr: 0.400000
+[02.27.24|14:27:35] 	Iter 19000 Done. | loss: 4.2499 | lr: 0.400000
+[02.27.24|14:28:35] 	Iter 19100 Done. | loss: 4.4589 | lr: 0.400000
+[02.27.24|14:28:40] 	train_mean_loss: 4.265586561086226
+[02.27.24|14:28:42] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch65_model.pt.
+[02.27.24|14:28:42] KNN eval epoch 65
+[02.27.24|14:29:19] KNN - 10 current: 71.94%, best: 72.43%
+[02.27.24|14:29:19] KNN - 20 current: 71.55%, best: 72.14%
+[02.27.24|14:29:19] KNN - 40 current: 70.63%, best: 70.89%
+[02.27.24|14:29:19] Training epoch: 66
+[02.27.24|14:30:15] 	Iter 19200 Done. | loss: 3.9802 | lr: 0.400000
+[02.27.24|14:31:15] 	Iter 19300 Done. | loss: 5.1071 | lr: 0.400000
+[02.27.24|14:32:16] 	Iter 19400 Done. | loss: 4.8834 | lr: 0.400000
+[02.27.24|14:32:18] 	train_mean_loss: 4.3077967377747
+[02.27.24|14:32:18] Training epoch: 67
+[02.27.24|14:33:17] 	Iter 19500 Done. | loss: 4.7474 | lr: 0.400000
+[02.27.24|14:34:17] 	Iter 19600 Done. | loss: 3.5231 | lr: 0.400000
+[02.27.24|14:35:15] 	train_mean_loss: 4.27021708293837
+[02.27.24|14:35:15] Training epoch: 68
+[02.27.24|14:35:19] 	Iter 19700 Done. | loss: 4.4097 | lr: 0.400000
+[02.27.24|14:36:19] 	Iter 19800 Done. | loss: 4.1702 | lr: 0.400000
+[02.27.24|14:37:20] 	Iter 19900 Done. | loss: 4.4936 | lr: 0.400000
+[02.27.24|14:38:15] 	train_mean_loss: 4.302539936539267
+[02.27.24|14:38:15] Training epoch: 69
+[02.27.24|14:38:21] 	Iter 20000 Done. | loss: 3.8282 | lr: 0.400000
+[02.27.24|14:39:22] 	Iter 20100 Done. | loss: 4.8569 | lr: 0.400000
+[02.27.24|14:40:21] 	Iter 20200 Done. | loss: 3.7825 | lr: 0.400000
+[02.27.24|14:41:13] 	train_mean_loss: 4.237880543786652
+[02.27.24|14:41:13] Training epoch: 70
+[02.27.24|14:41:23] 	Iter 20300 Done. | loss: 6.6469 | lr: 0.400000
+[02.27.24|14:42:23] 	Iter 20400 Done. | loss: 5.4180 | lr: 0.400000
+[02.27.24|14:43:23] 	Iter 20500 Done. | loss: 4.1829 | lr: 0.400000
+[02.27.24|14:44:11] 	train_mean_loss: 4.2773390205539
+[02.27.24|14:44:12] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch70_model.pt.
+[02.27.24|14:44:12] KNN eval epoch 70
+[02.27.24|14:44:49] KNN - 10 current: 70.23%, best: 72.43%
+[02.27.24|14:44:49] KNN - 20 current: 69.16%, best: 72.14%
+[02.27.24|14:44:49] KNN - 40 current: 68.58%, best: 70.89%
+[02.27.24|14:44:49] Training epoch: 71
+[02.27.24|14:45:03] 	Iter 20600 Done. | loss: 4.6311 | lr: 0.400000
+[02.27.24|14:46:03] 	Iter 20700 Done. | loss: 3.5867 | lr: 0.400000
+[02.27.24|14:47:03] 	Iter 20800 Done. | loss: 5.2371 | lr: 0.400000
+[02.27.24|14:47:48] 	train_mean_loss: 4.24091688062058
+[02.27.24|14:47:48] Training epoch: 72
+[02.27.24|14:48:05] 	Iter 20900 Done. | loss: 3.5891 | lr: 0.400000
+[02.27.24|14:49:06] 	Iter 21000 Done. | loss: 4.5700 | lr: 0.400000
+[02.27.24|14:50:06] 	Iter 21100 Done. | loss: 3.7083 | lr: 0.400000
+[02.27.24|14:50:47] 	train_mean_loss: 4.268704904990942
+[02.27.24|14:50:47] Training epoch: 73
+[02.27.24|14:51:08] 	Iter 21200 Done. | loss: 3.9503 | lr: 0.400000
+[02.27.24|14:52:09] 	Iter 21300 Done. | loss: 4.0298 | lr: 0.400000
+[02.27.24|14:53:10] 	Iter 21400 Done. | loss: 3.7314 | lr: 0.400000
+[02.27.24|14:53:46] 	train_mean_loss: 4.250870964154094
+[02.27.24|14:53:46] Training epoch: 74
+[02.27.24|14:54:11] 	Iter 21500 Done. | loss: 3.8890 | lr: 0.400000
+[02.27.24|14:55:12] 	Iter 21600 Done. | loss: 3.6836 | lr: 0.400000
+[02.27.24|14:56:13] 	Iter 21700 Done. | loss: 3.9424 | lr: 0.400000
+[02.27.24|14:56:46] 	train_mean_loss: 4.266687658368324
+[02.27.24|14:56:46] Training epoch: 75
+[02.27.24|14:57:15] 	Iter 21800 Done. | loss: 4.4026 | lr: 0.400000
+[02.27.24|14:57:42] diff --git a/config/ntu60/pretext/pretext_actclr_xview_joint.yaml b/config/ntu60/pretext/pretext_actclr_xview_joint.yaml
+index 988fc65..405ba59 100644
+--- a/config/ntu60/pretext/pretext_actclr_xview_joint.yaml
++++ b/config/ntu60/pretext/pretext_actclr_xview_joint.yaml
+@@ -1,4 +1,4 @@
+-work_dir: ./work_dir/ntu60_cv/actclr_joint/pretext/
++work_dir: ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1
+ weights:  /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt
+ 
+ ignore_weights: [queue]
+@@ -53,7 +53,7 @@ model_args:
+ # optim
+ nesterov: False
+ weight_decay: 1e-4
+-base_lr: 0.4
++base_lr: 0.1
+ optimizer: SGD
+ step: [250]
+ 
+diff --git a/src.zip b/src.zip
+index eda204d..e26c40e 100644
+Binary files a/src.zip and b/src.zip differ
+diff --git a/work_dir/ntu60_cv/actclr_joint/pretext/log.txt b/work_dir/ntu60_cv/actclr_joint/pretext/log.txt
+index 7fc0f79..64b9cb8 100644
+--- a/work_dir/ntu60_cv/actclr_joint/pretext/log.txt
++++ b/work_dir/ntu60_cv/actclr_joint/pretext/log.txt
+@@ -6855,3 +6855,19 @@ Binary files a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.17
+ [02.27.24|10:34:21] 	Iter 0 Done. | loss: 2.8665 | lr: 0.400000
+ [02.27.24|10:35:20] 	Iter 100 Done. | loss: 13.9324 | lr: 0.400000
+ [02.27.24|10:37:13] 	Iter 200 Done. | loss: 12.5810 | lr: 0.400000
++[02.27.24|11:05:39] diff --git a/src.zip b/src.zip
++index eda204d..9d52475 100644
++Binary files a/src.zip and b/src.zip differ
++diff --git a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 b/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7
++index e69de29..61b35f1 100644
++Binary files a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 and b/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 differ
++
++[02.27.24|11:05:40] Load weights from /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt.
++[02.27.24|11:05:40] Parameters:
++{'work_dir': './work_dir/ntu60_cv/actclr_joint/pretext/', 'config': './config/ntu60/pretext/pretext_actclr_xview_joint.yaml', 'phase': 'train', 'save_result': True, 'start_epoch': 0, 'num_epoch': 350, 'use_gpu': True, 'device': [4], 'log_interval': 100, 'save_interval': 5, 'eval_interval': -1, 'save_log': True, 'print_log': True, 'pavi_log': False, 'knn_interval': 5, 'train_feeder': 'feeder.ntu_feeder.Feeder_triple', 'test_feeder': 'feeder.feeder', 'num_worker': 4, 'train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'test_feeder_args': {}, 'mem_train_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_test_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'mem_test_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/val_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/val_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'batch_size': 128, 'test_batch_size': 128, 'debug': False, 'model': 'net.actclr.actclr', 'model_args': {'base_encoder': 'net.st_gcn.Model', 'pretrain': True, 'feature_dim': 128, 'queue_size': 65536, 'momentum': 0.999, 'Temperature': 0.07, 'mlp': True, 'in_channels': 3, 'hidden_channels': 16, 'hidden_dim': 256, 'num_class': 60, 'dropout': 0.5, 'mode': 'joint', 'graph_args': {'layout': 'ntu-rgb+d', 'strategy': 'spatial'}, 'edge_importance_weighting': True}, 'weights': '/mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt', 'ignore_weights': ['queue'], 'rename_weights': ['encoder_q.encoder_k'], 'knn_k': [10, 20, 40], 'knn_classes': 60, 'knn_t': 0.1, 'KNN_show': [50, 100, 150, 200, 250, 300], 'base_lr': 0.4, 'step': [250], 'optimizer': 'SGD', 'nesterov': False, 'weight_decay': 0.0001, 'stream': 'joint', 'mining_epoch': 500, 'topk': 1}
++
++[02.27.24|11:05:40] ---------- Networks initialized -------------
++[02.27.24|11:05:40] [Network] Total number of parameters : 1.840 M
++[02.27.24|11:05:40] -----------------------------------------------
++[02.27.24|11:05:43] Training epoch: 1
++[02.27.24|11:05:48] 	Iter 0 Done. | loss: 2.8665 | lr: 0.400000
+diff --git a/work_dir/ntu60_cv/actclr_joint/pretext/train/events.out.tfevents.1709001250.STRUCT-TitanX7 b/work_dir/ntu60_cv/actclr_joint/pretext/train/events.out.tfevents.1709001250.STRUCT-TitanX7
+deleted file mode 100644
+index 2f695eb..0000000
+Binary files a/work_dir/ntu60_cv/actclr_joint/pretext/train/events.out.tfevents.1709001250.STRUCT-TitanX7 and /dev/null differ
+diff --git a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 b/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7
+deleted file mode 100644
+index e69de29..0000000
+
+[02.27.24|14:57:43] Load weights from /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt.
+[02.27.24|14:57:43] Parameters:
+{'work_dir': './work_dir/ntu60_cv/actclr_joint/pretext/gpu_1', 'config': './config/ntu60/pretext/pretext_actclr_xview_joint.yaml', 'phase': 'train', 'save_result': True, 'start_epoch': 0, 'num_epoch': 350, 'use_gpu': True, 'device': [4], 'log_interval': 100, 'save_interval': 5, 'eval_interval': -1, 'save_log': True, 'print_log': True, 'pavi_log': False, 'knn_interval': 5, 'train_feeder': 'feeder.ntu_feeder.Feeder_triple', 'test_feeder': 'feeder.feeder', 'num_worker': 4, 'train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'test_feeder_args': {}, 'mem_train_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_test_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'mem_test_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/val_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/val_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'batch_size': 128, 'test_batch_size': 128, 'debug': False, 'model': 'net.actclr.actclr', 'model_args': {'base_encoder': 'net.st_gcn.Model', 'pretrain': True, 'feature_dim': 128, 'queue_size': 65536, 'momentum': 0.999, 'Temperature': 0.07, 'mlp': True, 'in_channels': 3, 'hidden_channels': 16, 'hidden_dim': 256, 'num_class': 60, 'dropout': 0.5, 'mode': 'joint', 'graph_args': {'layout': 'ntu-rgb+d', 'strategy': 'spatial'}, 'edge_importance_weighting': True}, 'weights': '/mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt', 'ignore_weights': ['queue'], 'rename_weights': ['encoder_q.encoder_k'], 'knn_k': [10, 20, 40], 'knn_classes': 60, 'knn_t': 0.1, 'KNN_show': [50, 100, 150, 200, 250, 300], 'base_lr': 0.1, 'step': [250], 'optimizer': 'SGD', 'nesterov': False, 'weight_decay': 0.0001, 'stream': 'joint', 'mining_epoch': 500, 'topk': 1}
+
+[02.27.24|14:57:43] ---------- Networks initialized -------------
+[02.27.24|14:57:43] [Network] Total number of parameters : 1.840 M
+[02.27.24|14:57:43] -----------------------------------------------
+[02.27.24|14:57:46] Training epoch: 1
+[02.27.24|14:57:51] 	Iter 0 Done. | loss: 2.8665 | lr: 0.100000
+[02.27.24|16:07:22] diff --git a/config/ntu60/pretext/pretext_actclr_xview_joint.yaml b/config/ntu60/pretext/pretext_actclr_xview_joint.yaml
+index 988fc65..405ba59 100644
+--- a/config/ntu60/pretext/pretext_actclr_xview_joint.yaml
++++ b/config/ntu60/pretext/pretext_actclr_xview_joint.yaml
+@@ -1,4 +1,4 @@
+-work_dir: ./work_dir/ntu60_cv/actclr_joint/pretext/
++work_dir: ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1
+ weights:  /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt
+ 
+ ignore_weights: [queue]
+@@ -53,7 +53,7 @@ model_args:
+ # optim
+ nesterov: False
+ weight_decay: 1e-4
+-base_lr: 0.4
++base_lr: 0.1
+ optimizer: SGD
+ step: [250]
+ 
+diff --git a/src.zip b/src.zip
+index eda204d..b995d14 100644
+Binary files a/src.zip and b/src.zip differ
+diff --git a/work_dir/ntu60_cv/actclr_joint/pretext/log.txt b/work_dir/ntu60_cv/actclr_joint/pretext/log.txt
+index 7fc0f79..64b9cb8 100644
+--- a/work_dir/ntu60_cv/actclr_joint/pretext/log.txt
++++ b/work_dir/ntu60_cv/actclr_joint/pretext/log.txt
+@@ -6855,3 +6855,19 @@ Binary files a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.17
+ [02.27.24|10:34:21] 	Iter 0 Done. | loss: 2.8665 | lr: 0.400000
+ [02.27.24|10:35:20] 	Iter 100 Done. | loss: 13.9324 | lr: 0.400000
+ [02.27.24|10:37:13] 	Iter 200 Done. | loss: 12.5810 | lr: 0.400000
++[02.27.24|11:05:39] diff --git a/src.zip b/src.zip
++index eda204d..9d52475 100644
++Binary files a/src.zip and b/src.zip differ
++diff --git a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 b/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7
++index e69de29..61b35f1 100644
++Binary files a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 and b/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 differ
++
++[02.27.24|11:05:40] Load weights from /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt.
++[02.27.24|11:05:40] Parameters:
++{'work_dir': './work_dir/ntu60_cv/actclr_joint/pretext/', 'config': './config/ntu60/pretext/pretext_actclr_xview_joint.yaml', 'phase': 'train', 'save_result': True, 'start_epoch': 0, 'num_epoch': 350, 'use_gpu': True, 'device': [4], 'log_interval': 100, 'save_interval': 5, 'eval_interval': -1, 'save_log': True, 'print_log': True, 'pavi_log': False, 'knn_interval': 5, 'train_feeder': 'feeder.ntu_feeder.Feeder_triple', 'test_feeder': 'feeder.feeder', 'num_worker': 4, 'train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'test_feeder_args': {}, 'mem_train_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_test_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'mem_test_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/val_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/val_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'batch_size': 128, 'test_batch_size': 128, 'debug': False, 'model': 'net.actclr.actclr', 'model_args': {'base_encoder': 'net.st_gcn.Model', 'pretrain': True, 'feature_dim': 128, 'queue_size': 65536, 'momentum': 0.999, 'Temperature': 0.07, 'mlp': True, 'in_channels': 3, 'hidden_channels': 16, 'hidden_dim': 256, 'num_class': 60, 'dropout': 0.5, 'mode': 'joint', 'graph_args': {'layout': 'ntu-rgb+d', 'strategy': 'spatial'}, 'edge_importance_weighting': True}, 'weights': '/mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt', 'ignore_weights': ['queue'], 'rename_weights': ['encoder_q.encoder_k'], 'knn_k': [10, 20, 40], 'knn_classes': 60, 'knn_t': 0.1, 'KNN_show': [50, 100, 150, 200, 250, 300], 'base_lr': 0.4, 'step': [250], 'optimizer': 'SGD', 'nesterov': False, 'weight_decay': 0.0001, 'stream': 'joint', 'mining_epoch': 500, 'topk': 1}
++
++[02.27.24|11:05:40] ---------- Networks initialized -------------
++[02.27.24|11:05:40] [Network] Total number of parameters : 1.840 M
++[02.27.24|11:05:40] -----------------------------------------------
++[02.27.24|11:05:43] Training epoch: 1
++[02.27.24|11:05:48] 	Iter 0 Done. | loss: 2.8665 | lr: 0.400000
+diff --git a/work_dir/ntu60_cv/actclr_joint/pretext/train/events.out.tfevents.1709001250.STRUCT-TitanX7 b/work_dir/ntu60_cv/actclr_joint/pretext/train/events.out.tfevents.1709001250.STRUCT-TitanX7
+deleted file mode 100644
+index 2f695eb..0000000
+Binary files a/work_dir/ntu60_cv/actclr_joint/pretext/train/events.out.tfevents.1709001250.STRUCT-TitanX7 and /dev/null differ
+diff --git a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 b/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7
+deleted file mode 100644
+index e69de29..0000000
+
+[02.27.24|16:07:23] Load weights from /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt.
+[02.27.24|16:07:25] Parameters:
+{'work_dir': './work_dir/ntu60_cv/actclr_joint/pretext/gpu_1', 'config': './config/ntu60/pretext/pretext_actclr_xview_joint.yaml', 'phase': 'train', 'save_result': True, 'start_epoch': 0, 'num_epoch': 350, 'use_gpu': True, 'device': [4], 'log_interval': 100, 'save_interval': 5, 'eval_interval': -1, 'save_log': True, 'print_log': True, 'pavi_log': False, 'knn_interval': 5, 'train_feeder': 'feeder.ntu_feeder.Feeder_triple', 'test_feeder': 'feeder.feeder', 'num_worker': 4, 'train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'test_feeder_args': {}, 'mem_train_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_test_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'mem_test_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/val_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/val_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'batch_size': 128, 'test_batch_size': 128, 'debug': False, 'model': 'net.actclr.actclr', 'model_args': {'base_encoder': 'net.st_gcn.Model', 'pretrain': True, 'feature_dim': 128, 'queue_size': 65536, 'momentum': 0.999, 'Temperature': 0.07, 'mlp': True, 'in_channels': 3, 'hidden_channels': 16, 'hidden_dim': 256, 'num_class': 60, 'dropout': 0.5, 'mode': 'joint', 'graph_args': {'layout': 'ntu-rgb+d', 'strategy': 'spatial'}, 'edge_importance_weighting': True}, 'weights': '/mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt', 'ignore_weights': ['queue'], 'rename_weights': ['encoder_q.encoder_k'], 'knn_k': [10, 20, 40], 'knn_classes': 60, 'knn_t': 0.1, 'KNN_show': [50, 100, 150, 200, 250, 300], 'base_lr': 0.1, 'step': [250], 'optimizer': 'SGD', 'nesterov': False, 'weight_decay': 0.0001, 'stream': 'joint', 'mining_epoch': 500, 'topk': 1}
+
+[02.27.24|16:07:25] ---------- Networks initialized -------------
+[02.27.24|16:07:25] [Network] Total number of parameters : 1.840 M
+[02.27.24|16:07:25] -----------------------------------------------
+[02.27.24|16:07:29] Training epoch: 1
+[02.27.24|16:07:49] 	Iter 0 Done. | loss: 2.8665 | lr: 0.100000
+[02.27.24|16:08:48] 	Iter 100 Done. | loss: 13.6459 | lr: 0.100000
+[02.27.24|16:09:47] 	Iter 200 Done. | loss: 12.7726 | lr: 0.100000
+[02.27.24|16:10:42] 	train_mean_loss: 13.426895423000362
+[02.27.24|16:10:42] Training epoch: 2
+[02.27.24|16:10:48] 	Iter 300 Done. | loss: 13.6144 | lr: 0.100000
+[02.27.24|16:11:48] 	Iter 400 Done. | loss: 11.7430 | lr: 0.100000
+[02.27.24|16:12:47] 	Iter 500 Done. | loss: 10.1000 | lr: 0.100000
+[02.27.24|16:13:39] 	train_mean_loss: 11.071861140582026
+[02.27.24|16:13:39] Training epoch: 3
+[02.27.24|16:13:48] 	Iter 600 Done. | loss: 9.3586 | lr: 0.100000
+[02.27.24|16:14:48] 	Iter 700 Done. | loss: 9.2690 | lr: 0.100000
+[02.27.24|16:15:47] 	Iter 800 Done. | loss: 9.1818 | lr: 0.100000
+[02.27.24|16:16:35] 	train_mean_loss: 9.330462514137736
+[02.27.24|16:16:35] Training epoch: 4
+[02.27.24|16:16:48] 	Iter 900 Done. | loss: 8.3564 | lr: 0.100000
+[02.27.24|16:17:48] 	Iter 1000 Done. | loss: 8.2267 | lr: 0.100000
+[02.27.24|16:18:47] 	Iter 1100 Done. | loss: 7.5581 | lr: 0.100000
+[02.27.24|16:19:32] 	train_mean_loss: 8.23835588799042
+[02.27.24|16:19:32] Training epoch: 5
+[02.27.24|16:19:49] 	Iter 1200 Done. | loss: 7.2220 | lr: 0.100000
+[02.27.24|16:20:48] 	Iter 1300 Done. | loss: 7.5842 | lr: 0.100000
+[02.27.24|16:21:48] 	Iter 1400 Done. | loss: 6.8592 | lr: 0.100000
+[02.27.24|16:22:30] 	train_mean_loss: 7.729837362458106
+[02.27.24|16:22:31] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch5_model.pt.
+[02.27.24|16:22:31] KNN eval epoch 5
+[02.27.24|16:23:16] KNN - 10 current: 71.52%, best: 71.52%
+[02.27.24|16:23:16] KNN - 20 current: 70.74%, best: 70.74%
+[02.27.24|16:23:16] KNN - 40 current: 69.41%, best: 69.41%
+[02.27.24|16:23:16] Training epoch: 6
+[02.27.24|16:23:36] 	Iter 1500 Done. | loss: 6.7572 | lr: 0.100000
+[02.27.24|16:24:36] 	Iter 1600 Done. | loss: 7.1784 | lr: 0.100000
+[02.27.24|16:25:36] 	Iter 1700 Done. | loss: 8.2083 | lr: 0.100000
+[02.27.24|16:26:13] 	train_mean_loss: 7.255369356700352
+[02.27.24|16:26:14] Training epoch: 7
+[02.27.24|16:26:37] 	Iter 1800 Done. | loss: 7.2990 | lr: 0.100000
+[02.27.24|16:27:37] 	Iter 1900 Done. | loss: 7.0214 | lr: 0.100000
+[02.27.24|16:28:37] 	Iter 2000 Done. | loss: 6.8644 | lr: 0.100000
+[02.27.24|16:29:11] 	train_mean_loss: 6.8335851390345566
+[02.27.24|16:29:11] Training epoch: 8
+[02.27.24|16:29:38] 	Iter 2100 Done. | loss: 6.2767 | lr: 0.100000
+[02.27.24|16:30:37] 	Iter 2200 Done. | loss: 5.6431 | lr: 0.100000
+[02.27.24|16:31:37] 	Iter 2300 Done. | loss: 6.1636 | lr: 0.100000
+[02.27.24|16:32:08] 	train_mean_loss: 6.5205251100111985
+[02.27.24|16:32:08] Training epoch: 9
+[02.27.24|16:32:39] 	Iter 2400 Done. | loss: 6.5355 | lr: 0.100000
+[02.27.24|16:33:38] 	Iter 2500 Done. | loss: 5.8509 | lr: 0.100000
+[02.27.24|16:34:39] 	Iter 2600 Done. | loss: 6.2721 | lr: 0.100000
+[02.27.24|16:35:06] 	train_mean_loss: 6.2081882418418415
+[02.27.24|16:35:06] Training epoch: 10
+[02.27.24|16:35:40] 	Iter 2700 Done. | loss: 6.3232 | lr: 0.100000
+[02.27.24|16:36:41] 	Iter 2800 Done. | loss: 5.4066 | lr: 0.100000
+[02.27.24|16:37:41] 	Iter 2900 Done. | loss: 5.4578 | lr: 0.100000
+[02.27.24|16:38:04] 	train_mean_loss: 5.978538904060312
+[02.27.24|16:38:06] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch10_model.pt.
+[02.27.24|16:38:06] KNN eval epoch 10
+[02.27.24|16:38:44] KNN - 10 current: 71.02%, best: 71.52%
+[02.27.24|16:38:44] KNN - 20 current: 69.84%, best: 70.74%
+[02.27.24|16:38:44] KNN - 40 current: 68.18%, best: 69.41%
+[02.27.24|16:38:44] Training epoch: 11
+[02.27.24|16:39:22] 	Iter 3000 Done. | loss: 6.7874 | lr: 0.100000
+[02.27.24|16:40:22] 	Iter 3100 Done. | loss: 6.5141 | lr: 0.100000
+[02.27.24|16:41:23] 	Iter 3200 Done. | loss: 5.9652 | lr: 0.100000
+[02.27.24|16:41:43] 	train_mean_loss: 5.803476155209704
+[02.27.24|16:41:43] Training epoch: 12
+[02.27.24|16:42:25] 	Iter 3300 Done. | loss: 5.3750 | lr: 0.100000
+[02.27.24|16:43:25] 	Iter 3400 Done. | loss: 5.8800 | lr: 0.100000
+[02.27.24|16:44:26] 	Iter 3500 Done. | loss: 5.2661 | lr: 0.100000
+[02.27.24|16:44:42] 	train_mean_loss: 5.567406707880449
+[02.27.24|16:44:42] Training epoch: 13
+[02.27.24|16:45:28] 	Iter 3600 Done. | loss: 5.0045 | lr: 0.100000
+[02.27.24|16:46:28] 	Iter 3700 Done. | loss: 5.9725 | lr: 0.100000
+[02.27.24|16:47:29] 	Iter 3800 Done. | loss: 5.2603 | lr: 0.100000
+[02.27.24|16:47:41] 	train_mean_loss: 5.46781046212125
+[02.27.24|16:47:41] Training epoch: 14
+[02.27.24|16:48:30] 	Iter 3900 Done. | loss: 5.4467 | lr: 0.100000
+[02.27.24|16:49:31] 	Iter 4000 Done. | loss: 4.9622 | lr: 0.100000
+[02.27.24|16:50:31] 	Iter 4100 Done. | loss: 5.2107 | lr: 0.100000
+[02.27.24|16:50:40] 	train_mean_loss: 5.308334272734973
+[02.27.24|16:50:40] Training epoch: 15
+[02.27.24|16:51:32] 	Iter 4200 Done. | loss: 5.7185 | lr: 0.100000
+[02.27.24|16:52:32] 	Iter 4300 Done. | loss: 4.8731 | lr: 0.100000
+[02.27.24|16:53:33] 	Iter 4400 Done. | loss: 5.7553 | lr: 0.100000
+[02.27.24|16:53:39] 	train_mean_loss: 5.164491304734937
+[02.27.24|16:53:40] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch15_model.pt.
+[02.27.24|16:53:40] KNN eval epoch 15
+[02.27.24|16:54:19] KNN - 10 current: 72.05%, best: 72.05%
+[02.27.24|16:54:19] KNN - 20 current: 71.59%, best: 71.59%
+[02.27.24|16:54:19] KNN - 40 current: 70.15%, best: 70.15%
+[02.27.24|16:54:19] Training epoch: 16
+[02.27.24|16:55:15] 	Iter 4500 Done. | loss: 5.4239 | lr: 0.100000
+[02.27.24|16:56:16] 	Iter 4600 Done. | loss: 4.8765 | lr: 0.100000
+[02.27.24|16:57:16] 	Iter 4700 Done. | loss: 5.3624 | lr: 0.100000
+[02.27.24|16:57:18] 	train_mean_loss: 5.0640785694122314
+[02.27.24|16:57:18] Training epoch: 17
+[02.27.24|16:58:18] 	Iter 4800 Done. | loss: 4.6484 | lr: 0.100000
+[02.27.24|16:59:18] 	Iter 4900 Done. | loss: 4.7775 | lr: 0.100000
+[02.27.24|17:00:18] 	train_mean_loss: 5.024311636580902
+[02.27.24|17:00:18] Training epoch: 18
+[02.27.24|17:00:21] 	Iter 5000 Done. | loss: 5.7819 | lr: 0.100000
+[02.27.24|17:01:21] 	Iter 5100 Done. | loss: 4.6617 | lr: 0.100000
+[02.27.24|17:02:21] 	Iter 5200 Done. | loss: 4.6994 | lr: 0.100000
+[02.27.24|17:03:16] 	train_mean_loss: 4.948955947850027
+[02.27.24|17:03:16] Training epoch: 19
+[02.27.24|17:03:23] 	Iter 5300 Done. | loss: 4.7012 | lr: 0.100000
+[02.27.24|17:04:23] 	Iter 5400 Done. | loss: 4.3793 | lr: 0.100000
+[02.27.24|17:05:23] 	Iter 5500 Done. | loss: 5.3243 | lr: 0.100000
+[02.27.24|17:06:15] 	train_mean_loss: 4.957208805343732
+[02.27.24|17:06:15] Training epoch: 20
+[02.27.24|17:06:26] 	Iter 5600 Done. | loss: 5.6525 | lr: 0.100000
+[02.27.24|17:07:26] 	Iter 5700 Done. | loss: 4.8003 | lr: 0.100000
+[02.27.24|17:08:27] 	Iter 5800 Done. | loss: 4.1580 | lr: 0.100000
+[02.27.24|17:09:14] 	train_mean_loss: 4.85101057072075
+[02.27.24|17:09:15] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch20_model.pt.
+[02.27.24|17:09:16] KNN eval epoch 20
+[02.27.24|17:09:53] KNN - 10 current: 73.37%, best: 73.37%
+[02.27.24|17:09:54] KNN - 20 current: 71.83%, best: 71.83%
+[02.27.24|17:09:54] KNN - 40 current: 70.61%, best: 70.61%
+[02.27.24|17:09:54] Training epoch: 21
+[02.27.24|17:10:08] 	Iter 5900 Done. | loss: 4.9251 | lr: 0.100000
+[02.27.24|17:11:08] 	Iter 6000 Done. | loss: 5.2587 | lr: 0.100000
+[02.27.24|17:12:08] 	Iter 6100 Done. | loss: 4.5632 | lr: 0.100000
+[02.27.24|17:12:52] 	train_mean_loss: 4.8407295844992815
+[02.27.24|17:12:52] Training epoch: 22
+[02.27.24|17:13:10] 	Iter 6200 Done. | loss: 4.9962 | lr: 0.100000
+[02.27.24|17:14:10] 	Iter 6300 Done. | loss: 4.6323 | lr: 0.100000
+[02.27.24|17:15:11] 	Iter 6400 Done. | loss: 4.0397 | lr: 0.100000
+[02.27.24|17:15:51] 	train_mean_loss: 4.80284444328879
+[02.27.24|17:15:51] Training epoch: 23
+[02.27.24|17:16:13] 	Iter 6500 Done. | loss: 4.3535 | lr: 0.100000
+[02.27.24|17:17:13] 	Iter 6600 Done. | loss: 4.4799 | lr: 0.100000
+[02.27.24|17:18:14] 	Iter 6700 Done. | loss: 5.5960 | lr: 0.100000
+[02.27.24|17:18:51] 	train_mean_loss: 4.709111921641291
+[02.27.24|17:18:51] Training epoch: 24
+[02.27.24|17:19:16] 	Iter 6800 Done. | loss: 4.3865 | lr: 0.100000
+[02.27.24|17:20:16] 	Iter 6900 Done. | loss: 4.7686 | lr: 0.100000
+[02.27.24|17:21:17] 	Iter 7000 Done. | loss: 4.4865 | lr: 0.100000
+[02.27.24|17:21:50] 	train_mean_loss: 4.711045562004556
+[02.27.24|17:21:50] Training epoch: 25
+[02.27.24|17:22:20] 	Iter 7100 Done. | loss: 4.0091 | lr: 0.100000
+[02.27.24|17:23:21] 	Iter 7200 Done. | loss: 4.0090 | lr: 0.100000
+[02.27.24|17:24:21] 	Iter 7300 Done. | loss: 4.1309 | lr: 0.100000
+[02.27.24|17:24:52] 	train_mean_loss: 4.612620789988512
+[02.27.24|17:24:54] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch25_model.pt.
+[02.27.24|17:24:54] KNN eval epoch 25
+[02.27.24|17:25:32] KNN - 10 current: 70.80%, best: 73.37%
+[02.27.24|17:25:32] KNN - 20 current: 69.69%, best: 71.83%
+[02.27.24|17:25:32] KNN - 40 current: 68.41%, best: 70.61%
+[02.27.24|17:25:32] Training epoch: 26
+[02.27.24|17:26:04] 	Iter 7400 Done. | loss: 4.2599 | lr: 0.100000
+[02.27.24|17:27:06] 	Iter 7500 Done. | loss: 4.5662 | lr: 0.100000
+[02.27.24|17:28:06] 	Iter 7600 Done. | loss: 4.5496 | lr: 0.100000
+[02.27.24|17:28:32] 	train_mean_loss: 4.58760590780349
+[02.27.24|17:28:33] Training epoch: 27
+[02.27.24|17:29:10] 	Iter 7700 Done. | loss: 4.2629 | lr: 0.100000
+[02.27.24|17:30:10] 	Iter 7800 Done. | loss: 5.0514 | lr: 0.100000
+[02.27.24|17:31:12] 	Iter 7900 Done. | loss: 4.5667 | lr: 0.100000
+[02.27.24|17:31:34] 	train_mean_loss: 4.52078174490507
+[02.27.24|17:31:34] Training epoch: 28
+[02.27.24|17:32:14] 	Iter 8000 Done. | loss: 3.8630 | lr: 0.100000
+[02.27.24|17:33:16] 	Iter 8100 Done. | loss: 4.6316 | lr: 0.100000
+[02.27.24|17:34:16] 	Iter 8200 Done. | loss: 4.2418 | lr: 0.100000
+[02.27.24|17:34:35] 	train_mean_loss: 4.614666654139149
+[02.27.24|17:34:35] Training epoch: 29
+[02.27.24|17:35:17] 	Iter 8300 Done. | loss: 4.1932 | lr: 0.100000
+[02.27.24|17:36:17] 	Iter 8400 Done. | loss: 4.3312 | lr: 0.100000
+[02.27.24|17:37:18] 	Iter 8500 Done. | loss: 4.8170 | lr: 0.100000
+[02.27.24|17:37:33] 	train_mean_loss: 4.451556853696602
+[02.27.24|17:37:33] Training epoch: 30
+[02.27.24|17:38:20] 	Iter 8600 Done. | loss: 4.1405 | lr: 0.100000
+[02.27.24|17:39:20] 	Iter 8700 Done. | loss: 4.3656 | lr: 0.100000
+[02.27.24|17:40:20] 	Iter 8800 Done. | loss: 4.3444 | lr: 0.100000
+[02.27.24|17:40:32] 	train_mean_loss: 4.482376229195368
+[02.27.24|17:40:34] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch30_model.pt.
+[02.27.24|17:40:34] KNN eval epoch 30
+[02.27.24|17:41:12] KNN - 10 current: 71.76%, best: 73.37%
+[02.27.24|17:41:12] KNN - 20 current: 71.46%, best: 71.83%
+[02.27.24|17:41:12] KNN - 40 current: 70.18%, best: 70.61%
+[02.27.24|17:41:12] Training epoch: 31
+[02.27.24|17:42:02] 	Iter 8900 Done. | loss: 3.6246 | lr: 0.100000
+[02.27.24|17:43:02] 	Iter 9000 Done. | loss: 3.9714 | lr: 0.100000
+[02.27.24|17:44:03] 	Iter 9100 Done. | loss: 4.3677 | lr: 0.100000
+[02.27.24|17:44:11] 	train_mean_loss: 4.582812496594021
+[02.27.24|17:44:11] Training epoch: 32
+[02.27.24|17:45:05] 	Iter 9200 Done. | loss: 4.5553 | lr: 0.100000
+[02.27.24|17:46:06] 	Iter 9300 Done. | loss: 3.9519 | lr: 0.100000
+[02.27.24|17:47:06] 	Iter 9400 Done. | loss: 3.9346 | lr: 0.100000
+[02.27.24|17:47:11] 	train_mean_loss: 4.472928380479618
+[02.27.24|17:47:11] Training epoch: 33
+[02.27.24|17:48:08] 	Iter 9500 Done. | loss: 4.5737 | lr: 0.100000
+[02.27.24|17:49:09] 	Iter 9600 Done. | loss: 4.2169 | lr: 0.100000
+[02.27.24|17:50:09] 	Iter 9700 Done. | loss: 4.2673 | lr: 0.100000
+[02.27.24|17:50:10] 	train_mean_loss: 4.406824969920982
+[02.27.24|17:50:10] Training epoch: 34
+[02.27.24|17:51:11] 	Iter 9800 Done. | loss: 4.5602 | lr: 0.100000
+[02.27.24|17:52:11] 	Iter 9900 Done. | loss: 3.8935 | lr: 0.100000
+[02.27.24|17:53:09] 	train_mean_loss: 4.373936334434821
+[02.27.24|17:53:10] Training epoch: 35
+[02.27.24|17:53:15] 	Iter 10000 Done. | loss: 4.1606 | lr: 0.100000
+[02.27.24|17:54:15] 	Iter 10100 Done. | loss: 4.4052 | lr: 0.100000
+[02.27.24|17:55:16] 	Iter 10200 Done. | loss: 3.8594 | lr: 0.100000
+[02.27.24|17:56:09] 	train_mean_loss: 4.360084666686804
+[02.27.24|17:56:10] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch35_model.pt.
+[02.27.24|17:56:10] KNN eval epoch 35
+[02.27.24|17:56:49] KNN - 10 current: 73.73%, best: 73.73%
+[02.27.24|17:56:49] KNN - 20 current: 72.88%, best: 72.88%
+[02.27.24|17:56:49] KNN - 40 current: 71.47%, best: 71.47%
+[02.27.24|17:56:49] Training epoch: 36
+[02.27.24|17:56:57] 	Iter 10300 Done. | loss: 3.8627 | lr: 0.100000
+[02.27.24|17:57:57] 	Iter 10400 Done. | loss: 5.0682 | lr: 0.100000
+[02.27.24|17:58:58] 	Iter 10500 Done. | loss: 3.6899 | lr: 0.100000
+[02.27.24|17:59:49] 	train_mean_loss: 4.389810197207392
+[02.27.24|17:59:49] Training epoch: 37
+[02.27.24|18:00:01] 	Iter 10600 Done. | loss: 3.6858 | lr: 0.100000
+[02.27.24|18:01:02] 	Iter 10700 Done. | loss: 4.2074 | lr: 0.100000
+[02.27.24|18:02:03] 	Iter 10800 Done. | loss: 4.2997 | lr: 0.100000
+[02.27.24|18:02:49] 	train_mean_loss: 4.2813774136458935
+[02.27.24|18:02:49] Training epoch: 38
+[02.27.24|18:03:05] 	Iter 10900 Done. | loss: 4.3984 | lr: 0.100000
+[02.27.24|18:04:05] 	Iter 11000 Done. | loss: 4.4225 | lr: 0.100000
+[02.27.24|18:05:05] 	Iter 11100 Done. | loss: 4.4182 | lr: 0.100000
+[02.27.24|18:05:48] 	train_mean_loss: 4.2992190544297095
+[02.27.24|18:05:48] Training epoch: 39
+[02.27.24|18:06:07] 	Iter 11200 Done. | loss: 4.2437 | lr: 0.100000
+[02.27.24|18:07:08] 	Iter 11300 Done. | loss: 4.0801 | lr: 0.100000
+[02.27.24|18:08:09] 	Iter 11400 Done. | loss: 3.9101 | lr: 0.100000
+[02.27.24|18:08:49] 	train_mean_loss: 4.240577224971486
+[02.27.24|18:08:49] Training epoch: 40
+[02.27.24|18:09:11] 	Iter 11500 Done. | loss: 4.2400 | lr: 0.100000
+[02.27.24|18:10:12] 	Iter 11600 Done. | loss: 3.7531 | lr: 0.100000
+[02.27.24|18:11:12] 	Iter 11700 Done. | loss: 4.0466 | lr: 0.100000
+[02.27.24|18:11:48] 	train_mean_loss: 4.221686268339352
+[02.27.24|18:11:49] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch40_model.pt.
+[02.27.24|18:11:49] KNN eval epoch 40
+[02.27.24|18:12:28] KNN - 10 current: 73.71%, best: 73.73%
+[02.27.24|18:12:28] KNN - 20 current: 73.30%, best: 73.30%
+[02.27.24|18:12:28] KNN - 40 current: 72.07%, best: 72.07%
+[02.27.24|18:12:28] Training epoch: 41
+[02.27.24|18:12:54] 	Iter 11800 Done. | loss: 5.2008 | lr: 0.100000
+[02.27.24|18:13:54] 	Iter 11900 Done. | loss: 4.2334 | lr: 0.100000
+[02.27.24|18:14:55] 	Iter 12000 Done. | loss: 5.0491 | lr: 0.100000
+[02.27.24|18:15:27] 	train_mean_loss: 4.226181438991001
+[02.27.24|18:15:27] Training epoch: 42
+[02.27.24|18:15:57] 	Iter 12100 Done. | loss: 4.5027 | lr: 0.100000
+[02.27.24|18:16:57] 	Iter 12200 Done. | loss: 4.3743 | lr: 0.100000
+[02.27.24|18:17:57] 	Iter 12300 Done. | loss: 4.6222 | lr: 0.100000
+[02.27.24|18:18:26] 	train_mean_loss: 4.192290921600497
+[02.27.24|18:18:26] Training epoch: 43
+[02.27.24|18:19:00] 	Iter 12400 Done. | loss: 4.0613 | lr: 0.100000
+[02.27.24|18:20:00] 	Iter 12500 Done. | loss: 3.6994 | lr: 0.100000
+[02.27.24|18:21:01] 	Iter 12600 Done. | loss: 4.2694 | lr: 0.100000
+[02.27.24|18:21:26] 	train_mean_loss: 4.158451309820422
+[02.27.24|18:21:26] Training epoch: 44
+[02.27.24|18:22:03] 	Iter 12700 Done. | loss: 3.9725 | lr: 0.100000
+[02.27.24|18:23:03] 	Iter 12800 Done. | loss: 4.5738 | lr: 0.100000
+[02.27.24|18:24:03] 	Iter 12900 Done. | loss: 4.1676 | lr: 0.100000
+[02.27.24|18:24:25] 	train_mean_loss: 4.107499051256244
+[02.27.24|18:24:25] Training epoch: 45
+[02.27.24|18:25:06] 	Iter 13000 Done. | loss: 3.4783 | lr: 0.100000
+[02.27.24|18:26:07] 	Iter 13100 Done. | loss: 3.9180 | lr: 0.100000
+[02.27.24|18:27:07] 	Iter 13200 Done. | loss: 3.8278 | lr: 0.100000
+[02.27.24|18:27:25] 	train_mean_loss: 4.161133893493082
+[02.27.24|18:27:26] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch45_model.pt.
+[02.27.24|18:27:26] KNN eval epoch 45
+[02.27.24|18:28:04] KNN - 10 current: 72.69%, best: 73.73%
+[02.27.24|18:28:04] KNN - 20 current: 72.46%, best: 73.30%
+[02.27.24|18:28:04] KNN - 40 current: 71.12%, best: 72.07%
+[02.27.24|18:28:04] Training epoch: 46
+[02.27.24|18:28:49] 	Iter 13300 Done. | loss: 3.9343 | lr: 0.100000
+[02.27.24|18:29:49] 	Iter 13400 Done. | loss: 4.3383 | lr: 0.100000
+[02.27.24|18:30:50] 	Iter 13500 Done. | loss: 3.9510 | lr: 0.100000
+[02.27.24|18:31:04] 	train_mean_loss: 4.066369960097228
+[02.27.24|18:31:04] Training epoch: 47
+[02.27.24|18:31:52] 	Iter 13600 Done. | loss: 3.4822 | lr: 0.100000
+[02.27.24|18:32:52] 	Iter 13700 Done. | loss: 4.4656 | lr: 0.100000
+[02.27.24|18:33:52] 	Iter 13800 Done. | loss: 4.0998 | lr: 0.100000
+[02.27.24|18:34:03] 	train_mean_loss: 4.090513935705432
+[02.27.24|18:34:03] Training epoch: 48
+[02.27.24|18:34:55] 	Iter 13900 Done. | loss: 4.1114 | lr: 0.100000
+[02.27.24|18:35:55] 	Iter 14000 Done. | loss: 3.6269 | lr: 0.100000
+[02.27.24|18:36:55] 	Iter 14100 Done. | loss: 3.6080 | lr: 0.100000
+[02.27.24|18:37:02] 	train_mean_loss: 4.0284205334527154
+[02.27.24|18:37:02] Training epoch: 49
+[02.27.24|18:37:57] 	Iter 14200 Done. | loss: 4.5912 | lr: 0.100000
+[02.27.24|18:38:58] 	Iter 14300 Done. | loss: 4.5735 | lr: 0.100000
+[02.27.24|18:39:59] 	Iter 14400 Done. | loss: 4.3249 | lr: 0.100000
+[02.27.24|18:40:02] 	train_mean_loss: 4.101240029140395
+[02.27.24|18:40:02] Training epoch: 50
+[02.27.24|18:41:01] 	Iter 14500 Done. | loss: 3.7891 | lr: 0.100000
+[02.27.24|18:42:01] 	Iter 14600 Done. | loss: 4.9674 | lr: 0.100000
+[02.27.24|18:43:01] 	train_mean_loss: 4.082688029120568
+[02.27.24|18:43:02] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch50_model.pt.
+[02.27.24|18:43:02] KNN eval epoch 50
+[02.27.24|18:43:40] KNN - 10 current: 75.07%, best: 75.07%
+[02.27.24|18:43:40] KNN - 20 current: 74.46%, best: 74.46%
+[02.27.24|18:43:40] KNN - 40 current: 73.67%, best: 73.67%
+[02.27.24|18:43:40] Training epoch: 51
+[02.27.24|18:43:42] 	Iter 14700 Done. | loss: 4.1636 | lr: 0.100000
+[02.27.24|18:44:43] 	Iter 14800 Done. | loss: 3.4682 | lr: 0.100000
+[02.27.24|18:45:43] 	Iter 14900 Done. | loss: 4.3355 | lr: 0.100000
+[02.27.24|18:46:40] 	train_mean_loss: 4.030702690688932
+[02.27.24|18:46:40] Training epoch: 52
+[02.27.24|18:46:45] 	Iter 15000 Done. | loss: 4.6618 | lr: 0.100000
+[02.27.24|18:47:46] 	Iter 15100 Done. | loss: 4.1289 | lr: 0.100000
+[02.27.24|18:48:46] 	Iter 15200 Done. | loss: 3.8842 | lr: 0.100000
+[02.27.24|18:49:39] 	train_mean_loss: 4.049153420389915
+[02.27.24|18:49:39] Training epoch: 53
+[02.27.24|18:49:48] 	Iter 15300 Done. | loss: 3.7383 | lr: 0.100000
+[02.27.24|18:50:49] 	Iter 15400 Done. | loss: 3.6112 | lr: 0.100000
+[02.27.24|18:51:49] 	Iter 15500 Done. | loss: 4.2995 | lr: 0.100000
+[02.27.24|18:52:38] 	train_mean_loss: 4.087936451645936
+[02.27.24|18:52:38] Training epoch: 54
+[02.27.24|18:52:51] 	Iter 15600 Done. | loss: 3.9070 | lr: 0.100000
+[02.27.24|18:53:52] 	Iter 15700 Done. | loss: 3.7830 | lr: 0.100000
+[02.27.24|18:54:53] 	Iter 15800 Done. | loss: 3.7528 | lr: 0.100000
+[02.27.24|18:55:38] 	train_mean_loss: 4.019537442395476
+[02.27.24|18:55:38] Training epoch: 55
+[02.27.24|18:55:55] 	Iter 15900 Done. | loss: 3.7453 | lr: 0.100000
+[02.27.24|18:56:55] 	Iter 16000 Done. | loss: 3.7553 | lr: 0.100000
+[02.27.24|18:57:55] 	Iter 16100 Done. | loss: 3.7444 | lr: 0.100000
+[02.27.24|18:58:37] 	train_mean_loss: 3.9771534609956807
+[02.27.24|18:58:38] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch55_model.pt.
+[02.27.24|18:58:38] KNN eval epoch 55
+[02.27.24|18:59:16] KNN - 10 current: 73.50%, best: 75.07%
+[02.27.24|18:59:16] KNN - 20 current: 72.69%, best: 74.46%
+[02.27.24|18:59:16] KNN - 40 current: 71.37%, best: 73.67%
+[02.27.24|18:59:16] Training epoch: 56
+[02.27.24|18:59:36] 	Iter 16200 Done. | loss: 3.9652 | lr: 0.100000
+[02.27.24|19:00:37] 	Iter 16300 Done. | loss: 4.1491 | lr: 0.100000
+[02.27.24|19:01:37] 	Iter 16400 Done. | loss: 3.8987 | lr: 0.100000
+[02.27.24|19:02:16] 	train_mean_loss: 4.005093924042319
+[02.27.24|19:02:16] Training epoch: 57
+[02.27.24|19:02:39] 	Iter 16500 Done. | loss: 3.9785 | lr: 0.100000
+[02.27.24|19:03:39] 	Iter 16600 Done. | loss: 3.5474 | lr: 0.100000
+[02.27.24|19:04:44] 	Iter 16700 Done. | loss: 3.6597 | lr: 0.100000
+[02.27.24|19:05:18] 	train_mean_loss: 3.9482495387395224
+[02.27.24|19:05:18] Training epoch: 58
+[02.27.24|19:05:46] 	Iter 16800 Done. | loss: 3.6878 | lr: 0.100000
+[02.27.24|19:06:46] 	Iter 16900 Done. | loss: 3.4798 | lr: 0.100000
+[02.27.24|19:07:46] 	Iter 17000 Done. | loss: 4.2632 | lr: 0.100000
+[02.27.24|19:08:18] 	train_mean_loss: 3.9871909245341812
+[02.27.24|19:08:18] Training epoch: 59
+[02.27.24|19:08:49] 	Iter 17100 Done. | loss: 3.7034 | lr: 0.100000
+[02.27.24|19:09:49] 	Iter 17200 Done. | loss: 3.9715 | lr: 0.100000
+[02.27.24|19:10:49] 	Iter 17300 Done. | loss: 3.5491 | lr: 0.100000
+[02.27.24|19:11:16] 	train_mean_loss: 3.9175317149583986
+[02.27.24|19:11:17] Training epoch: 60
+[02.27.24|19:11:51] 	Iter 17400 Done. | loss: 4.5861 | lr: 0.100000
+[02.27.24|19:12:52] 	Iter 17500 Done. | loss: 3.6211 | lr: 0.100000
+[02.27.24|19:13:53] 	Iter 17600 Done. | loss: 3.5123 | lr: 0.100000
+[02.27.24|19:14:17] 	train_mean_loss: 3.949370808341876
+[02.27.24|19:14:18] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch60_model.pt.
+[02.27.24|19:14:18] KNN eval epoch 60
+[02.27.24|19:14:57] KNN - 10 current: 75.10%, best: 75.10%
+[02.27.24|19:14:57] KNN - 20 current: 74.56%, best: 74.56%
+[02.27.24|19:14:57] KNN - 40 current: 73.67%, best: 73.67%
+[02.27.24|19:14:57] Training epoch: 61
+[02.27.24|19:15:35] 	Iter 17700 Done. | loss: 3.8091 | lr: 0.100000
+[02.27.24|19:16:35] 	Iter 17800 Done. | loss: 3.8488 | lr: 0.100000
+[02.27.24|19:17:36] 	Iter 17900 Done. | loss: 3.5206 | lr: 0.100000
+[02.27.24|19:17:56] 	train_mean_loss: 3.905556781762311
+[02.27.24|19:17:56] Training epoch: 62
+[02.27.24|19:18:38] 	Iter 18000 Done. | loss: 3.7133 | lr: 0.100000
+[02.27.24|19:19:39] 	Iter 18100 Done. | loss: 3.5191 | lr: 0.100000
+[02.27.24|19:20:39] 	Iter 18200 Done. | loss: 4.0115 | lr: 0.100000
+[02.27.24|19:20:56] 	train_mean_loss: 3.8956679876158837
+[02.27.24|19:20:56] Training epoch: 63
+[02.27.24|19:21:41] 	Iter 18300 Done. | loss: 4.7473 | lr: 0.100000
+[02.27.24|19:22:41] 	Iter 18400 Done. | loss: 4.2552 | lr: 0.100000
+[02.27.24|19:23:42] 	Iter 18500 Done. | loss: 3.9301 | lr: 0.100000
+[02.27.24|19:23:55] 	train_mean_loss: 3.9471463638098063
+[02.27.24|19:23:55] Training epoch: 64
+[02.27.24|19:24:44] 	Iter 18600 Done. | loss: 3.8571 | lr: 0.100000
+[02.27.24|19:25:44] 	Iter 18700 Done. | loss: 3.5970 | lr: 0.100000
+[02.27.24|19:26:45] 	Iter 18800 Done. | loss: 4.0697 | lr: 0.100000
+[02.27.24|19:26:54] 	train_mean_loss: 3.973522040308738
+[02.27.24|19:26:54] Training epoch: 65
+[02.27.24|19:27:47] 	Iter 18900 Done. | loss: 4.9382 | lr: 0.100000
+[02.27.24|19:28:47] 	Iter 19000 Done. | loss: 3.7530 | lr: 0.100000
+[02.27.24|19:29:48] 	Iter 19100 Done. | loss: 3.4881 | lr: 0.100000
+[02.27.24|19:29:53] 	train_mean_loss: 3.8964491117568243
+[02.27.24|19:29:54] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch65_model.pt.
+[02.27.24|19:29:55] KNN eval epoch 65
+[02.27.24|19:30:33] KNN - 10 current: 74.51%, best: 75.10%
+[02.27.24|19:30:33] KNN - 20 current: 74.07%, best: 74.56%
+[02.27.24|19:30:33] KNN - 40 current: 72.96%, best: 73.67%
+[02.27.24|19:30:33] Training epoch: 66
+[02.27.24|19:31:30] 	Iter 19200 Done. | loss: 3.9032 | lr: 0.100000
+[02.27.24|19:32:30] 	Iter 19300 Done. | loss: 4.6607 | lr: 0.100000
+[02.27.24|19:33:30] 	Iter 19400 Done. | loss: 4.7257 | lr: 0.100000
+[02.27.24|19:33:32] 	train_mean_loss: 3.9921806207319506
+[02.27.24|19:33:32] Training epoch: 67
+[02.27.24|19:34:32] 	Iter 19500 Done. | loss: 4.3544 | lr: 0.100000
+[02.27.24|19:35:33] 	Iter 19600 Done. | loss: 3.4871 | lr: 0.100000
+[02.27.24|19:36:32] 	train_mean_loss: 3.934411593034965
+[02.27.24|19:36:32] Training epoch: 68
+[02.27.24|19:36:35] 	Iter 19700 Done. | loss: 3.5213 | lr: 0.100000
+[02.27.24|19:37:36] 	Iter 19800 Done. | loss: 3.9090 | lr: 0.100000
+[02.27.24|19:38:36] 	Iter 19900 Done. | loss: 3.5729 | lr: 0.100000
+[02.27.24|19:39:31] 	train_mean_loss: 3.9310568433229616
+[02.27.24|19:39:31] Training epoch: 69
+[02.27.24|19:39:38] 	Iter 20000 Done. | loss: 3.3468 | lr: 0.100000
+[02.27.24|19:40:39] 	Iter 20100 Done. | loss: 4.5561 | lr: 0.100000
+[02.27.24|19:41:39] 	Iter 20200 Done. | loss: 3.7872 | lr: 0.100000
+[02.27.24|19:42:31] 	train_mean_loss: 3.8828288851952064
+[02.27.24|19:42:31] Training epoch: 70
+[02.27.24|19:42:41] 	Iter 20300 Done. | loss: 6.4465 | lr: 0.100000
+[02.27.24|19:43:42] 	Iter 20400 Done. | loss: 4.5743 | lr: 0.100000
+[02.27.24|19:44:42] 	Iter 20500 Done. | loss: 3.8553 | lr: 0.100000
+[02.27.24|19:45:30] 	train_mean_loss: 3.9225408982257455
+[02.27.24|19:45:31] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch70_model.pt.
+[02.27.24|19:45:31] KNN eval epoch 70
+[02.27.24|19:46:10] KNN - 10 current: 73.82%, best: 75.10%
+[02.27.24|19:46:10] KNN - 20 current: 72.68%, best: 74.56%
+[02.27.24|19:46:10] KNN - 40 current: 71.69%, best: 73.67%
+[02.27.24|19:46:10] Training epoch: 71
+[02.27.24|19:46:24] 	Iter 20600 Done. | loss: 3.8258 | lr: 0.100000
+[02.27.24|19:47:24] 	Iter 20700 Done. | loss: 3.2828 | lr: 0.100000
+[02.27.24|19:48:25] 	Iter 20800 Done. | loss: 4.3691 | lr: 0.100000
+[02.27.24|19:49:09] 	train_mean_loss: 3.8956840265364874
+[02.27.24|19:49:09] Training epoch: 72
+[02.27.24|19:49:27] 	Iter 20900 Done. | loss: 3.2867 | lr: 0.100000
+[02.27.24|19:50:27] 	Iter 21000 Done. | loss: 4.6666 | lr: 0.100000
+[02.27.24|19:51:28] 	Iter 21100 Done. | loss: 3.5398 | lr: 0.100000
+[02.27.24|19:52:08] 	train_mean_loss: 3.9028982321421304
+[02.27.24|19:52:08] Training epoch: 73
+[02.27.24|19:52:30] 	Iter 21200 Done. | loss: 3.4503 | lr: 0.100000
+[02.27.24|19:53:30] 	Iter 21300 Done. | loss: 3.5412 | lr: 0.100000
+[02.27.24|19:54:31] 	Iter 21400 Done. | loss: 3.2630 | lr: 0.100000
+[02.27.24|19:55:08] 	train_mean_loss: 3.8454242044565627
+[02.27.24|19:55:08] Training epoch: 74
+[02.27.24|19:55:33] 	Iter 21500 Done. | loss: 3.3715 | lr: 0.100000
+[02.27.24|19:56:33] 	Iter 21600 Done. | loss: 3.2435 | lr: 0.100000
+[02.27.24|19:57:34] 	Iter 21700 Done. | loss: 3.3877 | lr: 0.100000
+[02.27.24|19:58:07] 	train_mean_loss: 3.8861938309507305
+[02.27.24|19:58:08] Training epoch: 75
+[02.27.24|19:58:37] 	Iter 21800 Done. | loss: 3.9642 | lr: 0.100000
+[02.27.24|19:59:37] 	Iter 21900 Done. | loss: 3.8982 | lr: 0.100000
+[02.27.24|20:00:37] 	Iter 22000 Done. | loss: 3.6655 | lr: 0.100000
+[02.27.24|20:01:07] 	train_mean_loss: 3.891319111090939
+[02.27.24|20:01:08] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch75_model.pt.
+[02.27.24|20:01:08] KNN eval epoch 75
+[02.27.24|20:01:47] KNN - 10 current: 73.29%, best: 75.10%
+[02.27.24|20:01:47] KNN - 20 current: 72.00%, best: 74.56%
+[02.27.24|20:01:47] KNN - 40 current: 70.95%, best: 73.67%
+[02.27.24|20:01:47] Training epoch: 76
+[02.27.24|20:02:19] 	Iter 22100 Done. | loss: 3.9916 | lr: 0.100000
+[02.27.24|20:03:20] 	Iter 22200 Done. | loss: 3.3378 | lr: 0.100000
+[02.27.24|20:04:20] 	Iter 22300 Done. | loss: 3.4658 | lr: 0.100000
+[02.27.24|20:04:46] 	train_mean_loss: 3.894029781120975
+[02.27.24|20:04:46] Training epoch: 77
+[02.27.24|20:05:22] 	Iter 22400 Done. | loss: 3.4721 | lr: 0.100000
+[02.27.24|20:06:22] 	Iter 22500 Done. | loss: 3.7318 | lr: 0.100000
+[02.27.24|20:07:23] 	Iter 22600 Done. | loss: 4.3652 | lr: 0.100000
+[02.27.24|20:07:45] 	train_mean_loss: 3.842259448401782
+[02.27.24|20:07:45] Training epoch: 78
+[02.27.24|20:08:25] 	Iter 22700 Done. | loss: 4.8454 | lr: 0.100000
+[02.27.24|20:09:25] 	Iter 22800 Done. | loss: 5.3973 | lr: 0.100000
+[02.27.24|20:10:26] 	Iter 22900 Done. | loss: 3.5146 | lr: 0.100000
+[02.27.24|20:10:45] 	train_mean_loss: 3.871323427375482
+[02.27.24|20:10:45] Training epoch: 79
+[02.27.24|20:11:28] 	Iter 23000 Done. | loss: 3.8165 | lr: 0.100000
+[02.27.24|20:12:29] 	Iter 23100 Done. | loss: 3.5560 | lr: 0.100000
+[02.27.24|20:13:29] 	Iter 23200 Done. | loss: 3.6022 | lr: 0.100000
+[02.27.24|20:13:44] 	train_mean_loss: 3.8735535112368007
+[02.27.24|20:13:44] Training epoch: 80
+[02.27.24|20:14:31] 	Iter 23300 Done. | loss: 3.5667 | lr: 0.100000
+[02.27.24|20:15:32] 	Iter 23400 Done. | loss: 2.7981 | lr: 0.100000
+[02.27.24|20:16:32] 	Iter 23500 Done. | loss: 4.0764 | lr: 0.100000
+[02.27.24|20:16:44] 	train_mean_loss: 3.8626090466570693
+[02.27.24|20:16:45] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch80_model.pt.
+[02.27.24|20:16:45] KNN eval epoch 80
+[02.27.24|20:17:23] KNN - 10 current: 74.77%, best: 75.10%
+[02.27.24|20:17:23] KNN - 20 current: 73.92%, best: 74.56%
+[02.27.24|20:17:23] KNN - 40 current: 73.20%, best: 73.67%
+[02.27.24|20:17:23] Training epoch: 81
+[02.27.24|20:18:14] 	Iter 23600 Done. | loss: 4.0730 | lr: 0.100000
+[02.27.24|20:19:14] 	Iter 23700 Done. | loss: 3.3389 | lr: 0.100000
+[02.27.24|20:20:14] 	Iter 23800 Done. | loss: 3.8467 | lr: 0.100000
+[02.27.24|20:20:22] 	train_mean_loss: 3.9105286419797105
+[02.27.24|20:20:22] Training epoch: 82
+[02.27.24|20:21:16] 	Iter 23900 Done. | loss: 3.7148 | lr: 0.100000
+[02.27.24|20:22:17] 	Iter 24000 Done. | loss: 3.2783 | lr: 0.100000
+[02.27.24|20:23:17] 	Iter 24100 Done. | loss: 4.0414 | lr: 0.100000
+[02.27.24|20:23:21] 	train_mean_loss: 3.80728225643132
+[02.27.24|20:23:21] Training epoch: 83
+[02.27.24|20:24:19] 	Iter 24200 Done. | loss: 3.7640 | lr: 0.100000
+[02.27.24|20:25:19] 	Iter 24300 Done. | loss: 3.7633 | lr: 0.100000
+[02.27.24|20:26:20] 	Iter 24400 Done. | loss: 4.2494 | lr: 0.100000
+[02.27.24|20:26:20] 	train_mean_loss: 3.8487463386691347
+[02.27.24|20:26:20] Training epoch: 84
+[02.27.24|20:27:21] 	Iter 24500 Done. | loss: 3.6395 | lr: 0.100000
+[02.27.24|20:28:22] 	Iter 24600 Done. | loss: 3.7955 | lr: 0.100000
+[02.27.24|20:29:19] 	train_mean_loss: 3.8272715206859873
+[02.27.24|20:29:20] Training epoch: 85
+[02.27.24|20:29:24] 	Iter 24700 Done. | loss: 3.0985 | lr: 0.100000
+[02.27.24|20:30:25] 	Iter 24800 Done. | loss: 3.6815 | lr: 0.100000
+[02.27.24|20:31:25] 	Iter 24900 Done. | loss: 3.2509 | lr: 0.100000
+[02.27.24|20:32:20] 	train_mean_loss: 3.8504058163182266
+[02.27.24|20:32:21] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch85_model.pt.
+[02.27.24|20:32:21] KNN eval epoch 85
+[02.27.24|20:32:59] KNN - 10 current: 74.39%, best: 75.10%
+[02.27.24|20:32:59] KNN - 20 current: 73.39%, best: 74.56%
+[02.27.24|20:32:59] KNN - 40 current: 72.35%, best: 73.67%
+[02.27.24|20:32:59] Training epoch: 86
+[02.27.24|20:33:07] 	Iter 25000 Done. | loss: 3.6759 | lr: 0.100000
+[02.27.24|20:34:08] 	Iter 25100 Done. | loss: 4.0499 | lr: 0.100000
+[02.27.24|20:35:09] 	Iter 25200 Done. | loss: 3.6720 | lr: 0.100000
+[02.27.24|20:35:59] 	train_mean_loss: 3.9111119192473742
+[02.27.24|20:35:59] Training epoch: 87
+[02.27.24|20:36:10] 	Iter 25300 Done. | loss: 4.5507 | lr: 0.100000
+[02.27.24|20:37:11] 	Iter 25400 Done. | loss: 3.7730 | lr: 0.100000
+[02.27.24|20:38:12] 	Iter 25500 Done. | loss: 4.2039 | lr: 0.100000
+[02.27.24|20:38:58] 	train_mean_loss: 3.8815101133722836
+[02.27.24|20:38:58] Training epoch: 88
+[02.27.24|20:39:14] 	Iter 25600 Done. | loss: 3.5526 | lr: 0.100000
+[02.27.24|20:40:15] 	Iter 25700 Done. | loss: 4.7417 | lr: 0.100000
+[02.27.24|20:41:15] 	Iter 25800 Done. | loss: 4.1947 | lr: 0.100000
+[02.27.24|20:41:58] 	train_mean_loss: 3.9108892703542906
+[02.27.24|20:41:58] Training epoch: 89
+[02.27.24|20:42:17] 	Iter 25900 Done. | loss: 4.3431 | lr: 0.100000
+[02.27.24|20:43:18] 	Iter 26000 Done. | loss: 3.4542 | lr: 0.100000
+[02.27.24|20:44:18] 	Iter 26100 Done. | loss: 3.4500 | lr: 0.100000
+[02.27.24|20:44:58] 	train_mean_loss: 3.9540676300217505
+[02.27.24|20:44:58] Training epoch: 90
+[02.27.24|20:45:20] 	Iter 26200 Done. | loss: 3.6566 | lr: 0.100000
+[02.27.24|20:46:21] 	Iter 26300 Done. | loss: 3.3205 | lr: 0.100000
+[02.27.24|20:47:21] 	Iter 26400 Done. | loss: 3.3787 | lr: 0.100000
+[02.27.24|20:47:56] 	train_mean_loss: 3.8877639446128796
+[02.27.24|20:47:57] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch90_model.pt.
+[02.27.24|20:47:57] KNN eval epoch 90
+[02.27.24|20:48:35] KNN - 10 current: 74.37%, best: 75.10%
+[02.27.24|20:48:35] KNN - 20 current: 73.96%, best: 74.56%
+[02.27.24|20:48:35] KNN - 40 current: 73.17%, best: 73.67%
+[02.27.24|20:48:35] Training epoch: 91
+[02.27.24|20:49:01] 	Iter 26500 Done. | loss: 5.0289 | lr: 0.100000
+[02.27.24|20:50:01] 	Iter 26600 Done. | loss: 4.5123 | lr: 0.100000
+[02.27.24|20:51:01] 	Iter 26700 Done. | loss: 3.8502 | lr: 0.100000
+[02.27.24|20:51:33] 	train_mean_loss: 3.9296622543918844
+[02.27.24|20:51:33] Training epoch: 92
+[02.27.24|20:52:03] 	Iter 26800 Done. | loss: 3.2420 | lr: 0.100000
+[02.27.24|20:53:03] 	Iter 26900 Done. | loss: 3.3662 | lr: 0.100000
+[02.27.24|20:54:03] 	Iter 27000 Done. | loss: 4.8021 | lr: 0.100000
+[02.27.24|20:54:32] 	train_mean_loss: 3.9738650897733208
+[02.27.24|20:54:32] Training epoch: 93
+[02.27.24|20:55:05] 	Iter 27100 Done. | loss: 3.8947 | lr: 0.100000
+[02.27.24|20:56:05] 	Iter 27200 Done. | loss: 3.8538 | lr: 0.100000
+[02.27.24|20:57:06] 	Iter 27300 Done. | loss: 4.5631 | lr: 0.100000
+[02.27.24|20:57:30] 	train_mean_loss: 3.910536676037068
+[02.27.24|20:57:30] Training epoch: 94
+[02.27.24|20:58:07] 	Iter 27400 Done. | loss: 3.5259 | lr: 0.100000
+[02.27.24|20:59:07] 	Iter 27500 Done. | loss: 4.3197 | lr: 0.100000
+[02.27.24|21:00:07] 	Iter 27600 Done. | loss: 4.0409 | lr: 0.100000
+[02.27.24|21:00:29] 	train_mean_loss: 3.9211302330704774
+[02.27.24|21:00:29] Training epoch: 95
+[02.27.24|21:01:09] 	Iter 27700 Done. | loss: 4.1242 | lr: 0.100000
+[02.27.24|21:02:09] 	Iter 27800 Done. | loss: 3.1893 | lr: 0.100000
+[02.27.24|21:03:10] 	Iter 27900 Done. | loss: 3.7011 | lr: 0.100000
+[02.27.24|21:03:27] 	train_mean_loss: 3.9133155548653633
+[02.27.24|21:03:28] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch95_model.pt.
+[02.27.24|21:03:28] KNN eval epoch 95
+[02.27.24|21:04:06] KNN - 10 current: 73.66%, best: 75.10%
+[02.27.24|21:04:06] KNN - 20 current: 72.74%, best: 74.56%
+[02.27.24|21:04:06] KNN - 40 current: 72.03%, best: 73.67%
+[02.27.24|21:04:06] Training epoch: 96
+[02.27.24|21:04:50] 	Iter 28000 Done. | loss: 5.3300 | lr: 0.100000
+[02.27.24|21:05:50] 	Iter 28100 Done. | loss: 3.7367 | lr: 0.100000
+[02.27.24|21:06:50] 	Iter 28200 Done. | loss: 3.2584 | lr: 0.100000
+[02.27.24|21:07:04] 	train_mean_loss: 3.8841773514844933
+[02.27.24|21:07:04] Training epoch: 97
+[02.27.24|21:07:51] 	Iter 28300 Done. | loss: 3.4190 | lr: 0.100000
+[02.27.24|21:08:51] 	Iter 28400 Done. | loss: 3.4353 | lr: 0.100000
+[02.27.24|21:09:52] 	Iter 28500 Done. | loss: 4.0139 | lr: 0.100000
+[02.27.24|21:10:02] 	train_mean_loss: 3.8378622702189853
+[02.27.24|21:10:03] Training epoch: 98
+[02.27.24|21:10:54] 	Iter 28600 Done. | loss: 4.0801 | lr: 0.100000
+[02.27.24|21:11:54] 	Iter 28700 Done. | loss: 3.3719 | lr: 0.100000
+[02.27.24|21:12:54] 	Iter 28800 Done. | loss: 3.6219 | lr: 0.100000
+[02.27.24|21:13:01] 	train_mean_loss: 3.8719428226250368
+[02.27.24|21:13:01] Training epoch: 99
+[02.27.24|21:13:56] 	Iter 28900 Done. | loss: 3.5909 | lr: 0.100000
+[02.27.24|21:14:56] 	Iter 29000 Done. | loss: 3.7015 | lr: 0.100000
+[02.27.24|21:15:56] 	Iter 29100 Done. | loss: 4.8156 | lr: 0.100000
+[02.27.24|21:15:59] 	train_mean_loss: 3.9628988999087795
+[02.27.24|21:15:59] Training epoch: 100
+[02.27.24|21:16:58] 	Iter 29200 Done. | loss: 3.1757 | lr: 0.100000
+[02.27.24|21:17:58] 	Iter 29300 Done. | loss: 3.9225 | lr: 0.100000
+[02.27.24|21:18:58] 	train_mean_loss: 3.9112795672449123
+[02.27.24|21:18:59] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch100_model.pt.
+[02.27.24|21:18:59] KNN eval epoch 100
+[02.27.24|21:19:37] KNN - 10 current: 75.85%, best: 75.85%
+[02.27.24|21:19:37] KNN - 20 current: 75.35%, best: 75.35%
+[02.27.24|21:19:37] KNN - 40 current: 74.41%, best: 74.41%
+[02.27.24|21:19:37] Training epoch: 101
+[02.27.24|21:19:39] 	Iter 29400 Done. | loss: 4.0037 | lr: 0.100000
+[02.27.24|21:20:39] 	Iter 29500 Done. | loss: 2.9890 | lr: 0.100000
+[02.27.24|21:21:39] 	Iter 29600 Done. | loss: 3.0473 | lr: 0.100000
+[02.27.24|21:22:35] 	train_mean_loss: 3.5035555232949807
+[02.27.24|21:22:35] Training epoch: 102
+[02.27.24|21:22:41] 	Iter 29700 Done. | loss: 3.8076 | lr: 0.100000
+[02.27.24|21:23:41] 	Iter 29800 Done. | loss: 3.3405 | lr: 0.100000
+[02.27.24|21:24:41] 	Iter 29900 Done. | loss: 3.3286 | lr: 0.100000
+[02.27.24|21:25:34] 	train_mean_loss: 3.80974129024817
+[02.27.24|21:25:34] Training epoch: 103
+[02.27.24|21:25:43] 	Iter 30000 Done. | loss: 3.7288 | lr: 0.100000
+[02.27.24|21:26:43] 	Iter 30100 Done. | loss: 4.5921 | lr: 0.100000
+[02.27.24|21:27:43] 	Iter 30200 Done. | loss: 3.3405 | lr: 0.100000
+[02.27.24|21:28:32] 	train_mean_loss: 3.8356539748963856
+[02.27.24|21:28:32] Training epoch: 104
+[02.27.24|21:28:46] 	Iter 30300 Done. | loss: 4.1622 | lr: 0.100000
+[02.27.24|21:29:46] 	Iter 30400 Done. | loss: 3.6171 | lr: 0.100000
+[02.27.24|21:30:46] 	Iter 30500 Done. | loss: 3.0516 | lr: 0.100000
+[02.27.24|21:31:31] 	train_mean_loss: 3.63904045714813
+[02.27.24|21:31:31] Training epoch: 105
+[02.27.24|21:31:48] 	Iter 30600 Done. | loss: 4.7308 | lr: 0.100000
+[02.27.24|21:32:50] 	Iter 30700 Done. | loss: 3.5284 | lr: 0.100000
+[02.27.24|21:33:50] 	Iter 30800 Done. | loss: 3.4228 | lr: 0.100000
+[02.27.24|21:34:31] 	train_mean_loss: 3.573611593570839
+[02.27.24|21:34:32] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch105_model.pt.
+[02.27.24|21:34:32] KNN eval epoch 105
+[02.27.24|21:35:10] KNN - 10 current: 74.36%, best: 75.85%
+[02.27.24|21:35:10] KNN - 20 current: 74.21%, best: 75.35%
+[02.27.24|21:35:10] KNN - 40 current: 73.75%, best: 74.41%
+[02.27.24|21:35:10] Training epoch: 106
+[02.27.24|21:35:30] 	Iter 30900 Done. | loss: 3.4478 | lr: 0.100000
+[02.27.24|21:36:31] 	Iter 31000 Done. | loss: 3.7904 | lr: 0.100000
+[02.27.24|21:37:31] 	Iter 31100 Done. | loss: 3.4576 | lr: 0.100000
+[02.27.24|21:38:09] 	train_mean_loss: 3.5697448245522114
+[02.27.24|21:38:09] Training epoch: 107
+[02.27.24|21:38:32] 	Iter 31200 Done. | loss: 2.8026 | lr: 0.100000
+[02.27.24|21:39:33] 	Iter 31300 Done. | loss: 3.5242 | lr: 0.100000
+[02.27.24|21:40:34] 	Iter 31400 Done. | loss: 3.2081 | lr: 0.100000
+[02.27.24|21:41:08] 	train_mean_loss: 3.491928767184822
+[02.27.24|21:41:13] Training epoch: 108
+[02.27.24|21:41:42] 	Iter 31500 Done. | loss: 3.2431 | lr: 0.100000
+[02.27.24|21:42:42] 	Iter 31600 Done. | loss: 3.7716 | lr: 0.100000
+[02.27.24|21:43:42] 	Iter 31700 Done. | loss: 3.9655 | lr: 0.100000
+[02.27.24|21:44:21] 	train_mean_loss: 3.667886892143561
+[02.27.24|21:44:21] Training epoch: 109
+[02.27.24|21:44:51] 	Iter 31800 Done. | loss: 3.8763 | lr: 0.100000
+[02.27.24|21:45:52] 	Iter 31900 Done. | loss: 3.2175 | lr: 0.100000
+[02.27.24|21:46:52] 	Iter 32000 Done. | loss: 3.7568 | lr: 0.100000
+[02.27.24|21:47:19] 	train_mean_loss: 3.925230037598383
+[02.27.24|21:47:20] Training epoch: 110
+[02.27.24|21:47:55] 	Iter 32100 Done. | loss: 3.4208 | lr: 0.100000
+[02.27.24|21:48:55] 	Iter 32200 Done. | loss: 4.9349 | lr: 0.100000
+[02.27.24|21:49:55] 	Iter 32300 Done. | loss: 3.9703 | lr: 0.100000
+[02.27.24|21:50:20] 	train_mean_loss: 3.9225628943670365
+[02.27.24|21:50:21] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch110_model.pt.
+[02.27.24|21:50:21] KNN eval epoch 110
+[02.27.24|21:50:58] KNN - 10 current: 75.22%, best: 75.85%
+[02.27.24|21:50:59] KNN - 20 current: 74.34%, best: 75.35%
+[02.27.24|21:50:59] KNN - 40 current: 73.43%, best: 74.41%
+[02.27.24|21:50:59] Training epoch: 111
+[02.27.24|21:51:37] 	Iter 32400 Done. | loss: 3.7769 | lr: 0.100000
+[02.27.24|21:52:37] 	Iter 32500 Done. | loss: 3.8071 | lr: 0.100000
+[02.27.24|21:53:39] 	Iter 32600 Done. | loss: 3.4942 | lr: 0.100000
+[02.27.24|21:54:00] 	train_mean_loss: 3.8944510951334115
+[02.27.24|21:54:00] Training epoch: 112
+[02.27.24|21:54:42] 	Iter 32700 Done. | loss: 3.4097 | lr: 0.100000
+[02.27.24|21:55:42] 	Iter 32800 Done. | loss: 4.3091 | lr: 0.100000
+[02.27.24|21:56:42] 	Iter 32900 Done. | loss: 3.8623 | lr: 0.100000
+[02.27.24|21:56:58] 	train_mean_loss: 3.7804788910612768
+[02.27.24|21:56:58] Training epoch: 113
+[02.27.24|21:57:43] 	Iter 33000 Done. | loss: 3.1398 | lr: 0.100000
+[02.27.24|21:58:43] 	Iter 33100 Done. | loss: 3.6678 | lr: 0.100000
+[02.27.24|21:59:43] 	Iter 33200 Done. | loss: 4.2796 | lr: 0.100000
+[02.27.24|21:59:57] 	train_mean_loss: 3.793331404932502
+[02.27.24|21:59:58] Training epoch: 114
+[02.27.24|22:00:47] 	Iter 33300 Done. | loss: 3.2680 | lr: 0.100000
+[02.27.24|22:01:49] 	Iter 33400 Done. | loss: 4.0033 | lr: 0.100000
+[02.27.24|22:02:49] 	Iter 33500 Done. | loss: 3.4097 | lr: 0.100000
+[02.27.24|22:02:58] 	train_mean_loss: 3.7611093391366555
+[02.27.24|22:02:58] Training epoch: 115
+[02.27.24|22:03:50] 	Iter 33600 Done. | loss: 3.4952 | lr: 0.100000
+[02.27.24|22:04:50] 	Iter 33700 Done. | loss: 2.9760 | lr: 0.100000
+[02.27.24|22:05:51] 	Iter 33800 Done. | loss: 3.7109 | lr: 0.100000
+[02.27.24|22:05:57] 	train_mean_loss: 3.6033981551929397
+[02.27.24|22:05:57] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch115_model.pt.
+[02.27.24|22:05:57] KNN eval epoch 115
+[02.27.24|22:06:36] KNN - 10 current: 74.92%, best: 75.85%
+[02.27.24|22:06:36] KNN - 20 current: 73.90%, best: 75.35%
+[02.27.24|22:06:36] KNN - 40 current: 73.24%, best: 74.41%
+[02.27.24|22:06:36] Training epoch: 116
+[02.27.24|22:07:31] 	Iter 33900 Done. | loss: 4.0630 | lr: 0.100000
+[02.27.24|22:08:31] 	Iter 34000 Done. | loss: 3.5937 | lr: 0.100000
+[02.27.24|22:09:31] 	Iter 34100 Done. | loss: 3.8219 | lr: 0.100000
+[02.27.24|22:09:33] 	train_mean_loss: 4.005642646024016
+[02.27.24|22:09:33] Training epoch: 117
+[02.27.24|22:10:33] 	Iter 34200 Done. | loss: 3.7992 | lr: 0.100000
+[02.27.24|22:11:32] 	Iter 34300 Done. | loss: 2.9987 | lr: 0.100000
+[02.27.24|22:12:31] 	train_mean_loss: 3.628578918320792
+[02.27.24|22:12:31] Training epoch: 118
+[02.27.24|22:12:34] 	Iter 34400 Done. | loss: 3.5730 | lr: 0.100000
+[02.27.24|22:13:34] 	Iter 34500 Done. | loss: 3.4126 | lr: 0.100000
+[02.27.24|22:14:36] 	Iter 34600 Done. | loss: 3.1725 | lr: 0.100000
+[02.27.24|22:15:41] 	train_mean_loss: 3.5430738374489503
+[02.27.24|22:15:42] Training epoch: 119
+[02.27.24|22:15:49] 	Iter 34700 Done. | loss: 2.9056 | lr: 0.100000
+[02.27.24|22:16:49] 	Iter 34800 Done. | loss: 4.7367 | lr: 0.100000
+[02.27.24|22:17:49] 	Iter 34900 Done. | loss: 3.9130 | lr: 0.100000
+[02.27.24|22:18:41] 	train_mean_loss: 3.533070455603048
+[02.27.24|22:18:41] Training epoch: 120
+[02.27.24|22:18:51] 	Iter 35000 Done. | loss: 3.0459 | lr: 0.100000
+[02.27.24|22:19:51] 	Iter 35100 Done. | loss: 3.4789 | lr: 0.100000
+[02.27.24|22:20:51] 	Iter 35200 Done. | loss: 4.5765 | lr: 0.100000
+[02.27.24|22:21:38] 	train_mean_loss: 3.930800649584556
+[02.27.24|22:21:39] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch120_model.pt.
+[02.27.24|22:21:39] KNN eval epoch 120
+[02.27.24|22:22:17] KNN - 10 current: 74.57%, best: 75.85%
+[02.27.24|22:22:18] KNN - 20 current: 73.92%, best: 75.35%
+[02.27.24|22:22:18] KNN - 40 current: 72.84%, best: 74.41%
+[02.27.24|22:22:18] Training epoch: 121
+[02.27.24|22:22:32] 	Iter 35300 Done. | loss: 3.2659 | lr: 0.100000
+[02.27.24|22:23:33] 	Iter 35400 Done. | loss: 2.9217 | lr: 0.100000
+[02.27.24|22:24:33] 	Iter 35500 Done. | loss: 3.2310 | lr: 0.100000
+[02.27.24|22:25:17] 	train_mean_loss: 3.4681909035663216
+[02.27.24|22:25:17] Training epoch: 122
+[02.27.24|22:25:35] 	Iter 35600 Done. | loss: 3.6695 | lr: 0.100000
+[02.27.24|22:26:35] 	Iter 35700 Done. | loss: 3.7938 | lr: 0.100000
+[02.27.24|22:27:35] 	Iter 35800 Done. | loss: 3.8511 | lr: 0.100000
+[02.27.24|22:28:15] 	train_mean_loss: 3.749103625615438
+[02.27.24|22:28:15] Training epoch: 123
+[02.27.24|22:28:37] 	Iter 35900 Done. | loss: 3.1736 | lr: 0.100000
+[02.27.24|22:29:37] 	Iter 36000 Done. | loss: 3.0432 | lr: 0.100000
+[02.27.24|22:30:36] 	Iter 36100 Done. | loss: 3.1374 | lr: 0.100000
+[02.27.24|22:31:13] 	train_mean_loss: 3.4459302579464555
+[02.27.24|22:31:13] Training epoch: 124
+[02.27.24|22:31:38] 	Iter 36200 Done. | loss: 3.2773 | lr: 0.100000
+[02.27.24|22:32:38] 	Iter 36300 Done. | loss: 4.3241 | lr: 0.100000
+[02.27.24|22:33:38] 	Iter 36400 Done. | loss: 4.1742 | lr: 0.100000
+[02.27.24|22:34:11] 	train_mean_loss: 3.5543646269104108
+[02.27.24|22:34:11] Training epoch: 125
+[02.27.24|22:34:40] 	Iter 36500 Done. | loss: 3.0735 | lr: 0.100000
+[02.27.24|22:35:40] 	Iter 36600 Done. | loss: 4.3141 | lr: 0.100000
+[02.27.24|22:36:40] 	Iter 36700 Done. | loss: 4.0436 | lr: 0.100000
+[02.27.24|22:37:09] 	train_mean_loss: 3.7622872809974517
+[02.27.24|22:37:10] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch125_model.pt.
+[02.27.24|22:37:10] KNN eval epoch 125
+[02.27.24|22:37:48] KNN - 10 current: 75.52%, best: 75.85%
+[02.27.24|22:37:48] KNN - 20 current: 75.03%, best: 75.35%
+[02.27.24|22:37:48] KNN - 40 current: 73.58%, best: 74.41%
+[02.27.24|22:37:48] Training epoch: 126
+[02.27.24|22:38:20] 	Iter 36800 Done. | loss: 3.4625 | lr: 0.100000
+[02.27.24|22:39:20] 	Iter 36900 Done. | loss: 3.1624 | lr: 0.100000
+[02.27.24|22:40:20] 	Iter 37000 Done. | loss: 4.0959 | lr: 0.100000
+[02.27.24|22:40:46] 	train_mean_loss: 3.5575219863126066
+[02.27.24|22:40:46] Training epoch: 127
+[02.27.24|22:41:22] 	Iter 37100 Done. | loss: 3.7198 | lr: 0.100000
+[02.27.24|22:42:22] 	Iter 37200 Done. | loss: 3.8745 | lr: 0.100000
+[02.27.24|22:43:22] 	Iter 37300 Done. | loss: 3.8642 | lr: 0.100000
+[02.27.24|22:43:44] 	train_mean_loss: 3.801333808574547
+[02.27.24|22:43:44] Training epoch: 128
+[02.27.24|22:44:24] 	Iter 37400 Done. | loss: 4.1214 | lr: 0.100000
+[02.27.24|22:45:24] 	Iter 37500 Done. | loss: 3.3004 | lr: 0.100000
+[02.27.24|22:46:24] 	Iter 37600 Done. | loss: 3.3204 | lr: 0.100000
+[02.27.24|22:46:42] 	train_mean_loss: 3.6188375755232207
+[02.27.24|22:46:43] Training epoch: 129
+[02.27.24|22:47:25] 	Iter 37700 Done. | loss: 5.4863 | lr: 0.100000
+[02.27.24|22:48:25] 	Iter 37800 Done. | loss: 3.5591 | lr: 0.100000
+[02.27.24|22:49:25] 	Iter 37900 Done. | loss: 3.2461 | lr: 0.100000
+[02.27.24|22:49:40] 	train_mean_loss: 3.672721731419466
+[02.27.24|22:49:40] Training epoch: 130
+[02.27.24|22:50:27] 	Iter 38000 Done. | loss: 3.1406 | lr: 0.100000
+[02.27.24|22:51:27] 	Iter 38100 Done. | loss: 3.2659 | lr: 0.100000
+[02.27.24|22:52:27] 	Iter 38200 Done. | loss: 3.1088 | lr: 0.100000
+[02.27.24|22:52:39] 	train_mean_loss: 3.394964981241291
+[02.27.24|22:52:41] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch130_model.pt.
+[02.27.24|22:52:41] KNN eval epoch 130
+[02.27.24|22:53:18] KNN - 10 current: 75.43%, best: 75.85%
+[02.27.24|22:53:18] KNN - 20 current: 74.15%, best: 75.35%
+[02.27.24|22:53:18] KNN - 40 current: 73.13%, best: 74.41%
+[02.27.24|22:53:18] Training epoch: 131
+[02.27.24|22:54:08] 	Iter 38300 Done. | loss: 3.8513 | lr: 0.100000
+[02.27.24|22:55:08] 	Iter 38400 Done. | loss: 3.3840 | lr: 0.100000
+[02.27.24|22:56:08] 	Iter 38500 Done. | loss: 4.4831 | lr: 0.100000
+[02.27.24|22:56:16] 	train_mean_loss: 3.5965976114986704
+[02.27.24|22:56:16] Training epoch: 132
+[02.27.24|22:57:09] 	Iter 38600 Done. | loss: 3.0755 | lr: 0.100000
+[02.27.24|22:58:09] 	Iter 38700 Done. | loss: 4.6772 | lr: 0.100000
+[02.27.24|22:59:09] 	Iter 38800 Done. | loss: 3.1222 | lr: 0.100000
+[02.27.24|22:59:14] 	train_mean_loss: 3.7442817112215523
+[02.27.24|22:59:14] Training epoch: 133
+[02.27.24|23:00:11] 	Iter 38900 Done. | loss: 4.1553 | lr: 0.100000
+[02.27.24|23:01:11] 	Iter 39000 Done. | loss: 3.3335 | lr: 0.100000
+[02.27.24|23:02:11] 	Iter 39100 Done. | loss: 2.9859 | lr: 0.100000
+[02.27.24|23:02:12] 	train_mean_loss: 3.5751205569221858
+[02.27.24|23:02:12] Training epoch: 134
+[02.27.24|23:03:13] 	Iter 39200 Done. | loss: 3.9978 | lr: 0.100000
+[02.27.24|23:04:12] 	Iter 39300 Done. | loss: 2.9952 | lr: 0.100000
+[02.27.24|23:05:10] 	train_mean_loss: 3.6389063491302283
+[02.27.24|23:05:10] Training epoch: 135
+[02.27.24|23:05:15] 	Iter 39400 Done. | loss: 3.0158 | lr: 0.100000
+[02.27.24|23:06:15] 	Iter 39500 Done. | loss: 3.0656 | lr: 0.100000
+[02.27.24|23:07:15] 	Iter 39600 Done. | loss: 3.5170 | lr: 0.100000
+[02.27.24|23:08:09] 	train_mean_loss: 3.474935553511795
+[02.27.24|23:08:09] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch135_model.pt.
+[02.27.24|23:08:09] KNN eval epoch 135
+[02.27.24|23:08:47] KNN - 10 current: 74.55%, best: 75.85%
+[02.27.24|23:08:47] KNN - 20 current: 73.97%, best: 75.35%
+[02.27.24|23:08:47] KNN - 40 current: 72.59%, best: 74.41%
+[02.27.24|23:08:47] Training epoch: 136
+[02.27.24|23:08:55] 	Iter 39700 Done. | loss: 3.8533 | lr: 0.100000
+[02.27.24|23:09:55] 	Iter 39800 Done. | loss: 3.4623 | lr: 0.100000
+[02.27.24|23:10:55] 	Iter 39900 Done. | loss: 3.9796 | lr: 0.100000
+[02.27.24|23:11:45] 	train_mean_loss: 3.6169432507080286
+[02.27.24|23:11:45] Training epoch: 137
+[02.27.24|23:11:56] 	Iter 40000 Done. | loss: 2.9825 | lr: 0.100000
+[02.27.24|23:12:57] 	Iter 40100 Done. | loss: 3.2502 | lr: 0.100000
+[02.27.24|23:13:56] 	Iter 40200 Done. | loss: 3.1768 | lr: 0.100000
+[02.27.24|23:14:43] 	train_mean_loss: 3.649236193319567
+[02.27.24|23:14:43] Training epoch: 138
+[02.27.24|23:14:58] 	Iter 40300 Done. | loss: 3.0420 | lr: 0.100000
+[02.27.24|23:15:58] 	Iter 40400 Done. | loss: 2.6563 | lr: 0.100000
+[02.27.24|23:16:58] 	Iter 40500 Done. | loss: 3.1539 | lr: 0.100000
+[02.27.24|23:17:41] 	train_mean_loss: 3.3392199026484066
+[02.27.24|23:17:41] Training epoch: 139
+[02.27.24|23:17:59] 	Iter 40600 Done. | loss: 3.5390 | lr: 0.100000
+[02.27.24|23:18:59] 	Iter 40700 Done. | loss: 3.0915 | lr: 0.100000
+[02.27.24|23:19:59] 	Iter 40800 Done. | loss: 5.6677 | lr: 0.100000
+[02.27.24|23:20:38] 	train_mean_loss: 3.5819398489128162
+[02.27.24|23:20:38] Training epoch: 140
+[02.27.24|23:21:01] 	Iter 40900 Done. | loss: 5.5641 | lr: 0.100000
+[02.27.24|23:22:01] 	Iter 41000 Done. | loss: 3.6942 | lr: 0.100000
+[02.27.24|23:23:01] 	Iter 41100 Done. | loss: 4.1371 | lr: 0.100000
+[02.27.24|23:23:37] 	train_mean_loss: 3.63992922241185
+[02.27.24|23:23:38] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch140_model.pt.
+[02.27.24|23:23:38] KNN eval epoch 140
+[02.27.24|23:24:16] KNN - 10 current: 76.28%, best: 76.28%
+[02.27.24|23:24:16] KNN - 20 current: 75.96%, best: 75.96%
+[02.27.24|23:24:16] KNN - 40 current: 74.40%, best: 74.41%
+[02.27.24|23:24:16] Training epoch: 141
+[02.27.24|23:24:42] 	Iter 41200 Done. | loss: 3.4348 | lr: 0.100000
+[02.27.24|23:25:42] 	Iter 41300 Done. | loss: 3.0221 | lr: 0.100000
+[02.27.24|23:26:42] 	Iter 41400 Done. | loss: 4.9857 | lr: 0.100000
+[02.27.24|23:27:14] 	train_mean_loss: 3.461731562809068
+[02.27.24|23:27:14] Training epoch: 142
+[02.27.24|23:27:43] 	Iter 41500 Done. | loss: 4.3598 | lr: 0.100000
+[02.27.24|23:28:43] 	Iter 41600 Done. | loss: 3.6015 | lr: 0.100000
+[02.27.24|23:29:43] 	Iter 41700 Done. | loss: 3.1639 | lr: 0.100000
+[02.27.24|23:30:11] 	train_mean_loss: 3.7066639248205693
+[02.27.24|23:30:11] Training epoch: 143
+[02.27.24|23:30:44] 	Iter 41800 Done. | loss: 3.3435 | lr: 0.100000
+[02.27.24|23:31:44] 	Iter 41900 Done. | loss: 2.7997 | lr: 0.100000
+[02.27.24|23:32:44] 	Iter 42000 Done. | loss: 3.1929 | lr: 0.100000
+[02.27.24|23:33:08] 	train_mean_loss: 3.3485133258663877
+[02.27.24|23:33:08] Training epoch: 144
+[02.27.24|23:33:45] 	Iter 42100 Done. | loss: 2.6558 | lr: 0.100000
+[02.27.24|23:34:45] 	Iter 42200 Done. | loss: 3.3532 | lr: 0.100000
+[02.27.24|23:35:45] 	Iter 42300 Done. | loss: 3.3050 | lr: 0.100000
+[02.27.24|23:36:06] 	train_mean_loss: 3.505818848707238
+[02.27.24|23:36:06] Training epoch: 145
+[02.27.24|23:36:46] 	Iter 42400 Done. | loss: 3.2737 | lr: 0.100000
+[02.27.24|23:37:46] 	Iter 42500 Done. | loss: 4.0743 | lr: 0.100000
+[02.27.24|23:38:46] 	Iter 42600 Done. | loss: 3.2176 | lr: 0.100000
+[02.27.24|23:39:03] 	train_mean_loss: 3.5491999776995913
+[02.27.24|23:39:04] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch145_model.pt.
+[02.27.24|23:39:04] KNN eval epoch 145
+[02.27.24|23:39:41] KNN - 10 current: 73.70%, best: 76.28%
+[02.27.24|23:39:41] KNN - 20 current: 72.80%, best: 75.96%
+[02.27.24|23:39:41] KNN - 40 current: 71.60%, best: 74.41%
+[02.27.24|23:39:41] Training epoch: 146
+[02.27.24|23:40:25] 	Iter 42700 Done. | loss: 3.2095 | lr: 0.100000
+[02.27.24|23:41:24] 	Iter 42800 Done. | loss: 3.6988 | lr: 0.100000
+[02.27.24|23:42:25] 	Iter 42900 Done. | loss: 4.0254 | lr: 0.100000
+[02.27.24|23:42:38] 	train_mean_loss: 3.537240338163311
+[02.27.24|23:42:38] Training epoch: 147
+[02.27.24|23:43:26] 	Iter 43000 Done. | loss: 4.0886 | lr: 0.100000
+[02.27.24|23:44:26] 	Iter 43100 Done. | loss: 3.0809 | lr: 0.100000
+[02.27.24|23:45:26] 	Iter 43200 Done. | loss: 3.8720 | lr: 0.100000
+[02.27.24|23:45:36] 	train_mean_loss: 3.579796212060111
+[02.27.24|23:45:36] Training epoch: 148
+[02.27.24|23:46:27] 	Iter 43300 Done. | loss: 3.4091 | lr: 0.100000
+[02.27.24|23:47:27] 	Iter 43400 Done. | loss: 3.0125 | lr: 0.100000
+[02.27.24|23:48:27] 	Iter 43500 Done. | loss: 3.0683 | lr: 0.100000
+[02.27.24|23:48:33] 	train_mean_loss: 3.3822552565814687
+[02.27.24|23:48:33] Training epoch: 149
+[02.27.24|23:49:28] 	Iter 43600 Done. | loss: 3.1580 | lr: 0.100000
+[02.27.24|23:50:28] 	Iter 43700 Done. | loss: 2.9643 | lr: 0.100000
+[02.27.24|23:51:28] 	Iter 43800 Done. | loss: 3.1914 | lr: 0.100000
+[02.27.24|23:51:31] 	train_mean_loss: 3.5104407493759986
+[02.27.24|23:51:31] Training epoch: 150
+[02.27.24|23:52:29] 	Iter 43900 Done. | loss: 3.2274 | lr: 0.100000
+[02.27.24|23:53:29] 	Iter 44000 Done. | loss: 2.7886 | lr: 0.100000
+[02.27.24|23:54:28] 	train_mean_loss: 3.519247745981022
+[02.27.24|23:54:29] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch150_model.pt.
+[02.27.24|23:54:29] KNN eval epoch 150
+[02.27.24|23:55:06] KNN - 10 current: 73.52%, best: 76.28%
+[02.27.24|23:55:07] KNN - 20 current: 72.91%, best: 75.96%
+[02.27.24|23:55:07] KNN - 40 current: 71.50%, best: 74.41%
+[02.27.24|23:55:07] Training epoch: 151
+[02.27.24|23:55:08] 	Iter 44100 Done. | loss: 5.6338 | lr: 0.100000
+[02.27.24|23:56:08] 	Iter 44200 Done. | loss: 3.1715 | lr: 0.100000
+[02.27.24|23:57:08] 	Iter 44300 Done. | loss: 2.8529 | lr: 0.100000
+[02.27.24|23:58:04] 	train_mean_loss: 3.4786959773018244
+[02.27.24|23:58:04] Training epoch: 152
+[02.27.24|23:58:10] 	Iter 44400 Done. | loss: 3.3208 | lr: 0.100000
+[02.27.24|23:59:10] 	Iter 44500 Done. | loss: 4.0461 | lr: 0.100000
+[02.28.24|00:00:10] 	Iter 44600 Done. | loss: 3.6638 | lr: 0.100000
+[02.28.24|00:01:02] 	train_mean_loss: 3.4657929746472105
+[02.28.24|00:01:02] Training epoch: 153
+[02.28.24|00:01:11] 	Iter 44700 Done. | loss: 3.2629 | lr: 0.100000
+[02.28.24|00:02:11] 	Iter 44800 Done. | loss: 3.1733 | lr: 0.100000
+[02.28.24|00:03:11] 	Iter 44900 Done. | loss: 6.3292 | lr: 0.100000
+[02.28.24|00:04:00] 	train_mean_loss: 3.3199043557757424
+[02.28.24|00:04:02] Training epoch: 154
+[02.28.24|00:04:16] 	Iter 45000 Done. | loss: 3.5128 | lr: 0.100000
+[02.28.24|00:05:15] 	Iter 45100 Done. | loss: 2.8981 | lr: 0.100000
+[02.28.24|00:06:15] 	Iter 45200 Done. | loss: 2.6254 | lr: 0.100000
+[02.28.24|00:07:00] 	train_mean_loss: 3.2861763320001613
+[02.28.24|00:07:01] Training epoch: 155
+[02.28.24|00:07:17] 	Iter 45300 Done. | loss: 3.2129 | lr: 0.100000
+[02.28.24|00:08:18] 	Iter 45400 Done. | loss: 3.1998 | lr: 0.100000
+[02.28.24|00:09:18] 	Iter 45500 Done. | loss: 3.7145 | lr: 0.100000
+[02.28.24|00:10:00] 	train_mean_loss: 3.5785116451938137
+[02.28.24|00:10:01] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch155_model.pt.
+[02.28.24|00:10:01] KNN eval epoch 155
+[02.28.24|00:10:39] KNN - 10 current: 73.57%, best: 76.28%
+[02.28.24|00:10:39] KNN - 20 current: 73.00%, best: 75.96%
+[02.28.24|00:10:39] KNN - 40 current: 71.55%, best: 74.41%
+[02.28.24|00:10:39] Training epoch: 156
+[02.28.24|00:10:58] 	Iter 45600 Done. | loss: 4.2946 | lr: 0.100000
+[02.28.24|00:11:58] 	Iter 45700 Done. | loss: 3.3513 | lr: 0.100000
+[02.28.24|00:12:58] 	Iter 45800 Done. | loss: 3.4509 | lr: 0.100000
+[02.28.24|00:13:36] 	train_mean_loss: 3.688820326409372
+[02.28.24|00:13:36] Training epoch: 157
+[02.28.24|00:14:00] 	Iter 45900 Done. | loss: 3.2600 | lr: 0.100000
+[02.28.24|00:15:00] 	Iter 46000 Done. | loss: 3.2058 | lr: 0.100000
+[02.28.24|00:16:00] 	Iter 46100 Done. | loss: 3.1908 | lr: 0.100000
+[02.28.24|00:16:34] 	train_mean_loss: 3.548985782934695
+[02.28.24|00:16:34] Training epoch: 158
+[02.28.24|00:17:01] 	Iter 46200 Done. | loss: 3.7747 | lr: 0.100000
+[02.28.24|00:18:01] 	Iter 46300 Done. | loss: 3.1227 | lr: 0.100000
+[02.28.24|00:19:01] 	Iter 46400 Done. | loss: 3.2211 | lr: 0.100000
+[02.28.24|00:19:32] 	train_mean_loss: 3.5014355036677145
+[02.28.24|00:19:32] Training epoch: 159
+[02.28.24|00:20:02] 	Iter 46500 Done. | loss: 3.2713 | lr: 0.100000
+[02.28.24|00:21:02] 	Iter 46600 Done. | loss: 3.4250 | lr: 0.100000
+[02.28.24|00:22:02] 	Iter 46700 Done. | loss: 2.9549 | lr: 0.100000
+[02.28.24|00:22:29] 	train_mean_loss: 3.2926079683563336
+[02.28.24|00:22:29] Training epoch: 160
+[02.28.24|00:23:04] 	Iter 46800 Done. | loss: 3.5193 | lr: 0.100000
+[02.28.24|00:24:03] 	Iter 46900 Done. | loss: 3.1531 | lr: 0.100000
+[02.28.24|00:25:03] 	Iter 47000 Done. | loss: 3.2974 | lr: 0.100000
+[02.28.24|00:25:27] 	train_mean_loss: 3.4402107941050106
+[02.28.24|00:25:28] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch160_model.pt.
+[02.28.24|00:25:28] KNN eval epoch 160
+[02.28.24|00:26:05] KNN - 10 current: 75.77%, best: 76.28%
+[02.28.24|00:26:05] KNN - 20 current: 74.95%, best: 75.96%
+[02.28.24|00:26:05] KNN - 40 current: 73.84%, best: 74.41%
+[02.28.24|00:26:05] Training epoch: 161
+[02.28.24|00:26:43] 	Iter 47100 Done. | loss: 3.0985 | lr: 0.100000
+[02.28.24|00:27:42] 	Iter 47200 Done. | loss: 4.2988 | lr: 0.100000
+[02.28.24|00:28:42] 	Iter 47300 Done. | loss: 3.3299 | lr: 0.100000
+[02.28.24|00:29:02] 	train_mean_loss: 3.4464817249856026
+[02.28.24|00:29:02] Training epoch: 162
+[02.28.24|00:29:43] 	Iter 47400 Done. | loss: 3.4077 | lr: 0.100000
+[02.28.24|00:30:43] 	Iter 47500 Done. | loss: 3.3491 | lr: 0.100000
+[02.28.24|00:31:43] 	Iter 47600 Done. | loss: 2.9920 | lr: 0.100000
+[02.28.24|00:31:59] 	train_mean_loss: 3.412905367053285
+[02.28.24|00:31:59] Training epoch: 163
+[02.28.24|00:32:45] 	Iter 47700 Done. | loss: 2.9409 | lr: 0.100000
+[02.28.24|00:33:44] 	Iter 47800 Done. | loss: 3.1132 | lr: 0.100000
+[02.28.24|00:34:44] 	Iter 47900 Done. | loss: 3.9766 | lr: 0.100000
+[02.28.24|00:34:57] 	train_mean_loss: 3.4185858324271483
+[02.28.24|00:34:57] Training epoch: 164
+[02.28.24|00:35:45] 	Iter 48000 Done. | loss: 4.1971 | lr: 0.100000
+[02.28.24|00:36:45] 	Iter 48100 Done. | loss: 3.4366 | lr: 0.100000
+[02.28.24|00:37:45] 	Iter 48200 Done. | loss: 3.2290 | lr: 0.100000
+[02.28.24|00:37:55] 	train_mean_loss: 3.4941215790858884
+[02.28.24|00:37:55] Training epoch: 165
+[02.28.24|00:38:47] 	Iter 48300 Done. | loss: 3.0137 | lr: 0.100000
+[02.28.24|00:39:47] 	Iter 48400 Done. | loss: 2.8993 | lr: 0.100000
+[02.28.24|00:40:46] 	Iter 48500 Done. | loss: 3.3262 | lr: 0.100000
+[02.28.24|00:40:52] 	train_mean_loss: 3.5094344032054043
+[02.28.24|00:40:53] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch165_model.pt.
+[02.28.24|00:40:53] KNN eval epoch 165
+[02.28.24|00:41:30] KNN - 10 current: 75.61%, best: 76.28%
+[02.28.24|00:41:30] KNN - 20 current: 74.93%, best: 75.96%
+[02.28.24|00:41:30] KNN - 40 current: 73.98%, best: 74.41%
+[02.28.24|00:41:30] Training epoch: 166
+[02.28.24|00:42:26] 	Iter 48600 Done. | loss: 3.1790 | lr: 0.100000
+[02.28.24|00:43:28] 	Iter 48700 Done. | loss: 2.8368 | lr: 0.100000
+[02.28.24|00:44:28] 	Iter 48800 Done. | loss: 2.8592 | lr: 0.100000
+[02.28.24|00:44:30] 	train_mean_loss: 3.2478416436383513
+[02.28.24|00:44:30] Training epoch: 167
+[02.28.24|00:45:30] 	Iter 48900 Done. | loss: 3.4251 | lr: 0.100000
+[02.28.24|00:46:30] 	Iter 49000 Done. | loss: 3.2681 | lr: 0.100000
+[02.28.24|00:47:29] 	train_mean_loss: 3.3816479014701586
+[02.28.24|00:47:29] Training epoch: 168
+[02.28.24|00:47:32] 	Iter 49100 Done. | loss: 4.2120 | lr: 0.100000
+[02.28.24|00:48:32] 	Iter 49200 Done. | loss: 3.8124 | lr: 0.100000
+[02.28.24|00:49:32] 	Iter 49300 Done. | loss: 2.9857 | lr: 0.100000
+[02.28.24|00:50:27] 	train_mean_loss: 3.2721570543691416
+[02.28.24|00:50:28] Training epoch: 169
+[02.28.24|00:50:34] 	Iter 49400 Done. | loss: 3.5943 | lr: 0.100000
+[02.28.24|00:51:34] 	Iter 49500 Done. | loss: 3.1944 | lr: 0.100000
+[02.28.24|00:52:34] 	Iter 49600 Done. | loss: 3.6890 | lr: 0.100000
+[02.28.24|00:53:25] 	train_mean_loss: 3.624961650290457
+[02.28.24|00:53:25] Training epoch: 170
+[02.28.24|00:53:35] 	Iter 49700 Done. | loss: 3.2250 | lr: 0.100000
+[02.28.24|00:54:35] 	Iter 49800 Done. | loss: 3.3740 | lr: 0.100000
+[02.28.24|00:55:35] 	Iter 49900 Done. | loss: 3.1157 | lr: 0.100000
+[02.28.24|00:56:22] 	train_mean_loss: 3.4939759515580677
+[02.28.24|00:56:23] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch170_model.pt.
+[02.28.24|00:56:23] KNN eval epoch 170
+[02.28.24|00:57:00] KNN - 10 current: 75.19%, best: 76.28%
+[02.28.24|00:57:00] KNN - 20 current: 74.50%, best: 75.96%
+[02.28.24|00:57:00] KNN - 40 current: 73.19%, best: 74.41%
+[02.28.24|00:57:00] Training epoch: 171
+[02.28.24|00:57:14] 	Iter 50000 Done. | loss: 3.1750 | lr: 0.100000
+[02.28.24|00:58:14] 	Iter 50100 Done. | loss: 3.2987 | lr: 0.100000
+[02.28.24|00:59:14] 	Iter 50200 Done. | loss: 2.8694 | lr: 0.100000
+[02.28.24|00:59:58] 	train_mean_loss: 3.2600836502451473
+[02.28.24|00:59:58] Training epoch: 172
+[02.28.24|01:00:15] 	Iter 50300 Done. | loss: 4.1949 | lr: 0.100000
+[02.28.24|01:01:15] 	Iter 50400 Done. | loss: 3.3617 | lr: 0.100000
+[02.28.24|01:02:15] 	Iter 50500 Done. | loss: 3.0744 | lr: 0.100000
+[02.28.24|01:02:57] 	train_mean_loss: 3.6175583009006216
+[02.28.24|01:02:57] Training epoch: 173
+[02.28.24|01:03:18] 	Iter 50600 Done. | loss: 2.6578 | lr: 0.100000
+[02.28.24|01:04:18] 	Iter 50700 Done. | loss: 2.7648 | lr: 0.100000
+[02.28.24|01:05:18] 	Iter 50800 Done. | loss: 2.8524 | lr: 0.100000
+[02.28.24|01:05:54] 	train_mean_loss: 3.276583650485188
+[02.28.24|01:05:55] Training epoch: 174
+[02.28.24|01:06:19] 	Iter 50900 Done. | loss: 4.3642 | lr: 0.100000
+[02.28.24|01:07:19] 	Iter 51000 Done. | loss: 3.1008 | lr: 0.100000
+[02.28.24|01:08:19] 	Iter 51100 Done. | loss: 5.0881 | lr: 0.100000
+[02.28.24|01:08:52] 	train_mean_loss: 3.246136025506623
+[02.28.24|01:08:52] Training epoch: 175
+[02.28.24|01:09:20] 	Iter 51200 Done. | loss: 3.2742 | lr: 0.100000
+[02.28.24|01:10:20] 	Iter 51300 Done. | loss: 3.4786 | lr: 0.100000
+[02.28.24|01:11:20] 	Iter 51400 Done. | loss: 2.9770 | lr: 0.100000
+[02.28.24|01:11:50] 	train_mean_loss: 3.5030138995371707
+[02.28.24|01:11:51] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch175_model.pt.
+[02.28.24|01:11:51] KNN eval epoch 175
+[02.28.24|01:12:28] KNN - 10 current: 75.31%, best: 76.28%
+[02.28.24|01:12:28] KNN - 20 current: 74.41%, best: 75.96%
+[02.28.24|01:12:28] KNN - 40 current: 73.05%, best: 74.41%
+[02.28.24|01:12:28] Training epoch: 176
+[02.28.24|01:13:00] 	Iter 51500 Done. | loss: 3.2888 | lr: 0.100000
+[02.28.24|01:14:00] 	Iter 51600 Done. | loss: 3.1837 | lr: 0.100000
+[02.28.24|01:15:00] 	Iter 51700 Done. | loss: 4.1009 | lr: 0.100000
+[02.28.24|01:15:26] 	train_mean_loss: 3.460221151105401
+[02.28.24|01:15:26] Training epoch: 177
+[02.28.24|01:16:02] 	Iter 51800 Done. | loss: 3.0762 | lr: 0.100000
+[02.28.24|01:17:02] 	Iter 51900 Done. | loss: 3.2695 | lr: 0.100000
+[02.28.24|01:18:01] 	Iter 52000 Done. | loss: 3.2109 | lr: 0.100000
+[02.28.24|01:18:24] 	train_mean_loss: 3.429484106245495
+[02.28.24|01:18:24] Training epoch: 178
+[02.28.24|01:19:03] 	Iter 52100 Done. | loss: 3.2810 | lr: 0.100000
+[02.28.24|01:20:03] 	Iter 52200 Done. | loss: 4.1613 | lr: 0.100000
+[02.28.24|01:21:03] 	Iter 52300 Done. | loss: 3.3568 | lr: 0.100000
+[02.28.24|01:21:22] 	train_mean_loss: 3.476847467779302
+[02.28.24|01:21:22] Training epoch: 179
+[02.28.24|01:22:04] 	Iter 52400 Done. | loss: 2.4614 | lr: 0.100000
+[02.28.24|01:23:04] 	Iter 52500 Done. | loss: 3.0173 | lr: 0.100000
+[02.28.24|01:24:04] 	Iter 52600 Done. | loss: 3.2372 | lr: 0.100000
+[02.28.24|01:24:19] 	train_mean_loss: 3.3248992687990877
+[02.28.24|01:24:19] Training epoch: 180
+[02.28.24|01:25:05] 	Iter 52700 Done. | loss: 3.9397 | lr: 0.100000
+[02.28.24|01:26:05] 	Iter 52800 Done. | loss: 3.4474 | lr: 0.100000
+[02.28.24|01:27:05] 	Iter 52900 Done. | loss: 3.3998 | lr: 0.100000
+[02.28.24|01:27:16] 	train_mean_loss: 3.589371677969589
+[02.28.24|01:27:17] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch180_model.pt.
+[02.28.24|01:27:17] KNN eval epoch 180
+[02.28.24|01:27:54] KNN - 10 current: 75.05%, best: 76.28%
+[02.28.24|01:27:54] KNN - 20 current: 74.40%, best: 75.96%
+[02.28.24|01:27:54] KNN - 40 current: 72.90%, best: 74.41%
+[02.28.24|01:27:54] Training epoch: 181
+[02.28.24|01:28:44] 	Iter 53000 Done. | loss: 3.2736 | lr: 0.100000
+[02.28.24|01:29:44] 	Iter 53100 Done. | loss: 3.0487 | lr: 0.100000
+[02.28.24|01:30:44] 	Iter 53200 Done. | loss: 2.9951 | lr: 0.100000
+[02.28.24|01:30:52] 	train_mean_loss: 3.2143273775269385
+[02.28.24|01:30:52] Training epoch: 182
+[02.28.24|01:31:45] 	Iter 53300 Done. | loss: 3.5556 | lr: 0.100000
+[02.28.24|01:32:46] 	Iter 53400 Done. | loss: 4.8445 | lr: 0.100000
+[02.28.24|01:33:45] 	Iter 53500 Done. | loss: 3.0924 | lr: 0.100000
+[02.28.24|01:33:50] 	train_mean_loss: 3.4939163558337154
+[02.28.24|01:33:50] Training epoch: 183
+[02.28.24|01:34:47] 	Iter 53600 Done. | loss: 3.0456 | lr: 0.100000
+[02.28.24|01:35:47] 	Iter 53700 Done. | loss: 3.5035 | lr: 0.100000
+[02.28.24|01:36:47] 	Iter 53800 Done. | loss: 2.9207 | lr: 0.100000
+[02.28.24|01:36:48] 	train_mean_loss: 3.2411703025402665
+[02.28.24|01:36:49] Training epoch: 184
+[02.28.24|01:37:50] 	Iter 53900 Done. | loss: 3.1341 | lr: 0.100000
+[02.28.24|01:38:49] 	Iter 54000 Done. | loss: 2.9985 | lr: 0.100000
+[02.28.24|01:39:47] 	train_mean_loss: 3.4563216246715207
+[02.28.24|01:39:48] Training epoch: 185
+[02.28.24|01:39:52] 	Iter 54100 Done. | loss: 3.4097 | lr: 0.100000
+[02.28.24|01:40:52] 	Iter 54200 Done. | loss: 3.0066 | lr: 0.100000
+[02.28.24|01:41:53] 	Iter 54300 Done. | loss: 3.0688 | lr: 0.100000
+[02.28.24|01:42:46] 	train_mean_loss: 3.5152094518246293
+[02.28.24|01:42:55] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch185_model.pt.
+[02.28.24|01:42:56] KNN eval epoch 185
+[02.28.24|01:43:33] KNN - 10 current: 75.14%, best: 76.28%
+[02.28.24|01:43:34] KNN - 20 current: 74.50%, best: 75.96%
+[02.28.24|01:43:35] KNN - 40 current: 73.43%, best: 74.41%
+[02.28.24|01:43:35] Training epoch: 186
+[02.28.24|01:43:43] 	Iter 54400 Done. | loss: 3.1363 | lr: 0.100000
+[02.28.24|01:44:43] 	Iter 54500 Done. | loss: 6.2336 | lr: 0.100000
+[02.28.24|01:45:43] 	Iter 54600 Done. | loss: 3.5068 | lr: 0.100000
+[02.28.24|01:46:33] 	train_mean_loss: 3.4232211867157294
+[02.28.24|01:46:33] Training epoch: 187
+[02.28.24|01:46:44] 	Iter 54700 Done. | loss: 3.4203 | lr: 0.100000
+[02.28.24|01:47:45] 	Iter 54800 Done. | loss: 3.0734 | lr: 0.100000
+[02.28.24|01:48:45] 	Iter 54900 Done. | loss: 3.2753 | lr: 0.100000
+[02.28.24|01:49:32] 	train_mean_loss: 3.448676734554524
+[02.28.24|01:49:33] Training epoch: 188
+[02.28.24|01:49:48] 	Iter 55000 Done. | loss: 3.2567 | lr: 0.100000
+[02.28.24|01:50:48] 	Iter 55100 Done. | loss: 3.0858 | lr: 0.100000
+[02.28.24|01:51:48] 	Iter 55200 Done. | loss: 3.3581 | lr: 0.100000
+[02.28.24|01:52:31] 	train_mean_loss: 3.46723764445506
+[02.28.24|01:52:32] Training epoch: 189
+[02.28.24|01:52:51] 	Iter 55300 Done. | loss: 3.4682 | lr: 0.100000
+[02.28.24|01:53:51] 	Iter 55400 Done. | loss: 2.6688 | lr: 0.100000
+[02.28.24|01:54:51] 	Iter 55500 Done. | loss: 3.3489 | lr: 0.100000
+[02.28.24|01:55:33] 	train_mean_loss: 3.307372349460109
+[02.28.24|01:55:33] Training epoch: 190
+[02.28.24|01:55:55] 	Iter 55600 Done. | loss: 2.9657 | lr: 0.100000
+[02.28.24|01:56:55] 	Iter 55700 Done. | loss: 3.1858 | lr: 0.100000
+[02.28.24|01:57:55] 	Iter 55800 Done. | loss: 3.4455 | lr: 0.100000
+[02.28.24|01:58:30] 	train_mean_loss: 3.5678548861523063
+[02.28.24|01:58:34] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch190_model.pt.
+[02.28.24|01:58:35] KNN eval epoch 190
+[02.28.24|01:59:12] KNN - 10 current: 74.35%, best: 76.28%
+[02.28.24|01:59:13] KNN - 20 current: 73.53%, best: 75.96%
+[02.28.24|01:59:13] KNN - 40 current: 72.22%, best: 74.41%
+[02.28.24|01:59:13] Training epoch: 191
+[02.28.24|01:59:38] 	Iter 55900 Done. | loss: 4.1856 | lr: 0.100000
+[02.28.24|02:00:38] 	Iter 56000 Done. | loss: 3.4534 | lr: 0.100000
+[02.28.24|02:01:40] 	Iter 56100 Done. | loss: 5.8953 | lr: 0.100000
+[02.28.24|02:02:12] 	train_mean_loss: 3.45190061274029
+[02.28.24|02:02:12] Training epoch: 192
+[02.28.24|02:02:41] 	Iter 56200 Done. | loss: 3.1029 | lr: 0.100000
+[02.28.24|02:03:41] 	Iter 56300 Done. | loss: 3.1834 | lr: 0.100000
+[02.28.24|02:04:41] 	Iter 56400 Done. | loss: 3.5540 | lr: 0.100000
+[02.28.24|02:05:10] 	train_mean_loss: 3.483236318542844
+[02.28.24|02:05:11] Training epoch: 193
+[02.28.24|02:05:44] 	Iter 56500 Done. | loss: 3.3771 | lr: 0.100000
+[02.28.24|02:06:45] 	Iter 56600 Done. | loss: 3.0992 | lr: 0.100000
+[02.28.24|02:07:44] 	Iter 56700 Done. | loss: 3.0335 | lr: 0.100000
+[02.28.24|02:08:09] 	train_mean_loss: 3.60296352055608
+[02.28.24|02:08:09] Training epoch: 194
+[02.28.24|02:08:46] 	Iter 56800 Done. | loss: 3.2908 | lr: 0.100000
+[02.28.24|02:09:46] 	Iter 56900 Done. | loss: 3.4535 | lr: 0.100000
+[02.28.24|02:10:46] 	Iter 57000 Done. | loss: 3.0959 | lr: 0.100000
+[02.28.24|02:11:09] 	train_mean_loss: 3.337946500097002
+[02.28.24|02:11:09] Training epoch: 195
+[02.28.24|02:11:49] 	Iter 57100 Done. | loss: 3.0456 | lr: 0.100000
+[02.28.24|02:12:49] 	Iter 57200 Done. | loss: 4.1255 | lr: 0.100000
+[02.28.24|02:13:49] 	Iter 57300 Done. | loss: 3.1514 | lr: 0.100000
+[02.28.24|02:14:07] 	train_mean_loss: 3.5773124719152647
+[02.28.24|02:14:08] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch195_model.pt.
+[02.28.24|02:14:08] KNN eval epoch 195
+[02.28.24|02:14:45] KNN - 10 current: 75.83%, best: 76.28%
+[02.28.24|02:14:45] KNN - 20 current: 75.21%, best: 75.96%
+[02.28.24|02:14:46] KNN - 40 current: 74.64%, best: 74.64%
+[02.28.24|02:14:46] Training epoch: 196
+[02.28.24|02:15:29] 	Iter 57400 Done. | loss: 3.2282 | lr: 0.100000
+[02.28.24|02:16:29] 	Iter 57500 Done. | loss: 3.2704 | lr: 0.100000
+[02.28.24|02:17:29] 	Iter 57600 Done. | loss: 3.1192 | lr: 0.100000
+[02.28.24|02:17:43] 	train_mean_loss: 3.510177336582521
+[02.28.24|02:17:43] Training epoch: 197
+[02.28.24|02:18:31] 	Iter 57700 Done. | loss: 3.4657 | lr: 0.100000
+[02.28.24|02:19:30] 	Iter 57800 Done. | loss: 4.0340 | lr: 0.100000
+[02.28.24|02:20:30] 	Iter 57900 Done. | loss: 3.1752 | lr: 0.100000
+[02.28.24|02:20:41] 	train_mean_loss: 3.52203580473556
+[02.28.24|02:20:41] Training epoch: 198
+[02.28.24|02:21:32] 	Iter 58000 Done. | loss: 4.3409 | lr: 0.100000
+[02.28.24|02:22:32] 	Iter 58100 Done. | loss: 2.7792 | lr: 0.100000
+[02.28.24|02:23:32] 	Iter 58200 Done. | loss: 3.5921 | lr: 0.100000
+[02.28.24|02:23:39] 	train_mean_loss: 3.410621616305137
+[02.28.24|02:23:39] Training epoch: 199
+[02.28.24|02:24:33] 	Iter 58300 Done. | loss: 3.4367 | lr: 0.100000
+[02.28.24|02:25:34] 	Iter 58400 Done. | loss: 3.4413 | lr: 0.100000
+[02.28.24|02:26:34] 	Iter 58500 Done. | loss: 3.3183 | lr: 0.100000
+[02.28.24|02:26:37] 	train_mean_loss: 3.6885607283131607
+[02.28.24|02:26:37] Training epoch: 200
+[02.28.24|02:27:35] 	Iter 58600 Done. | loss: 5.1753 | lr: 0.100000
+[02.28.24|02:28:35] 	Iter 58700 Done. | loss: 3.1381 | lr: 0.100000
+[02.28.24|02:29:34] 	train_mean_loss: 3.4869351873592453
+[02.28.24|02:29:35] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch200_model.pt.
+[02.28.24|02:29:35] KNN eval epoch 200
+[02.28.24|02:30:13] KNN - 10 current: 76.16%, best: 76.28%
+[02.28.24|02:30:13] KNN - 20 current: 75.39%, best: 75.96%
+[02.28.24|02:30:13] KNN - 40 current: 74.28%, best: 74.64%
+[02.28.24|02:30:13] Training epoch: 201
+[02.28.24|02:30:15] 	Iter 58800 Done. | loss: 3.1933 | lr: 0.100000
+[02.28.24|02:31:15] 	Iter 58900 Done. | loss: 3.3955 | lr: 0.100000
+[02.28.24|02:32:15] 	Iter 59000 Done. | loss: 3.8173 | lr: 0.100000
+[02.28.24|02:33:10] 	train_mean_loss: 3.259071393077876
+[02.28.24|02:33:10] Training epoch: 202
+[02.28.24|02:33:16] 	Iter 59100 Done. | loss: 2.9189 | lr: 0.100000
+[02.28.24|02:34:16] 	Iter 59200 Done. | loss: 3.1399 | lr: 0.100000
+[02.28.24|02:35:16] 	Iter 59300 Done. | loss: 2.8481 | lr: 0.100000
+[02.28.24|02:36:08] 	train_mean_loss: 3.323336902929812
+[02.28.24|02:36:08] Training epoch: 203
+[02.28.24|02:36:17] 	Iter 59400 Done. | loss: 3.3343 | lr: 0.100000
+[02.28.24|02:37:17] 	Iter 59500 Done. | loss: 3.0021 | lr: 0.100000
+[02.28.24|02:38:17] 	Iter 59600 Done. | loss: 2.6008 | lr: 0.100000
+[02.28.24|02:39:06] 	train_mean_loss: 3.1738932659836854
+[02.28.24|02:39:06] Training epoch: 204
+[02.28.24|02:39:20] 	Iter 59700 Done. | loss: 3.1540 | lr: 0.100000
+[02.28.24|02:40:20] 	Iter 59800 Done. | loss: 2.5607 | lr: 0.100000
+[02.28.24|02:41:20] 	Iter 59900 Done. | loss: 2.8703 | lr: 0.100000
+[02.28.24|02:42:05] 	train_mean_loss: 3.2929906163896834
+[02.28.24|02:42:05] Training epoch: 205
+[02.28.24|02:42:21] 	Iter 60000 Done. | loss: 2.8606 | lr: 0.100000
+[02.28.24|02:43:21] 	Iter 60100 Done. | loss: 3.5985 | lr: 0.100000
+[02.28.24|02:44:21] 	Iter 60200 Done. | loss: 4.9070 | lr: 0.100000
+[02.28.24|02:45:02] 	train_mean_loss: 3.29832146200193
+[02.28.24|02:45:03] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch205_model.pt.
+[02.28.24|02:45:03] KNN eval epoch 205
+[02.28.24|02:45:41] KNN - 10 current: 76.43%, best: 76.43%
+[02.28.24|02:45:41] KNN - 20 current: 75.64%, best: 75.96%
+[02.28.24|02:45:41] KNN - 40 current: 74.81%, best: 74.81%
+[02.28.24|02:45:41] Training epoch: 206
+[02.28.24|02:46:00] 	Iter 60300 Done. | loss: 2.8005 | lr: 0.100000
+[02.28.24|02:47:00] 	Iter 60400 Done. | loss: 3.8109 | lr: 0.100000
+[02.28.24|02:48:00] 	Iter 60500 Done. | loss: 4.1576 | lr: 0.100000
+[02.28.24|02:48:38] 	train_mean_loss: 3.3266800204101874
+[02.28.24|02:48:38] Training epoch: 207
+[02.28.24|02:49:01] 	Iter 60600 Done. | loss: 3.4267 | lr: 0.100000
+[02.28.24|02:50:01] 	Iter 60700 Done. | loss: 2.7923 | lr: 0.100000
+[02.28.24|02:51:01] 	Iter 60800 Done. | loss: 2.9916 | lr: 0.100000
+[02.28.24|02:51:35] 	train_mean_loss: 3.356185209183466
+[02.28.24|02:51:35] Training epoch: 208
+[02.28.24|02:52:01] 	Iter 60900 Done. | loss: 3.1592 | lr: 0.100000
+[02.28.24|02:53:02] 	Iter 61000 Done. | loss: 3.0488 | lr: 0.100000
+[02.28.24|02:54:02] 	Iter 61100 Done. | loss: 5.8823 | lr: 0.100000
+[02.28.24|02:54:33] 	train_mean_loss: 3.295184631736911
+[02.28.24|02:54:33] Training epoch: 209
+[02.28.24|02:55:04] 	Iter 61200 Done. | loss: 2.7538 | lr: 0.100000
+[02.28.24|02:56:05] 	Iter 61300 Done. | loss: 2.4784 | lr: 0.100000
+[02.28.24|02:57:05] 	Iter 61400 Done. | loss: 5.5557 | lr: 0.100000
+[02.28.24|02:57:33] 	train_mean_loss: 3.160496948527641
+[02.28.24|02:57:33] Training epoch: 210
+[02.28.24|02:58:07] 	Iter 61500 Done. | loss: 2.8942 | lr: 0.100000
+[02.28.24|02:59:07] 	Iter 61600 Done. | loss: 2.7168 | lr: 0.100000
+[02.28.24|03:00:07] 	Iter 61700 Done. | loss: 2.5743 | lr: 0.100000
+[02.28.24|03:00:31] 	train_mean_loss: 3.320318662390417
+[02.28.24|03:00:32] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch210_model.pt.
+[02.28.24|03:00:32] KNN eval epoch 210
+[02.28.24|03:01:09] KNN - 10 current: 76.44%, best: 76.44%
+[02.28.24|03:01:09] KNN - 20 current: 75.74%, best: 75.96%
+[02.28.24|03:01:09] KNN - 40 current: 74.80%, best: 74.81%
+[02.28.24|03:01:09] Training epoch: 211
+[02.28.24|03:01:46] 	Iter 61800 Done. | loss: 2.9641 | lr: 0.100000
+[02.28.24|03:02:46] 	Iter 61900 Done. | loss: 2.8503 | lr: 0.100000
+[02.28.24|03:03:46] 	Iter 62000 Done. | loss: 3.0362 | lr: 0.100000
+[02.28.24|03:04:06] 	train_mean_loss: 3.2734642385625516
+[02.28.24|03:04:06] Training epoch: 212
+[02.28.24|03:04:47] 	Iter 62100 Done. | loss: 2.5633 | lr: 0.100000
+[02.28.24|03:05:47] 	Iter 62200 Done. | loss: 3.5334 | lr: 0.100000
+[02.28.24|03:06:47] 	Iter 62300 Done. | loss: 6.6811 | lr: 0.100000
+[02.28.24|03:07:03] 	train_mean_loss: 3.230522103050128
+[02.28.24|03:07:03] Training epoch: 213
+[02.28.24|03:07:48] 	Iter 62400 Done. | loss: 2.6390 | lr: 0.100000
+[02.28.24|03:08:48] 	Iter 62500 Done. | loss: 2.8069 | lr: 0.100000
+[02.28.24|03:09:50] 	Iter 62600 Done. | loss: 2.9649 | lr: 0.100000
+[02.28.24|03:10:02] 	train_mean_loss: 3.253218423752558
+[02.28.24|03:10:02] Training epoch: 214
+[02.28.24|03:10:50] 	Iter 62700 Done. | loss: 3.0306 | lr: 0.100000
+[02.28.24|03:11:50] 	Iter 62800 Done. | loss: 3.0118 | lr: 0.100000
+[02.28.24|03:12:50] 	Iter 62900 Done. | loss: 3.3676 | lr: 0.100000
+[02.28.24|03:12:59] 	train_mean_loss: 3.6417589584986367
+[02.28.24|03:12:59] Training epoch: 215
+[02.28.24|03:13:51] 	Iter 63000 Done. | loss: 3.2720 | lr: 0.100000
+[02.28.24|03:14:51] 	Iter 63100 Done. | loss: 4.1517 | lr: 0.100000
+[02.28.24|03:15:51] 	Iter 63200 Done. | loss: 3.0759 | lr: 0.100000
+[02.28.24|03:15:56] 	train_mean_loss: 3.4085720169300937
+[02.28.24|03:15:57] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch215_model.pt.
+[02.28.24|03:15:57] KNN eval epoch 215
+[02.28.24|03:16:34] KNN - 10 current: 75.78%, best: 76.44%
+[02.28.24|03:16:34] KNN - 20 current: 75.68%, best: 75.96%
+[02.28.24|03:16:34] KNN - 40 current: 74.66%, best: 74.81%
+[02.28.24|03:16:34] Training epoch: 216
+[02.28.24|03:17:29] 	Iter 63300 Done. | loss: 5.3960 | lr: 0.100000
+[02.28.24|03:18:29] 	Iter 63400 Done. | loss: 2.8906 | lr: 0.100000
+[02.28.24|03:19:29] 	Iter 63500 Done. | loss: 4.1713 | lr: 0.100000
+[02.28.24|03:19:31] 	train_mean_loss: 3.559579841944636
+[02.28.24|03:19:31] Training epoch: 217
+[02.28.24|03:20:30] 	Iter 63600 Done. | loss: 2.9287 | lr: 0.100000
+[02.28.24|03:21:31] 	Iter 63700 Done. | loss: 3.1584 | lr: 0.100000
+[02.28.24|03:22:29] 	train_mean_loss: 3.3616018319616514
+[02.28.24|03:22:29] Training epoch: 218
+[02.28.24|03:22:32] 	Iter 63800 Done. | loss: 4.1518 | lr: 0.100000
+[02.28.24|03:23:32] 	Iter 63900 Done. | loss: 2.8563 | lr: 0.100000
+[02.28.24|03:24:32] 	Iter 64000 Done. | loss: 4.2882 | lr: 0.100000
+[02.28.24|03:25:26] 	train_mean_loss: 3.3841536726270403
+[02.28.24|03:25:27] Training epoch: 219
+[02.28.24|03:25:33] 	Iter 64100 Done. | loss: 2.7041 | lr: 0.100000
+[02.28.24|03:26:33] 	Iter 64200 Done. | loss: 3.6973 | lr: 0.100000
+[02.28.24|03:27:33] 	Iter 64300 Done. | loss: 5.3311 | lr: 0.100000
+[02.28.24|03:28:24] 	train_mean_loss: 3.358962122274905
+[02.28.24|03:28:24] Training epoch: 220
+[02.28.24|03:28:34] 	Iter 64400 Done. | loss: 6.1871 | lr: 0.100000
+[02.28.24|03:29:34] 	Iter 64500 Done. | loss: 2.7559 | lr: 0.100000
+[02.28.24|03:30:34] 	Iter 64600 Done. | loss: 3.9680 | lr: 0.100000
+[02.28.24|03:31:21] 	train_mean_loss: 3.245280295813165
+[02.28.24|03:31:22] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch220_model.pt.
+[02.28.24|03:31:22] KNN eval epoch 220
+[02.28.24|03:31:59] KNN - 10 current: 75.44%, best: 76.44%
+[02.28.24|03:31:59] KNN - 20 current: 74.76%, best: 75.96%
+[02.28.24|03:31:59] KNN - 40 current: 73.71%, best: 74.81%
+[02.28.24|03:31:59] Training epoch: 221
+[02.28.24|03:32:12] 	Iter 64700 Done. | loss: 3.2016 | lr: 0.100000
+[02.28.24|03:33:12] 	Iter 64800 Done. | loss: 3.6335 | lr: 0.100000
+[02.28.24|03:34:12] 	Iter 64900 Done. | loss: 3.2453 | lr: 0.100000
+[02.28.24|03:34:55] 	train_mean_loss: 3.4516497436834843
+[02.28.24|03:34:55] Training epoch: 222
+[02.28.24|03:35:13] 	Iter 65000 Done. | loss: 3.0339 | lr: 0.100000
+[02.28.24|03:36:13] 	Iter 65100 Done. | loss: 3.0594 | lr: 0.100000
+[02.28.24|03:37:13] 	Iter 65200 Done. | loss: 4.1171 | lr: 0.100000
+[02.28.24|03:37:53] 	train_mean_loss: 3.400908031431185
+[02.28.24|03:37:53] Training epoch: 223
+[02.28.24|03:38:14] 	Iter 65300 Done. | loss: 3.4416 | lr: 0.100000
+[02.28.24|03:39:13] 	Iter 65400 Done. | loss: 3.0154 | lr: 0.100000
+[02.28.24|03:40:13] 	Iter 65500 Done. | loss: 4.1387 | lr: 0.100000
+[02.28.24|03:40:50] 	train_mean_loss: 3.4150705491604447
+[02.28.24|03:40:50] Training epoch: 224
+[02.28.24|03:41:14] 	Iter 65600 Done. | loss: 3.8502 | lr: 0.100000
+[02.28.24|03:42:15] 	Iter 65700 Done. | loss: 3.1651 | lr: 0.100000
+[02.28.24|03:43:14] 	Iter 65800 Done. | loss: 2.6716 | lr: 0.100000
+[02.28.24|03:43:48] 	train_mean_loss: 3.2998907995872755
+[02.28.24|03:43:48] Training epoch: 225
+[02.28.24|03:44:16] 	Iter 65900 Done. | loss: 3.5348 | lr: 0.100000
+[02.28.24|03:45:16] 	Iter 66000 Done. | loss: 4.0214 | lr: 0.100000
+[02.28.24|03:46:16] 	Iter 66100 Done. | loss: 2.7879 | lr: 0.100000
+[02.28.24|03:46:45] 	train_mean_loss: 3.520575383082539
+[02.28.24|03:46:46] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch225_model.pt.
+[02.28.24|03:46:46] KNN eval epoch 225
+[02.28.24|03:47:23] KNN - 10 current: 76.02%, best: 76.44%
+[02.28.24|03:47:23] KNN - 20 current: 75.69%, best: 75.96%
+[02.28.24|03:47:23] KNN - 40 current: 74.87%, best: 74.87%
+[02.28.24|03:47:23] Training epoch: 226
+[02.28.24|03:47:54] 	Iter 66200 Done. | loss: 3.6669 | lr: 0.100000
+[02.28.24|03:48:54] 	Iter 66300 Done. | loss: 2.9532 | lr: 0.100000
+[02.28.24|03:49:54] 	Iter 66400 Done. | loss: 3.5447 | lr: 0.100000
+[02.28.24|03:50:20] 	train_mean_loss: 3.357210042525311
+[02.28.24|03:50:20] Training epoch: 227
+[02.28.24|03:50:55] 	Iter 66500 Done. | loss: 3.6023 | lr: 0.100000
+[02.28.24|03:51:55] 	Iter 66600 Done. | loss: 3.4288 | lr: 0.100000
+[02.28.24|03:52:55] 	Iter 66700 Done. | loss: 3.8486 | lr: 0.100000
+[02.28.24|03:53:17] 	train_mean_loss: 3.4715600613834097
+[02.28.24|03:53:17] Training epoch: 228
+[02.28.24|03:53:56] 	Iter 66800 Done. | loss: 3.5361 | lr: 0.100000
+[02.28.24|03:54:56] 	Iter 66900 Done. | loss: 3.4916 | lr: 0.100000
+[02.28.24|03:55:56] 	Iter 67000 Done. | loss: 4.8123 | lr: 0.100000
+[02.28.24|03:56:14] 	train_mean_loss: 3.4148286062033
+[02.28.24|03:56:14] Training epoch: 229
+[02.28.24|03:56:57] 	Iter 67100 Done. | loss: 2.9756 | lr: 0.100000
+[02.28.24|03:57:57] 	Iter 67200 Done. | loss: 5.9729 | lr: 0.100000
+[02.28.24|03:58:56] 	Iter 67300 Done. | loss: 6.7215 | lr: 0.100000
+[02.28.24|03:59:12] 	train_mean_loss: 3.590156551931991
+[02.28.24|03:59:12] Training epoch: 230
+[02.28.24|03:59:57] 	Iter 67400 Done. | loss: 3.6912 | lr: 0.100000
+[02.28.24|04:00:57] 	Iter 67500 Done. | loss: 3.2583 | lr: 0.100000
+[02.28.24|04:01:57] 	Iter 67600 Done. | loss: 3.7398 | lr: 0.100000
+[02.28.24|04:02:09] 	train_mean_loss: 3.8418501826370655
+[02.28.24|04:02:09] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch230_model.pt.
+[02.28.24|04:02:09] KNN eval epoch 230
+[02.28.24|04:02:46] KNN - 10 current: 76.55%, best: 76.55%
+[02.28.24|04:02:46] KNN - 20 current: 75.88%, best: 75.96%
+[02.28.24|04:02:46] KNN - 40 current: 74.86%, best: 74.87%
+[02.28.24|04:02:46] Training epoch: 231
+[02.28.24|04:03:35] 	Iter 67700 Done. | loss: 3.3795 | lr: 0.100000
+[02.28.24|04:04:35] 	Iter 67800 Done. | loss: 3.5512 | lr: 0.100000
+[02.28.24|04:05:35] 	Iter 67900 Done. | loss: 3.2238 | lr: 0.100000
+[02.28.24|04:05:43] 	train_mean_loss: 3.630476688041168
+[02.28.24|04:05:43] Training epoch: 232
+[02.28.24|04:06:36] 	Iter 68000 Done. | loss: 2.9834 | lr: 0.100000
+[02.28.24|04:07:36] 	Iter 68100 Done. | loss: 2.6291 | lr: 0.100000
+[02.28.24|04:08:36] 	Iter 68200 Done. | loss: 5.8240 | lr: 0.100000
+[02.28.24|04:08:40] 	train_mean_loss: 3.5771549923890302
+[02.28.24|04:08:40] Training epoch: 233
+[02.28.24|04:09:37] 	Iter 68300 Done. | loss: 3.1182 | lr: 0.100000
+[02.28.24|04:10:37] 	Iter 68400 Done. | loss: 5.0547 | lr: 0.100000
+[02.28.24|04:11:37] 	Iter 68500 Done. | loss: 3.2620 | lr: 0.100000
+[02.28.24|04:11:38] 	train_mean_loss: 3.752214713972442
+[02.28.24|04:11:38] Training epoch: 234
+[02.28.24|04:12:38] 	Iter 68600 Done. | loss: 3.5377 | lr: 0.100000
+[02.28.24|04:13:38] 	Iter 68700 Done. | loss: 3.4063 | lr: 0.100000
+[02.28.24|04:14:35] 	train_mean_loss: 3.691948114609232
+[02.28.24|04:14:35] Training epoch: 235
+[02.28.24|04:14:39] 	Iter 68800 Done. | loss: 5.3526 | lr: 0.100000
+[02.28.24|04:15:39] 	Iter 68900 Done. | loss: 3.1941 | lr: 0.100000
+[02.28.24|04:16:39] 	Iter 69000 Done. | loss: 3.4981 | lr: 0.100000
+[02.28.24|04:17:32] 	train_mean_loss: 3.5509179757565867
+[02.28.24|04:17:33] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch235_model.pt.
+[02.28.24|04:17:33] KNN eval epoch 235
+[02.28.24|04:18:10] KNN - 10 current: 76.29%, best: 76.55%
+[02.28.24|04:18:10] KNN - 20 current: 75.61%, best: 75.96%
+[02.28.24|04:18:10] KNN - 40 current: 74.93%, best: 74.93%
+[02.28.24|04:18:10] Training epoch: 236
+[02.28.24|04:18:18] 	Iter 69100 Done. | loss: 4.6028 | lr: 0.100000
+[02.28.24|04:19:17] 	Iter 69200 Done. | loss: 3.4449 | lr: 0.100000
+[02.28.24|04:20:17] 	Iter 69300 Done. | loss: 3.6214 | lr: 0.100000
+[02.28.24|04:21:07] 	train_mean_loss: 3.7458870200072827
+[02.28.24|04:21:07] Training epoch: 237
+[02.28.24|04:21:18] 	Iter 69400 Done. | loss: 3.5999 | lr: 0.100000
+[02.28.24|04:22:18] 	Iter 69500 Done. | loss: 3.9673 | lr: 0.100000
+[02.28.24|04:23:18] 	Iter 69600 Done. | loss: 4.4800 | lr: 0.100000
+[02.28.24|04:24:04] 	train_mean_loss: 3.654747034416718
+[02.28.24|04:24:04] Training epoch: 238
+[02.28.24|04:24:19] 	Iter 69700 Done. | loss: 3.1059 | lr: 0.100000
+[02.28.24|04:25:19] 	Iter 69800 Done. | loss: 4.0979 | lr: 0.100000
+[02.28.24|04:26:19] 	Iter 69900 Done. | loss: 2.8843 | lr: 0.100000
+[02.28.24|04:27:01] 	train_mean_loss: 3.4211390788863305
+[02.28.24|04:27:01] Training epoch: 239
+[02.28.24|04:27:20] 	Iter 70000 Done. | loss: 3.1081 | lr: 0.100000
+[02.28.24|04:28:20] 	Iter 70100 Done. | loss: 4.5535 | lr: 0.100000
+[02.28.24|04:29:20] 	Iter 70200 Done. | loss: 3.7793 | lr: 0.100000
+[02.28.24|04:29:59] 	train_mean_loss: 3.387108268380976
+[02.28.24|04:29:59] Training epoch: 240
+[02.28.24|04:30:20] 	Iter 70300 Done. | loss: 3.5961 | lr: 0.100000
+[02.28.24|04:31:20] 	Iter 70400 Done. | loss: 2.9744 | lr: 0.100000
+[02.28.24|04:32:20] 	Iter 70500 Done. | loss: 3.0978 | lr: 0.100000
+[02.28.24|04:32:55] 	train_mean_loss: 3.5139818775410556
+[02.28.24|04:32:56] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch240_model.pt.
+[02.28.24|04:32:56] KNN eval epoch 240
+[02.28.24|04:33:34] KNN - 10 current: 73.93%, best: 76.55%
+[02.28.24|04:33:34] KNN - 20 current: 73.31%, best: 75.96%
+[02.28.24|04:33:34] KNN - 40 current: 71.92%, best: 74.93%
+[02.28.24|04:33:34] Training epoch: 241
+[02.28.24|04:33:59] 	Iter 70600 Done. | loss: 3.5985 | lr: 0.100000
+[02.28.24|04:34:59] 	Iter 70700 Done. | loss: 3.3934 | lr: 0.100000
+[02.28.24|04:35:58] 	Iter 70800 Done. | loss: 2.7669 | lr: 0.100000
+[02.28.24|04:36:30] 	train_mean_loss: 3.594512248525814
+[02.28.24|04:36:30] Training epoch: 242
+[02.28.24|04:36:59] 	Iter 70900 Done. | loss: 3.3068 | lr: 0.100000
+[02.28.24|04:37:59] 	Iter 71000 Done. | loss: 3.4787 | lr: 0.100000
+[02.28.24|04:38:59] 	Iter 71100 Done. | loss: 6.1131 | lr: 0.100000
+[02.28.24|04:39:27] 	train_mean_loss: 3.7460401155510725
+[02.28.24|04:39:27] Training epoch: 243
+[02.28.24|04:40:00] 	Iter 71200 Done. | loss: 3.0901 | lr: 0.100000
+[02.28.24|04:41:00] 	Iter 71300 Done. | loss: 3.3781 | lr: 0.100000
+[02.28.24|04:42:00] 	Iter 71400 Done. | loss: 2.8509 | lr: 0.100000
+[02.28.24|04:42:25] 	train_mean_loss: 3.612564794871272
+[02.28.24|04:42:25] Training epoch: 244
+[02.28.24|04:43:01] 	Iter 71500 Done. | loss: 3.8151 | lr: 0.100000
+[02.28.24|04:44:01] 	Iter 71600 Done. | loss: 4.1193 | lr: 0.100000
+[02.28.24|04:45:01] 	Iter 71700 Done. | loss: 3.4979 | lr: 0.100000
+[02.28.24|04:45:22] 	train_mean_loss: 3.6735971963324516
+[02.28.24|04:45:22] Training epoch: 245
+[02.28.24|04:46:01] 	Iter 71800 Done. | loss: 2.9180 | lr: 0.100000
+[02.28.24|04:47:01] 	Iter 71900 Done. | loss: 4.3040 | lr: 0.100000
+[02.28.24|04:48:01] 	Iter 72000 Done. | loss: 3.0051 | lr: 0.100000
+[02.28.24|04:48:18] 	train_mean_loss: 3.506950159462131
+[02.28.24|04:48:19] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch245_model.pt.
+[02.28.24|04:48:19] KNN eval epoch 245
+[02.28.24|04:48:57] KNN - 10 current: 76.58%, best: 76.58%
+[02.28.24|04:48:57] KNN - 20 current: 76.25%, best: 76.25%
+[02.28.24|04:48:57] KNN - 40 current: 75.71%, best: 75.71%
+[02.28.24|04:48:57] Training epoch: 246
+[02.28.24|04:49:41] 	Iter 72100 Done. | loss: 4.4108 | lr: 0.100000
+[02.28.24|04:50:40] 	Iter 72200 Done. | loss: 2.8773 | lr: 0.100000
+[02.28.24|04:51:41] 	Iter 72300 Done. | loss: 3.1145 | lr: 0.100000
+[02.28.24|04:51:55] 	train_mean_loss: 3.4321374649904213
+[02.28.24|04:51:55] Training epoch: 247
+[02.28.24|04:52:42] 	Iter 72400 Done. | loss: 2.6306 | lr: 0.100000
+[02.28.24|04:53:42] 	Iter 72500 Done. | loss: 2.4799 | lr: 0.100000
+[02.28.24|04:54:42] 	Iter 72600 Done. | loss: 3.2976 | lr: 0.100000
+[02.28.24|04:54:52] 	train_mean_loss: 3.4443069372047375
+[02.28.24|04:54:52] Training epoch: 248
+[02.28.24|04:55:43] 	Iter 72700 Done. | loss: 5.7521 | lr: 0.100000
+[02.28.24|04:56:43] 	Iter 72800 Done. | loss: 3.2642 | lr: 0.100000
+[02.28.24|04:57:43] 	Iter 72900 Done. | loss: 2.7005 | lr: 0.100000
+[02.28.24|04:57:49] 	train_mean_loss: 3.6960850418830407
+[02.28.24|04:57:49] Training epoch: 249
+[02.28.24|04:58:44] 	Iter 73000 Done. | loss: 4.1753 | lr: 0.100000
+[02.28.24|04:59:44] 	Iter 73100 Done. | loss: 2.7833 | lr: 0.100000
+[02.28.24|05:00:44] 	Iter 73200 Done. | loss: 3.2826 | lr: 0.100000
+[02.28.24|05:00:47] 	train_mean_loss: 3.590795396136589
+[02.28.24|05:00:47] Training epoch: 250
+[02.28.24|05:01:44] 	Iter 73300 Done. | loss: 4.3017 | lr: 0.100000
+[02.28.24|05:02:44] 	Iter 73400 Done. | loss: 3.2578 | lr: 0.100000
+[02.28.24|05:03:44] 	train_mean_loss: 3.6976411529138784
+[02.28.24|05:03:45] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch250_model.pt.
+[02.28.24|05:03:45] KNN eval epoch 250
+[02.28.24|05:04:22] KNN - 10 current: 74.82%, best: 76.58%
+[02.28.24|05:04:22] KNN - 20 current: 74.36%, best: 76.25%
+[02.28.24|05:04:22] KNN - 40 current: 73.09%, best: 75.71%
+[02.28.24|05:04:22] Training epoch: 251
+[02.28.24|05:04:23] 	Iter 73500 Done. | loss: 3.9522 | lr: 0.010000
+[02.28.24|05:05:23] 	Iter 73600 Done. | loss: 2.8976 | lr: 0.010000
+[02.28.24|05:06:23] 	Iter 73700 Done. | loss: 2.6339 | lr: 0.010000
+[02.28.24|05:07:19] 	train_mean_loss: 3.3637146219915275
+[02.28.24|05:07:19] Training epoch: 252
+[02.28.24|05:07:24] 	Iter 73800 Done. | loss: 2.7168 | lr: 0.010000
+[02.28.24|05:08:24] 	Iter 73900 Done. | loss: 2.9655 | lr: 0.010000
+[02.28.24|05:09:24] 	Iter 74000 Done. | loss: 2.4727 | lr: 0.010000
+[02.28.24|05:10:16] 	train_mean_loss: 3.017794665025205
+[02.28.24|05:10:16] Training epoch: 253
+[02.28.24|05:10:25] 	Iter 74100 Done. | loss: 2.5756 | lr: 0.010000
+[02.28.24|05:11:25] 	Iter 74200 Done. | loss: 3.0699 | lr: 0.010000
+[02.28.24|05:12:25] 	Iter 74300 Done. | loss: 2.2311 | lr: 0.010000
+[02.28.24|05:13:14] 	train_mean_loss: 3.14517710808994
+[02.28.24|05:13:14] Training epoch: 254
+[02.28.24|05:13:26] 	Iter 74400 Done. | loss: 4.3149 | lr: 0.010000
+[02.28.24|05:14:26] 	Iter 74500 Done. | loss: 5.6936 | lr: 0.010000
+[02.28.24|05:15:26] 	Iter 74600 Done. | loss: 4.0652 | lr: 0.010000
+[02.28.24|05:16:11] 	train_mean_loss: 3.155878702799479
+[02.28.24|05:16:11] Training epoch: 255
+[02.28.24|05:16:27] 	Iter 74700 Done. | loss: 2.8786 | lr: 0.010000
+[02.28.24|05:17:27] 	Iter 74800 Done. | loss: 3.3029 | lr: 0.010000
+[02.28.24|05:18:27] 	Iter 74900 Done. | loss: 4.7267 | lr: 0.010000
+[02.28.24|05:19:08] 	train_mean_loss: 3.120472257640086
+[02.28.24|05:19:09] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch255_model.pt.
+[02.28.24|05:19:09] KNN eval epoch 255
+[02.28.24|05:19:47] KNN - 10 current: 77.12%, best: 77.12%
+[02.28.24|05:19:47] KNN - 20 current: 75.87%, best: 76.25%
+[02.28.24|05:19:47] KNN - 40 current: 75.14%, best: 75.71%
+[02.28.24|05:19:47] Training epoch: 256
+[02.28.24|05:20:06] 	Iter 75000 Done. | loss: 2.4852 | lr: 0.010000
+[02.28.24|05:21:06] 	Iter 75100 Done. | loss: 2.3010 | lr: 0.010000
+[02.28.24|05:22:05] 	Iter 75200 Done. | loss: 4.4372 | lr: 0.010000
+[02.28.24|05:22:43] 	train_mean_loss: 3.0593392613793715
+[02.28.24|05:22:43] Training epoch: 257
+[02.28.24|05:23:06] 	Iter 75300 Done. | loss: 2.6108 | lr: 0.010000
+[02.28.24|05:24:06] 	Iter 75400 Done. | loss: 2.6727 | lr: 0.010000
+[02.28.24|05:25:05] 	Iter 75500 Done. | loss: 2.8015 | lr: 0.010000
+[02.28.24|05:25:40] 	train_mean_loss: 3.0325094128952546
+[02.28.24|05:25:40] Training epoch: 258
+[02.28.24|05:26:06] 	Iter 75600 Done. | loss: 2.9043 | lr: 0.010000
+[02.28.24|05:27:06] 	Iter 75700 Done. | loss: 2.2796 | lr: 0.010000
+[02.28.24|05:28:06] 	Iter 75800 Done. | loss: 3.0027 | lr: 0.010000
+[02.28.24|05:28:36] 	train_mean_loss: 3.152445497966948
+[02.28.24|05:28:36] Training epoch: 259
+[02.28.24|05:29:07] 	Iter 75900 Done. | loss: 2.8208 | lr: 0.010000
+[02.28.24|05:30:07] 	Iter 76000 Done. | loss: 2.3001 | lr: 0.010000
+[02.28.24|05:31:07] 	Iter 76100 Done. | loss: 4.4393 | lr: 0.010000
+[02.28.24|05:31:34] 	train_mean_loss: 3.2005697042763637
+[02.28.24|05:31:34] Training epoch: 260
+[02.28.24|05:32:08] 	Iter 76200 Done. | loss: 2.3612 | lr: 0.010000
+[02.28.24|05:33:08] 	Iter 76300 Done. | loss: 2.6145 | lr: 0.010000
+[02.28.24|05:34:08] 	Iter 76400 Done. | loss: 4.8284 | lr: 0.010000
+[02.28.24|05:34:31] 	train_mean_loss: 3.084989375808612
+[02.28.24|05:34:32] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch260_model.pt.
+[02.28.24|05:34:32] KNN eval epoch 260
+[02.28.24|05:35:10] KNN - 10 current: 75.70%, best: 77.12%
+[02.28.24|05:35:10] KNN - 20 current: 75.03%, best: 76.25%
+[02.28.24|05:35:10] KNN - 40 current: 74.51%, best: 75.71%
+[02.28.24|05:35:10] Training epoch: 261
+[02.28.24|05:35:47] 	Iter 76500 Done. | loss: 3.4739 | lr: 0.010000
+[02.28.24|05:36:47] 	Iter 76600 Done. | loss: 3.3570 | lr: 0.010000
+[02.28.24|05:37:47] 	Iter 76700 Done. | loss: 2.4937 | lr: 0.010000
+[02.28.24|05:38:07] 	train_mean_loss: 3.0713639964862747
+[02.28.24|05:38:07] Training epoch: 262
+[02.28.24|05:38:48] 	Iter 76800 Done. | loss: 3.0991 | lr: 0.010000
+[02.28.24|05:39:48] 	Iter 76900 Done. | loss: 7.5248 | lr: 0.010000
+[02.28.24|05:40:48] 	Iter 77000 Done. | loss: 2.7675 | lr: 0.010000
+[02.28.24|05:41:04] 	train_mean_loss: 3.074413622317671
+[02.28.24|05:41:04] Training epoch: 263
+[02.28.24|05:41:49] 	Iter 77100 Done. | loss: 3.5013 | lr: 0.010000
+[02.28.24|05:42:49] 	Iter 77200 Done. | loss: 3.0356 | lr: 0.010000
+[02.28.24|05:43:49] 	Iter 77300 Done. | loss: 2.6917 | lr: 0.010000
+[02.28.24|05:44:02] 	train_mean_loss: 2.9508513074342897
+[02.28.24|05:44:02] Training epoch: 264
+[02.28.24|05:44:50] 	Iter 77400 Done. | loss: 2.7067 | lr: 0.010000
+[02.28.24|05:45:50] 	Iter 77500 Done. | loss: 2.7324 | lr: 0.010000
+[02.28.24|05:46:50] 	Iter 77600 Done. | loss: 3.0033 | lr: 0.010000
+[02.28.24|05:46:59] 	train_mean_loss: 3.001110784050559
+[02.28.24|05:46:59] Training epoch: 265
+[02.28.24|05:47:51] 	Iter 77700 Done. | loss: 2.6246 | lr: 0.010000
+[02.28.24|05:48:51] 	Iter 77800 Done. | loss: 2.7099 | lr: 0.010000
+[02.28.24|05:49:51] 	Iter 77900 Done. | loss: 4.5626 | lr: 0.010000
+[02.28.24|05:49:57] 	train_mean_loss: 3.1663414702123527
+[02.28.24|05:49:58] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch265_model.pt.
+[02.28.24|05:49:58] KNN eval epoch 265
+[02.28.24|05:50:35] KNN - 10 current: 77.65%, best: 77.65%
+[02.28.24|05:50:35] KNN - 20 current: 77.26%, best: 77.26%
+[02.28.24|05:50:35] KNN - 40 current: 76.39%, best: 76.39%
+[02.28.24|05:50:35] Training epoch: 266
+[02.28.24|05:51:31] 	Iter 78000 Done. | loss: 2.4227 | lr: 0.010000
+[02.28.24|05:52:30] 	Iter 78100 Done. | loss: 2.4626 | lr: 0.010000
+[02.28.24|05:53:30] 	Iter 78200 Done. | loss: 3.1198 | lr: 0.010000
+[02.28.24|05:53:32] 	train_mean_loss: 3.0882173135978026
+[02.28.24|05:53:32] Training epoch: 267
+[02.28.24|05:54:31] 	Iter 78300 Done. | loss: 3.6941 | lr: 0.010000
+[02.28.24|05:55:31] 	Iter 78400 Done. | loss: 2.9211 | lr: 0.010000
+[02.28.24|05:56:29] 	train_mean_loss: 2.970340915277702
+[02.28.24|05:56:29] Training epoch: 268
+[02.28.24|05:56:32] 	Iter 78500 Done. | loss: 4.3130 | lr: 0.010000
+[02.28.24|05:57:31] 	Iter 78600 Done. | loss: 3.1449 | lr: 0.010000
+[02.28.24|05:58:31] 	Iter 78700 Done. | loss: 2.3574 | lr: 0.010000
+[02.28.24|05:59:26] 	train_mean_loss: 3.181864231622138
+[02.28.24|05:59:26] Training epoch: 269
+[02.28.24|05:59:33] 	Iter 78800 Done. | loss: 3.9931 | lr: 0.010000
+[02.28.24|06:00:32] 	Iter 78900 Done. | loss: 2.5707 | lr: 0.010000
+[02.28.24|06:01:32] 	Iter 79000 Done. | loss: 3.1576 | lr: 0.010000
+[02.28.24|06:02:23] 	train_mean_loss: 3.0421820878982544
+[02.28.24|06:02:23] Training epoch: 270
+[02.28.24|06:02:33] 	Iter 79100 Done. | loss: 3.4321 | lr: 0.010000
+[02.28.24|06:03:33] 	Iter 79200 Done. | loss: 3.5930 | lr: 0.010000
+[02.28.24|06:04:33] 	Iter 79300 Done. | loss: 2.3320 | lr: 0.010000
+[02.28.24|06:05:20] 	train_mean_loss: 3.2522472272924827
+[02.28.24|06:05:21] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch270_model.pt.
+[02.28.24|06:05:21] KNN eval epoch 270
+[02.28.24|06:05:58] KNN - 10 current: 76.64%, best: 77.65%
+[02.28.24|06:05:58] KNN - 20 current: 75.71%, best: 77.26%
+[02.28.24|06:05:58] KNN - 40 current: 74.28%, best: 76.39%
+[02.28.24|06:05:58] Training epoch: 271
+[02.28.24|06:06:12] 	Iter 79400 Done. | loss: 3.2175 | lr: 0.010000
+[02.28.24|06:07:12] 	Iter 79500 Done. | loss: 3.2992 | lr: 0.010000
+[02.28.24|06:08:12] 	Iter 79600 Done. | loss: 3.1305 | lr: 0.010000
+[02.28.24|06:08:56] 	train_mean_loss: 3.152302310580299
+[02.28.24|06:08:56] Training epoch: 272
+[02.28.24|06:09:13] 	Iter 79700 Done. | loss: 2.7914 | lr: 0.010000
+[02.28.24|06:10:13] 	Iter 79800 Done. | loss: 2.8372 | lr: 0.010000
+[02.28.24|06:11:13] 	Iter 79900 Done. | loss: 4.5699 | lr: 0.010000
+[02.28.24|06:11:53] 	train_mean_loss: 3.161001975033559
+[02.28.24|06:11:53] Training epoch: 273
+[02.28.24|06:12:14] 	Iter 80000 Done. | loss: 2.5092 | lr: 0.010000
+[02.28.24|06:13:14] 	Iter 80100 Done. | loss: 2.7979 | lr: 0.010000
+[02.28.24|06:14:13] 	Iter 80200 Done. | loss: 5.1407 | lr: 0.010000
+[02.28.24|06:14:50] 	train_mean_loss: 2.984291211277449
+[02.28.24|06:14:50] Training epoch: 274
+[02.28.24|06:15:14] 	Iter 80300 Done. | loss: 3.1450 | lr: 0.010000
+[02.28.24|06:16:14] 	Iter 80400 Done. | loss: 4.7315 | lr: 0.010000
+[02.28.24|06:17:14] 	Iter 80500 Done. | loss: 3.6739 | lr: 0.010000
+[02.28.24|06:17:47] 	train_mean_loss: 3.1734481303870274
+[02.28.24|06:17:47] Training epoch: 275
+[02.28.24|06:18:15] 	Iter 80600 Done. | loss: 3.0638 | lr: 0.010000
+[02.28.24|06:19:15] 	Iter 80700 Done. | loss: 2.6421 | lr: 0.010000
+[02.28.24|06:20:15] 	Iter 80800 Done. | loss: 2.8342 | lr: 0.010000
+[02.28.24|06:20:44] 	train_mean_loss: 3.1413427299382737
+[02.28.24|06:20:45] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch275_model.pt.
+[02.28.24|06:20:45] KNN eval epoch 275
+[02.28.24|06:21:23] KNN - 10 current: 75.83%, best: 77.65%
+[02.28.24|06:21:23] KNN - 20 current: 74.87%, best: 77.26%
+[02.28.24|06:21:23] KNN - 40 current: 74.01%, best: 76.39%
+[02.28.24|06:21:23] Training epoch: 276
+[02.28.24|06:21:55] 	Iter 80900 Done. | loss: 2.8917 | lr: 0.010000
+[02.28.24|06:22:55] 	Iter 81000 Done. | loss: 2.9224 | lr: 0.010000
+[02.28.24|06:23:55] 	Iter 81100 Done. | loss: 5.0815 | lr: 0.010000
+[02.28.24|06:24:21] 	train_mean_loss: 3.357851720180641
+[02.28.24|06:24:21] Training epoch: 277
+[02.28.24|06:24:56] 	Iter 81200 Done. | loss: 2.4499 | lr: 0.010000
+[02.28.24|06:25:56] 	Iter 81300 Done. | loss: 4.1738 | lr: 0.010000
+[02.28.24|06:26:55] 	Iter 81400 Done. | loss: 3.0891 | lr: 0.010000
+[02.28.24|06:27:18] 	train_mean_loss: 3.182742950056686
+[02.28.24|06:27:18] Training epoch: 278
+[02.28.24|06:27:56] 	Iter 81500 Done. | loss: 3.4702 | lr: 0.010000
+[02.28.24|06:28:56] 	Iter 81600 Done. | loss: 4.1243 | lr: 0.010000
+[02.28.24|06:29:56] 	Iter 81700 Done. | loss: 2.5292 | lr: 0.010000
+[02.28.24|06:30:14] 	train_mean_loss: 3.2379367813772086
+[02.28.24|06:30:14] Training epoch: 279
+[02.28.24|06:30:56] 	Iter 81800 Done. | loss: 2.5011 | lr: 0.010000
+[02.28.24|06:31:56] 	Iter 81900 Done. | loss: 2.3195 | lr: 0.010000
+[02.28.24|06:32:56] 	Iter 82000 Done. | loss: 3.7380 | lr: 0.010000
+[02.28.24|06:33:11] 	train_mean_loss: 3.0262901904631634
+[02.28.24|06:33:11] Training epoch: 280
+[02.28.24|06:33:57] 	Iter 82100 Done. | loss: 2.4817 | lr: 0.010000
+[02.28.24|06:34:56] 	Iter 82200 Done. | loss: 2.8334 | lr: 0.010000
+[02.28.24|06:35:56] 	Iter 82300 Done. | loss: 2.8317 | lr: 0.010000
+[02.28.24|06:36:08] 	train_mean_loss: 3.187210790965022
+[02.28.24|06:36:09] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch280_model.pt.
+[02.28.24|06:36:09] KNN eval epoch 280
+[02.28.24|06:36:45] KNN - 10 current: 76.18%, best: 77.65%
+[02.28.24|06:36:45] KNN - 20 current: 75.30%, best: 77.26%
+[02.28.24|06:36:45] KNN - 40 current: 74.14%, best: 76.39%
+[02.28.24|06:36:45] Training epoch: 281
+[02.28.24|06:37:35] 	Iter 82400 Done. | loss: 2.4136 | lr: 0.010000
+[02.28.24|06:38:35] 	Iter 82500 Done. | loss: 3.7647 | lr: 0.010000
+[02.28.24|06:39:35] 	Iter 82600 Done. | loss: 2.8190 | lr: 0.010000
+[02.28.24|06:39:43] 	train_mean_loss: 3.1044017433309232
+[02.28.24|06:39:43] Training epoch: 282
+[02.28.24|06:40:36] 	Iter 82700 Done. | loss: 2.2690 | lr: 0.010000
+[02.28.24|06:41:36] 	Iter 82800 Done. | loss: 3.4449 | lr: 0.010000
+[02.28.24|06:42:36] 	Iter 82900 Done. | loss: 2.9985 | lr: 0.010000
+[02.28.24|06:42:40] 	train_mean_loss: 3.1661787195270565
+[02.28.24|06:42:40] Training epoch: 283
+[02.28.24|06:43:37] 	Iter 83000 Done. | loss: 2.5645 | lr: 0.010000
+[02.28.24|06:44:37] 	Iter 83100 Done. | loss: 5.5213 | lr: 0.010000
+[02.28.24|06:45:38] 	Iter 83200 Done. | loss: 2.6463 | lr: 0.010000
+[02.28.24|06:45:38] 	train_mean_loss: 3.193131830416569
+[02.28.24|06:45:38] Training epoch: 284
+[02.28.24|06:46:38] 	Iter 83300 Done. | loss: 3.5062 | lr: 0.010000
+[02.28.24|06:47:38] 	Iter 83400 Done. | loss: 2.9796 | lr: 0.010000
+[02.28.24|06:48:35] 	train_mean_loss: 3.2900367456228556
+[02.28.24|06:48:35] Training epoch: 285
+[02.28.24|06:48:39] 	Iter 83500 Done. | loss: 3.2485 | lr: 0.010000
+[02.28.24|06:49:39] 	Iter 83600 Done. | loss: 3.2195 | lr: 0.010000
+[02.28.24|06:50:39] 	Iter 83700 Done. | loss: 2.7807 | lr: 0.010000
+[02.28.24|06:51:32] 	train_mean_loss: 3.1214911248408206
+[02.28.24|06:51:33] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch285_model.pt.
+[02.28.24|06:51:33] KNN eval epoch 285
+[02.28.24|06:52:10] KNN - 10 current: 78.21%, best: 78.21%
+[02.28.24|06:52:10] KNN - 20 current: 77.39%, best: 77.39%
+[02.28.24|06:52:10] KNN - 40 current: 76.55%, best: 76.55%
+[02.28.24|06:52:10] Training epoch: 286
+[02.28.24|06:52:18] 	Iter 83800 Done. | loss: 2.9457 | lr: 0.010000
+[02.28.24|06:53:18] 	Iter 83900 Done. | loss: 2.9876 | lr: 0.010000
+[02.28.24|06:54:17] 	Iter 84000 Done. | loss: 3.0750 | lr: 0.010000
+[02.28.24|06:55:07] 	train_mean_loss: 3.3211994706367958
+[02.28.24|06:55:07] Training epoch: 287
+[02.28.24|06:55:18] 	Iter 84100 Done. | loss: 4.6055 | lr: 0.010000
+[02.28.24|06:56:18] 	Iter 84200 Done. | loss: 3.2224 | lr: 0.010000
+[02.28.24|06:57:18] 	Iter 84300 Done. | loss: 3.2431 | lr: 0.010000
+[02.28.24|06:58:04] 	train_mean_loss: 3.2908068757478883
+[02.28.24|06:58:04] Training epoch: 288
+[02.28.24|06:58:19] 	Iter 84400 Done. | loss: 2.7582 | lr: 0.010000
+[02.28.24|06:59:19] 	Iter 84500 Done. | loss: 2.7395 | lr: 0.010000
+[02.28.24|07:00:18] 	Iter 84600 Done. | loss: 3.0093 | lr: 0.010000
+[02.28.24|07:01:01] 	train_mean_loss: 3.2459711120242165
+[02.28.24|07:01:01] Training epoch: 289
+[02.28.24|07:01:20] 	Iter 84700 Done. | loss: 3.6620 | lr: 0.010000
+[02.28.24|07:02:20] 	Iter 84800 Done. | loss: 4.0490 | lr: 0.010000
+[02.28.24|07:03:20] 	Iter 84900 Done. | loss: 3.2422 | lr: 0.010000
+[02.28.24|07:03:59] 	train_mean_loss: 3.239858614344175
+[02.28.24|07:03:59] Training epoch: 290
+[02.28.24|07:04:21] 	Iter 85000 Done. | loss: 2.9161 | lr: 0.010000
+[02.28.24|07:05:21] 	Iter 85100 Done. | loss: 3.4981 | lr: 0.010000
+[02.28.24|07:06:21] 	Iter 85200 Done. | loss: 3.0608 | lr: 0.010000
+[02.28.24|07:06:56] 	train_mean_loss: 3.2396529637226443
+[02.28.24|07:06:57] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch290_model.pt.
+[02.28.24|07:06:57] KNN eval epoch 290
+[02.28.24|07:07:33] KNN - 10 current: 76.69%, best: 78.21%
+[02.28.24|07:07:33] KNN - 20 current: 76.05%, best: 77.39%
+[02.28.24|07:07:33] KNN - 40 current: 75.27%, best: 76.55%
+[02.28.24|07:07:33] Training epoch: 291
+[02.28.24|07:07:59] 	Iter 85300 Done. | loss: 2.8454 | lr: 0.010000
+[02.28.24|07:08:59] 	Iter 85400 Done. | loss: 3.7413 | lr: 0.010000
+[02.28.24|07:09:59] 	Iter 85500 Done. | loss: 2.7863 | lr: 0.010000
+[02.28.24|07:10:31] 	train_mean_loss: 3.3429572711996483
+[02.28.24|07:10:31] Training epoch: 292
+[02.28.24|07:11:00] 	Iter 85600 Done. | loss: 3.2807 | lr: 0.010000
+[02.28.24|07:11:59] 	Iter 85700 Done. | loss: 3.6553 | lr: 0.010000
+[02.28.24|07:12:59] 	Iter 85800 Done. | loss: 3.1141 | lr: 0.010000
+[02.28.24|07:13:27] 	train_mean_loss: 3.443576604330621
+[02.28.24|07:13:27] Training epoch: 293
+[02.28.24|07:14:00] 	Iter 85900 Done. | loss: 2.4829 | lr: 0.010000
+[02.28.24|07:15:00] 	Iter 86000 Done. | loss: 2.3284 | lr: 0.010000
+[02.28.24|07:15:59] 	Iter 86100 Done. | loss: 2.9993 | lr: 0.010000
+[02.28.24|07:16:24] 	train_mean_loss: 3.180611263327047
+[02.28.24|07:16:24] Training epoch: 294
+[02.28.24|07:17:00] 	Iter 86200 Done. | loss: 2.6638 | lr: 0.010000
+[02.28.24|07:18:00] 	Iter 86300 Done. | loss: 4.3443 | lr: 0.010000
+[02.28.24|07:19:00] 	Iter 86400 Done. | loss: 3.2900 | lr: 0.010000
+[02.28.24|07:19:21] 	train_mean_loss: 3.490375435271231
+[02.28.24|07:19:21] Training epoch: 295
+[02.28.24|07:20:01] 	Iter 86500 Done. | loss: 4.8367 | lr: 0.010000
+[02.28.24|07:21:01] 	Iter 86600 Done. | loss: 2.4415 | lr: 0.010000
+[02.28.24|07:22:01] 	Iter 86700 Done. | loss: 2.6715 | lr: 0.010000
+[02.28.24|07:22:19] 	train_mean_loss: 3.169009729307525
+[02.28.24|07:22:20] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch295_model.pt.
+[02.28.24|07:22:20] KNN eval epoch 295
+[02.28.24|07:22:56] KNN - 10 current: 76.70%, best: 78.21%
+[02.28.24|07:22:56] KNN - 20 current: 76.01%, best: 77.39%
+[02.28.24|07:22:56] KNN - 40 current: 75.08%, best: 76.55%
+[02.28.24|07:22:56] Training epoch: 296
+[02.28.24|07:23:40] 	Iter 86800 Done. | loss: 2.8248 | lr: 0.010000
+[02.28.24|07:24:39] 	Iter 86900 Done. | loss: 2.7751 | lr: 0.010000
+[02.28.24|07:25:39] 	Iter 87000 Done. | loss: 3.2869 | lr: 0.010000
+[02.28.24|07:25:53] 	train_mean_loss: 3.350652902304721
+[02.28.24|07:25:53] Training epoch: 297
+[02.28.24|07:26:41] 	Iter 87100 Done. | loss: 4.6336 | lr: 0.010000
+[02.28.24|07:27:40] 	Iter 87200 Done. | loss: 2.7459 | lr: 0.010000
+[02.28.24|07:28:40] 	Iter 87300 Done. | loss: 3.5432 | lr: 0.010000
+[02.28.24|07:28:50] 	train_mean_loss: 3.0802551410636125
+[02.28.24|07:28:50] Training epoch: 298
+[02.28.24|07:29:41] 	Iter 87400 Done. | loss: 3.6702 | lr: 0.010000
+[02.28.24|07:30:41] 	Iter 87500 Done. | loss: 3.3797 | lr: 0.010000
+[02.28.24|07:31:41] 	Iter 87600 Done. | loss: 2.9260 | lr: 0.010000
+[02.28.24|07:31:47] 	train_mean_loss: 3.379319358034199
+[02.28.24|07:31:47] Training epoch: 299
+[02.28.24|07:32:42] 	Iter 87700 Done. | loss: 2.6084 | lr: 0.010000
+[02.28.24|07:33:42] 	Iter 87800 Done. | loss: 3.8876 | lr: 0.010000
+[02.28.24|07:34:41] 	Iter 87900 Done. | loss: 4.2111 | lr: 0.010000
+[02.28.24|07:34:44] 	train_mean_loss: 3.227532731432493
+[02.28.24|07:34:44] Training epoch: 300
+[02.28.24|07:35:42] 	Iter 88000 Done. | loss: 3.2513 | lr: 0.010000
+[02.28.24|07:36:42] 	Iter 88100 Done. | loss: 2.4692 | lr: 0.010000
+[02.28.24|07:37:42] 	train_mean_loss: 3.2608583808756197
+[02.28.24|07:37:43] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch300_model.pt.
+[02.28.24|07:37:43] KNN eval epoch 300
+[02.28.24|07:38:20] KNN - 10 current: 77.30%, best: 78.21%
+[02.28.24|07:38:20] KNN - 20 current: 76.60%, best: 77.39%
+[02.28.24|07:38:20] KNN - 40 current: 75.57%, best: 76.55%
+[02.28.24|07:38:20] Training epoch: 301
+[02.28.24|07:38:21] 	Iter 88200 Done. | loss: 2.0290 | lr: 0.010000
+[02.28.24|07:39:20] 	Iter 88300 Done. | loss: 2.1694 | lr: 0.010000
+[02.28.24|07:40:18] 	Iter 88400 Done. | loss: 1.7251 | lr: 0.010000
+[02.28.24|07:41:12] 	train_mean_loss: 2.3132533025579387
+[02.28.24|07:41:12] Training epoch: 302
+[02.28.24|07:41:17] 	Iter 88500 Done. | loss: 1.7402 | lr: 0.010000
+[02.28.24|07:42:15] 	Iter 88600 Done. | loss: 1.6076 | lr: 0.010000
+[02.28.24|07:43:13] 	Iter 88700 Done. | loss: 1.9332 | lr: 0.010000
+[02.28.24|07:44:04] 	train_mean_loss: 2.258896350455122
+[02.28.24|07:44:04] Training epoch: 303
+[02.28.24|07:44:12] 	Iter 88800 Done. | loss: 1.9772 | lr: 0.010000
+[02.28.24|07:45:10] 	Iter 88900 Done. | loss: 3.4976 | lr: 0.010000
+[02.28.24|07:46:09] 	Iter 89000 Done. | loss: 1.8732 | lr: 0.010000
+[02.28.24|07:46:56] 	train_mean_loss: 2.1948630031274288
+[02.28.24|07:46:56] Training epoch: 304
+[02.28.24|07:47:07] 	Iter 89100 Done. | loss: 1.7013 | lr: 0.010000
+[02.28.24|07:48:06] 	Iter 89200 Done. | loss: 5.2148 | lr: 0.010000
+[02.28.24|07:49:04] 	Iter 89300 Done. | loss: 2.8892 | lr: 0.010000
+[02.28.24|07:49:48] 	train_mean_loss: 2.2348924185953982
+[02.28.24|07:49:48] Training epoch: 305
+[02.28.24|07:50:03] 	Iter 89400 Done. | loss: 2.2147 | lr: 0.010000
+[02.28.24|07:51:01] 	Iter 89500 Done. | loss: 2.1577 | lr: 0.010000
+[02.28.24|07:51:59] 	Iter 89600 Done. | loss: 1.8828 | lr: 0.010000
+[02.28.24|07:52:40] 	train_mean_loss: 2.243905545497427
+[02.28.24|07:52:41] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch305_model.pt.
+[02.28.24|07:52:41] KNN eval epoch 305
+[02.28.24|07:53:18] KNN - 10 current: 76.82%, best: 78.21%
+[02.28.24|07:53:18] KNN - 20 current: 76.22%, best: 77.39%
+[02.28.24|07:53:18] KNN - 40 current: 75.59%, best: 76.55%
+[02.28.24|07:53:18] Training epoch: 306
+[02.28.24|07:53:37] 	Iter 89700 Done. | loss: 2.1731 | lr: 0.010000
+[02.28.24|07:54:35] 	Iter 89800 Done. | loss: 1.4913 | lr: 0.010000
+[02.28.24|07:55:33] 	Iter 89900 Done. | loss: 2.2406 | lr: 0.010000
+[02.28.24|07:56:10] 	train_mean_loss: 2.2755802188600813
+[02.28.24|07:56:10] Training epoch: 307
+[02.28.24|07:56:32] 	Iter 90000 Done. | loss: 2.0068 | lr: 0.010000
+[02.28.24|07:57:30] 	Iter 90100 Done. | loss: 1.8301 | lr: 0.010000
+[02.28.24|07:58:28] 	Iter 90200 Done. | loss: 2.7288 | lr: 0.010000
+[02.28.24|07:59:02] 	train_mean_loss: 2.316666776631154
+[02.28.24|07:59:02] Training epoch: 308
+[02.28.24|07:59:27] 	Iter 90300 Done. | loss: 3.1180 | lr: 0.010000
+[02.28.24|08:00:26] 	Iter 90400 Done. | loss: 1.5040 | lr: 0.010000
+[02.28.24|08:01:24] 	Iter 90500 Done. | loss: 1.9203 | lr: 0.010000
+[02.28.24|08:01:53] 	train_mean_loss: 2.2530139579253943
+[02.28.24|08:01:54] Training epoch: 309
+[02.28.24|08:02:22] 	Iter 90600 Done. | loss: 1.8674 | lr: 0.010000
+[02.28.24|08:03:21] 	Iter 90700 Done. | loss: 1.8446 | lr: 0.010000
+[02.28.24|08:04:19] 	Iter 90800 Done. | loss: 2.3327 | lr: 0.010000
+[02.28.24|08:04:45] 	train_mean_loss: 2.3177332423982167
+[02.28.24|08:04:45] Training epoch: 310
+[02.28.24|08:05:18] 	Iter 90900 Done. | loss: 1.6423 | lr: 0.010000
+[02.28.24|08:06:16] 	Iter 91000 Done. | loss: 1.9030 | lr: 0.010000
+[02.28.24|08:07:14] 	Iter 91100 Done. | loss: 2.0435 | lr: 0.010000
+[02.28.24|08:07:37] 	train_mean_loss: 2.307519804863703
+[02.28.24|08:07:38] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch310_model.pt.
+[02.28.24|08:07:38] KNN eval epoch 310
+[02.28.24|08:08:14] KNN - 10 current: 76.39%, best: 78.21%
+[02.28.24|08:08:14] KNN - 20 current: 75.87%, best: 77.39%
+[02.28.24|08:08:14] KNN - 40 current: 74.38%, best: 76.55%
+[02.28.24|08:08:14] Training epoch: 311
+[02.28.24|08:08:50] 	Iter 91200 Done. | loss: 2.2167 | lr: 0.010000
+[02.28.24|08:09:48] 	Iter 91300 Done. | loss: 3.6893 | lr: 0.010000
+[02.28.24|08:10:47] 	Iter 91400 Done. | loss: 4.6773 | lr: 0.010000
+[02.28.24|08:11:06] 	train_mean_loss: 2.227733244701308
+[02.28.24|08:11:06] Training epoch: 312
+[02.28.24|08:11:45] 	Iter 91500 Done. | loss: 2.0655 | lr: 0.010000
+[02.28.24|08:12:44] 	Iter 91600 Done. | loss: 1.9678 | lr: 0.010000
+[02.28.24|08:13:42] 	Iter 91700 Done. | loss: 1.9490 | lr: 0.010000
+[02.28.24|08:13:58] 	train_mean_loss: 2.255393780413128
+[02.28.24|08:13:58] Training epoch: 313
+[02.28.24|08:14:41] 	Iter 91800 Done. | loss: 1.9897 | lr: 0.010000
+[02.28.24|08:15:39] 	Iter 91900 Done. | loss: 1.8204 | lr: 0.010000
+[02.28.24|08:16:37] 	Iter 92000 Done. | loss: 2.3956 | lr: 0.010000
+[02.28.24|08:16:50] 	train_mean_loss: 2.317521733491599
+[02.28.24|08:16:50] Training epoch: 314
+[02.28.24|08:17:36] 	Iter 92100 Done. | loss: 2.1449 | lr: 0.010000
+[02.28.24|08:18:34] 	Iter 92200 Done. | loss: 1.8320 | lr: 0.010000
+[02.28.24|08:19:33] 	Iter 92300 Done. | loss: 2.3966 | lr: 0.010000
+[02.28.24|08:19:42] 	train_mean_loss: 2.3149961630503335
+[02.28.24|08:19:42] Training epoch: 315
+[02.28.24|08:20:31] 	Iter 92400 Done. | loss: 3.0641 | lr: 0.010000
+[02.28.24|08:21:30] 	Iter 92500 Done. | loss: 2.1935 | lr: 0.010000
+[02.28.24|08:22:28] 	Iter 92600 Done. | loss: 1.9385 | lr: 0.010000
+[02.28.24|08:22:33] 	train_mean_loss: 2.2909636156899587
+[02.28.24|08:22:34] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch315_model.pt.
+[02.28.24|08:22:34] KNN eval epoch 315
+[02.28.24|08:23:12] KNN - 10 current: 75.39%, best: 78.21%
+[02.28.24|08:23:12] KNN - 20 current: 75.33%, best: 77.39%
+[02.28.24|08:23:12] KNN - 40 current: 74.19%, best: 76.55%
+[02.28.24|08:23:12] Training epoch: 316
+[02.28.24|08:24:05] 	Iter 92700 Done. | loss: 1.8594 | lr: 0.010000
+[02.28.24|08:25:03] 	Iter 92800 Done. | loss: 1.9753 | lr: 0.010000
+[02.28.24|08:26:02] 	Iter 92900 Done. | loss: 2.1692 | lr: 0.010000
+[02.28.24|08:26:03] 	train_mean_loss: 2.2862534591940795
+[02.28.24|08:26:03] Training epoch: 317
+[02.28.24|08:27:00] 	Iter 93000 Done. | loss: 1.8018 | lr: 0.010000
+[02.28.24|08:27:59] 	Iter 93100 Done. | loss: 1.7731 | lr: 0.010000
+[02.28.24|08:28:55] 	train_mean_loss: 2.357874970452315
+[02.28.24|08:28:56] Training epoch: 318
+[02.28.24|08:28:58] 	Iter 93200 Done. | loss: 4.0214 | lr: 0.010000
+[02.28.24|08:29:56] 	Iter 93300 Done. | loss: 1.9023 | lr: 0.010000
+[02.28.24|08:30:54] 	Iter 93400 Done. | loss: 1.7066 | lr: 0.010000
+[02.28.24|08:31:47] 	train_mean_loss: 2.4247365942617662
+[02.28.24|08:31:47] Training epoch: 319
+[02.28.24|08:31:53] 	Iter 93500 Done. | loss: 1.9586 | lr: 0.010000
+[02.28.24|08:32:51] 	Iter 93600 Done. | loss: 3.9970 | lr: 0.010000
+[02.28.24|08:33:50] 	Iter 93700 Done. | loss: 2.9688 | lr: 0.010000
+[02.28.24|08:34:40] 	train_mean_loss: 2.3382723140878743
+[02.28.24|08:34:40] Training epoch: 320
+[02.28.24|08:34:49] 	Iter 93800 Done. | loss: 4.6151 | lr: 0.010000
+[02.28.24|08:35:47] 	Iter 93900 Done. | loss: 1.7720 | lr: 0.010000
+[02.28.24|08:36:45] 	Iter 94000 Done. | loss: 1.6956 | lr: 0.010000
+[02.28.24|08:37:32] 	train_mean_loss: 2.4184836189763077
+[02.28.24|08:37:33] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch320_model.pt.
+[02.28.24|08:37:33] KNN eval epoch 320
+[02.28.24|08:38:09] KNN - 10 current: 75.32%, best: 78.21%
+[02.28.24|08:38:09] KNN - 20 current: 74.42%, best: 77.39%
+[02.28.24|08:38:09] KNN - 40 current: 73.97%, best: 76.55%
+[02.28.24|08:38:09] Training epoch: 321
+[02.28.24|08:38:22] 	Iter 94100 Done. | loss: 1.8495 | lr: 0.010000
+[02.28.24|08:39:20] 	Iter 94200 Done. | loss: 1.9662 | lr: 0.010000
+[02.28.24|08:40:18] 	Iter 94300 Done. | loss: 2.0982 | lr: 0.010000
+[02.28.24|08:41:01] 	train_mean_loss: 2.3460671338094334
+[02.28.24|08:41:01] Training epoch: 322
+[02.28.24|08:41:17] 	Iter 94400 Done. | loss: 2.2284 | lr: 0.010000
+[02.28.24|08:42:15] 	Iter 94500 Done. | loss: 5.2786 | lr: 0.010000
+[02.28.24|08:43:14] 	Iter 94600 Done. | loss: 3.3452 | lr: 0.010000
+[02.28.24|08:43:53] 	train_mean_loss: 2.4615309104627494
+[02.28.24|08:43:53] Training epoch: 323
+[02.28.24|08:44:13] 	Iter 94700 Done. | loss: 2.0371 | lr: 0.010000
+[02.28.24|08:45:11] 	Iter 94800 Done. | loss: 2.4588 | lr: 0.010000
+[02.28.24|08:46:09] 	Iter 94900 Done. | loss: 2.5421 | lr: 0.010000
+[02.28.24|08:46:45] 	train_mean_loss: 2.445469600002782
+[02.28.24|08:46:45] Training epoch: 324
+[02.28.24|08:47:08] 	Iter 95000 Done. | loss: 1.9555 | lr: 0.010000
+[02.28.24|08:48:06] 	Iter 95100 Done. | loss: 5.7331 | lr: 0.010000
+[02.28.24|08:49:04] 	Iter 95200 Done. | loss: 3.4084 | lr: 0.010000
+[02.28.24|08:49:37] 	train_mean_loss: 2.478502814056111
+[02.28.24|08:49:37] Training epoch: 325
+[02.28.24|08:50:03] 	Iter 95300 Done. | loss: 3.2693 | lr: 0.010000
+[02.28.24|08:51:01] 	Iter 95400 Done. | loss: 4.3310 | lr: 0.010000
+[02.28.24|08:52:00] 	Iter 95500 Done. | loss: 2.4244 | lr: 0.010000
+[02.28.24|08:52:28] 	train_mean_loss: 2.4566593247206034
+[02.28.24|08:52:29] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch325_model.pt.
+[02.28.24|08:52:29] KNN eval epoch 325
+[02.28.24|08:53:06] KNN - 10 current: 74.36%, best: 78.21%
+[02.28.24|08:53:06] KNN - 20 current: 74.27%, best: 77.39%
+[02.28.24|08:53:06] KNN - 40 current: 73.38%, best: 76.55%
+[02.28.24|08:53:06] Training epoch: 326
+[02.28.24|08:53:36] 	Iter 95600 Done. | loss: 2.0340 | lr: 0.010000
+[02.28.24|08:54:34] 	Iter 95700 Done. | loss: 2.0740 | lr: 0.010000
+[02.28.24|08:55:32] 	Iter 95800 Done. | loss: 2.3543 | lr: 0.010000
+[02.28.24|08:55:58] 	train_mean_loss: 2.4354643383804633
+[02.28.24|08:55:58] Training epoch: 327
+[02.28.24|08:56:31] 	Iter 95900 Done. | loss: 2.9751 | lr: 0.010000
+[02.28.24|08:57:29] 	Iter 96000 Done. | loss: 1.6596 | lr: 0.010000
+[02.28.24|08:58:28] 	Iter 96100 Done. | loss: 1.7758 | lr: 0.010000
+[02.28.24|08:58:49] 	train_mean_loss: 2.388687506013987
+[02.28.24|08:58:49] Training epoch: 328
+[02.28.24|08:59:27] 	Iter 96200 Done. | loss: 4.9994 | lr: 0.010000
+[02.28.24|09:00:25] 	Iter 96300 Done. | loss: 1.9091 | lr: 0.010000
+[02.28.24|09:01:23] 	Iter 96400 Done. | loss: 2.4414 | lr: 0.010000
+[02.28.24|09:01:42] 	train_mean_loss: 2.4566289255408202
+[02.28.24|09:01:42] Training epoch: 329
+[02.28.24|09:02:22] 	Iter 96500 Done. | loss: 4.1855 | lr: 0.010000
+[02.28.24|09:03:20] 	Iter 96600 Done. | loss: 2.1374 | lr: 0.010000
+[02.28.24|09:04:19] 	Iter 96700 Done. | loss: 1.7094 | lr: 0.010000
+[02.28.24|09:04:33] 	train_mean_loss: 2.4882054989840707
+[02.28.24|09:04:33] Training epoch: 330
+[02.28.24|09:05:18] 	Iter 96800 Done. | loss: 2.1842 | lr: 0.010000
+[02.28.24|09:06:16] 	Iter 96900 Done. | loss: 3.5802 | lr: 0.010000
+[02.28.24|09:07:14] 	Iter 97000 Done. | loss: 2.0076 | lr: 0.010000
+[02.28.24|09:07:25] 	train_mean_loss: 2.5195260068186287
+[02.28.24|09:07:26] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch330_model.pt.
+[02.28.24|09:07:26] KNN eval epoch 330
+[02.28.24|09:08:03] KNN - 10 current: 74.35%, best: 78.21%
+[02.28.24|09:08:03] KNN - 20 current: 73.55%, best: 77.39%
+[02.28.24|09:08:03] KNN - 40 current: 72.70%, best: 76.55%
+[02.28.24|09:08:03] Training epoch: 331
+[02.28.24|09:08:51] 	Iter 97100 Done. | loss: 1.8325 | lr: 0.010000
+[02.28.24|09:09:49] 	Iter 97200 Done. | loss: 1.9254 | lr: 0.010000
+[02.28.24|09:10:48] 	Iter 97300 Done. | loss: 3.8885 | lr: 0.010000
+[02.28.24|09:10:55] 	train_mean_loss: 2.574756604473607
+[02.28.24|09:10:55] Training epoch: 332
+[02.28.24|09:11:46] 	Iter 97400 Done. | loss: 2.2855 | lr: 0.010000
+[02.28.24|09:12:45] 	Iter 97500 Done. | loss: 2.2019 | lr: 0.010000
+[02.28.24|09:13:43] 	Iter 97600 Done. | loss: 2.0129 | lr: 0.010000
+[02.28.24|09:13:47] 	train_mean_loss: 2.4586566508221788
+[02.28.24|09:13:47] Training epoch: 333
+[02.28.24|09:14:42] 	Iter 97700 Done. | loss: 2.1452 | lr: 0.010000
+[02.28.24|09:15:40] 	Iter 97800 Done. | loss: 2.4828 | lr: 0.010000
+[02.28.24|09:16:38] 	Iter 97900 Done. | loss: 3.2483 | lr: 0.010000
+[02.28.24|09:16:39] 	train_mean_loss: 2.5825738594645546
+[02.28.24|09:16:39] Training epoch: 334
+[02.28.24|09:17:37] 	Iter 98000 Done. | loss: 2.4570 | lr: 0.010000
+[02.28.24|09:18:35] 	Iter 98100 Done. | loss: 1.8973 | lr: 0.010000
+[02.28.24|09:19:31] 	train_mean_loss: 2.5378078068194747
+[02.28.24|09:19:31] Training epoch: 335
+[02.28.24|09:19:34] 	Iter 98200 Done. | loss: 2.1940 | lr: 0.010000
+[02.28.24|09:20:33] 	Iter 98300 Done. | loss: 2.0817 | lr: 0.010000
+[02.28.24|09:21:31] 	Iter 98400 Done. | loss: 2.6703 | lr: 0.010000
+[02.28.24|09:22:23] 	train_mean_loss: 2.6454949168120923
+[02.28.24|09:22:24] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch335_model.pt.
+[02.28.24|09:22:24] KNN eval epoch 335
+[02.28.24|09:23:01] KNN - 10 current: 73.27%, best: 78.21%
+[02.28.24|09:23:01] KNN - 20 current: 73.10%, best: 77.39%
+[02.28.24|09:23:01] KNN - 40 current: 72.69%, best: 76.55%
+[02.28.24|09:23:01] Training epoch: 336
+[02.28.24|09:23:08] 	Iter 98500 Done. | loss: 2.5615 | lr: 0.010000
+[02.28.24|09:24:06] 	Iter 98600 Done. | loss: 2.2579 | lr: 0.010000
+[02.28.24|09:25:04] 	Iter 98700 Done. | loss: 1.8815 | lr: 0.010000
+[02.28.24|09:25:53] 	train_mean_loss: 2.602769829383513
+[02.28.24|09:25:53] Training epoch: 337
+[02.28.24|09:26:03] 	Iter 98800 Done. | loss: 2.0279 | lr: 0.010000
+[02.28.24|09:27:02] 	Iter 98900 Done. | loss: 2.2205 | lr: 0.010000
+[02.28.24|09:28:00] 	Iter 99000 Done. | loss: 2.2755 | lr: 0.010000
+[02.28.24|09:28:45] 	train_mean_loss: 2.6770438673544903
+[02.28.24|09:28:45] Training epoch: 338
+[02.28.24|09:28:59] 	Iter 99100 Done. | loss: 2.3718 | lr: 0.010000
+[02.28.24|09:29:57] 	Iter 99200 Done. | loss: 1.8134 | lr: 0.010000
+[02.28.24|09:30:55] 	Iter 99300 Done. | loss: 1.8137 | lr: 0.010000
+[02.28.24|09:31:37] 	train_mean_loss: 2.7012207532415586
+[02.28.24|09:31:37] Training epoch: 339
+[02.28.24|09:31:54] 	Iter 99400 Done. | loss: 2.2965 | lr: 0.010000
+[02.28.24|09:32:52] 	Iter 99500 Done. | loss: 2.1052 | lr: 0.010000
+[02.28.24|09:33:50] 	Iter 99600 Done. | loss: 2.1693 | lr: 0.010000
+[02.28.24|09:34:28] 	train_mean_loss: 2.6649370108331953
+[02.28.24|09:34:28] Training epoch: 340
+[02.28.24|09:34:49] 	Iter 99700 Done. | loss: 3.4309 | lr: 0.010000
+[02.28.24|09:35:47] 	Iter 99800 Done. | loss: 2.0222 | lr: 0.010000
+[02.28.24|09:36:45] 	Iter 99900 Done. | loss: 1.9391 | lr: 0.010000
+[02.28.24|09:37:20] 	train_mean_loss: 2.695992108915939
+[02.28.24|09:37:21] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch340_model.pt.
+[02.28.24|09:37:21] KNN eval epoch 340
+[02.28.24|09:37:57] KNN - 10 current: 72.49%, best: 78.21%
+[02.28.24|09:37:57] KNN - 20 current: 72.59%, best: 77.39%
+[02.28.24|09:37:57] KNN - 40 current: 71.76%, best: 76.55%
+[02.28.24|09:37:57] Training epoch: 341
+[02.28.24|09:38:22] 	Iter 100000 Done. | loss: 2.8712 | lr: 0.010000
+[02.28.24|09:39:20] 	Iter 100100 Done. | loss: 1.8101 | lr: 0.010000
+[02.28.24|09:40:18] 	Iter 100200 Done. | loss: 2.7058 | lr: 0.010000
+[02.28.24|09:40:49] 	train_mean_loss: 2.719310145394332
+[02.28.24|09:40:49] Training epoch: 342
+[02.28.24|09:41:17] 	Iter 100300 Done. | loss: 4.6138 | lr: 0.010000
+[02.28.24|09:42:15] 	Iter 100400 Done. | loss: 2.2256 | lr: 0.010000
+[02.28.24|09:43:14] 	Iter 100500 Done. | loss: 2.3767 | lr: 0.010000
+[02.28.24|09:43:41] 	train_mean_loss: 2.688833104104412
+[02.28.24|09:43:41] Training epoch: 343
+[02.28.24|09:44:13] 	Iter 100600 Done. | loss: 2.6399 | lr: 0.010000
+[02.28.24|09:45:11] 	Iter 100700 Done. | loss: 2.8074 | lr: 0.010000
+[02.28.24|09:46:09] 	Iter 100800 Done. | loss: 2.2782 | lr: 0.010000
+[02.28.24|09:46:33] 	train_mean_loss: 2.721008471485709
+[02.28.24|09:46:33] Training epoch: 344
+[02.28.24|09:47:08] 	Iter 100900 Done. | loss: 1.7584 | lr: 0.010000
+[02.28.24|09:48:07] 	Iter 101000 Done. | loss: 2.5284 | lr: 0.010000
+[02.28.24|09:49:05] 	Iter 101100 Done. | loss: 5.1063 | lr: 0.010000
+[02.28.24|09:49:26] 	train_mean_loss: 2.738408994512493
+[02.28.24|09:49:26] Training epoch: 345
+[02.28.24|09:50:04] 	Iter 101200 Done. | loss: 2.5241 | lr: 0.010000
+[02.28.24|09:51:03] 	Iter 101300 Done. | loss: 2.8469 | lr: 0.010000
+[02.28.24|09:52:01] 	Iter 101400 Done. | loss: 2.5565 | lr: 0.010000
+[02.28.24|09:52:18] 	train_mean_loss: 2.8032808364654076
+[02.28.24|09:52:19] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch345_model.pt.
+[02.28.24|09:52:19] KNN eval epoch 345
+[02.28.24|09:52:56] KNN - 10 current: 72.44%, best: 78.21%
+[02.28.24|09:52:56] KNN - 20 current: 72.02%, best: 77.39%
+[02.28.24|09:52:56] KNN - 40 current: 71.27%, best: 76.55%
+[02.28.24|09:52:56] Training epoch: 346
+[02.28.24|09:53:38] 	Iter 101500 Done. | loss: 2.3997 | lr: 0.010000
+[02.28.24|09:54:37] 	Iter 101600 Done. | loss: 3.4669 | lr: 0.010000
+[02.28.24|09:55:35] 	Iter 101700 Done. | loss: 3.3859 | lr: 0.010000
+[02.28.24|09:55:48] 	train_mean_loss: 2.7964870094442045
+[02.28.24|09:55:48] Training epoch: 347
+[02.28.24|09:56:34] 	Iter 101800 Done. | loss: 2.2705 | lr: 0.010000
+[02.28.24|09:57:32] 	Iter 101900 Done. | loss: 2.4774 | lr: 0.010000
+[02.28.24|09:58:30] 	Iter 102000 Done. | loss: 2.6603 | lr: 0.010000
+[02.28.24|09:58:40] 	train_mean_loss: 2.841929305572899
+[02.28.24|09:58:40] Training epoch: 348
+[02.28.24|09:59:29] 	Iter 102100 Done. | loss: 2.6509 | lr: 0.010000
+[02.28.24|10:00:27] 	Iter 102200 Done. | loss: 4.5512 | lr: 0.010000
+[02.28.24|10:01:26] 	Iter 102300 Done. | loss: 4.1091 | lr: 0.010000
+[02.28.24|10:01:32] 	train_mean_loss: 2.7857402133292894
+[02.28.24|10:01:32] Training epoch: 349
+[02.28.24|10:02:24] 	Iter 102400 Done. | loss: 2.0704 | lr: 0.010000
+[02.28.24|10:03:23] 	Iter 102500 Done. | loss: 2.1141 | lr: 0.010000
+[02.28.24|10:04:21] 	Iter 102600 Done. | loss: 2.8930 | lr: 0.010000
+[02.28.24|10:04:24] 	train_mean_loss: 2.7669024070103965
+[02.28.24|10:04:24] Training epoch: 350
+[02.28.24|10:05:20] 	Iter 102700 Done. | loss: 2.6093 | lr: 0.010000
+[02.28.24|10:06:18] 	Iter 102800 Done. | loss: 2.7344 | lr: 0.010000
+[02.28.24|10:07:16] 	train_mean_loss: 2.86593427504001
+[02.28.24|10:07:17] The model has been saved as ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch350_model.pt.
+[02.28.24|10:07:17] KNN eval epoch 350
+[02.28.24|10:07:54] KNN - 10 current: 72.00%, best: 78.21%
+[02.28.24|10:07:54] KNN - 20 current: 71.39%, best: 77.39%
+[02.28.24|10:07:54] KNN - 40 current: 70.80%, best: 76.55%
+[02.28.24|10:07:54] ********** KNN Result **********
+[02.28.24|10:07:54] 	50-10: cur-75.07%, best-75.07%
+[02.28.24|10:07:54] 	50-20: cur-74.46%, best-74.46%
+[02.28.24|10:07:54] 	50-40: cur-73.67%, best-73.67%
+[02.28.24|10:07:54] 	100-10: cur-75.85%, best-75.85%
+[02.28.24|10:07:54] 	100-20: cur-75.35%, best-75.35%
+[02.28.24|10:07:54] 	100-40: cur-74.41%, best-74.41%
+[02.28.24|10:07:54] 	150-10: cur-73.52%, best-76.28%
+[02.28.24|10:07:54] 	150-20: cur-72.91%, best-75.96%
+[02.28.24|10:07:54] 	150-40: cur-71.50%, best-74.41%
+[02.28.24|10:07:54] 	200-10: cur-76.16%, best-76.28%
+[02.28.24|10:07:54] 	200-20: cur-75.39%, best-75.96%
+[02.28.24|10:07:54] 	200-40: cur-74.28%, best-74.64%
+[02.28.24|10:07:54] 	250-10: cur-74.82%, best-76.58%
+[02.28.24|10:07:54] 	250-20: cur-74.36%, best-76.25%
+[02.28.24|10:07:54] 	250-40: cur-73.09%, best-75.71%
+[02.28.24|10:07:54] 	300-10: cur-77.30%, best-78.21%
+[02.28.24|10:07:54] 	300-20: cur-76.60%, best-77.39%
+[02.28.24|10:07:54] 	300-40: cur-75.57%, best-76.55%

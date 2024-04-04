@@ -1,0 +1,91 @@
+# command line: main.py pretrain_actclr --config ./config/ntu60/pretext/pretext_actclr_xview_joint.yaml
+
+KNN_show:
+- 50
+- 100
+- 150
+- 200
+- 250
+- 300
+base_lr: 0.1
+batch_size: 128
+config: ./config/ntu60/pretext/pretext_actclr_xview_joint.yaml
+debug: false
+device:
+- 4
+eval_interval: -1
+ignore_weights:
+- queue
+knn_classes: 60
+knn_interval: 5
+knn_k:
+- 10
+- 20
+- 40
+knn_t: 0.1
+log_interval: 100
+mem_test_feeder: feeder.ntu_feeder.Feeder_single
+mem_test_feeder_args:
+    data_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/val_position.npy
+    label_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/val_label.pkl
+    mmap: true
+    shear_amplitude: 0.5
+    temperal_padding_ratio: 6
+mem_train_feeder: feeder.ntu_feeder.Feeder_single
+mem_train_feeder_args:
+    data_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy
+    label_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl
+    mmap: true
+    shear_amplitude: 0.5
+    temperal_padding_ratio: 6
+mining_epoch: 500
+model: net.actclr.actclr
+model_args:
+    Temperature: 0.07
+    base_encoder: net.st_gcn.Model
+    dropout: 0.5
+    edge_importance_weighting: true
+    feature_dim: 128
+    graph_args:
+        layout: ntu-rgb+d
+        strategy: spatial
+    hidden_channels: 16
+    hidden_dim: 256
+    in_channels: 3
+    mlp: true
+    mode: joint
+    momentum: 0.999
+    num_class: 60
+    pretrain: true
+    queue_size: 65536
+nesterov: false
+num_epoch: 350
+num_worker: 4
+optimizer: SGD
+pavi_log: false
+phase: train
+print_log: true
+rename_weights:
+- encoder_q.encoder_k
+save_interval: 5
+save_log: true
+save_result: true
+start_epoch: 0
+step:
+- 250
+stream: joint
+test_batch_size: 128
+test_feeder: feeder.feeder
+test_feeder_args: {}
+topk: 1
+train_feeder: feeder.ntu_feeder.Feeder_triple
+train_feeder_args:
+    data_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy
+    label_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl
+    mmap: true
+    shear_amplitude: 0.5
+    temperal_padding_ratio: 6
+use_gpu: true
+weight_decay: 0.0001
+weights: /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt
+work_dir: ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1

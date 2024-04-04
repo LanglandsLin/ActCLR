@@ -6855,3 +6855,19 @@ Binary files a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.17
 [02.27.24|10:34:21] 	Iter 0 Done. | loss: 2.8665 | lr: 0.400000
 [02.27.24|10:35:20] 	Iter 100 Done. | loss: 13.9324 | lr: 0.400000
 [02.27.24|10:37:13] 	Iter 200 Done. | loss: 12.5810 | lr: 0.400000
+[02.27.24|11:05:39] diff --git a/src.zip b/src.zip
+index eda204d..9d52475 100644
+Binary files a/src.zip and b/src.zip differ
+diff --git a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 b/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7
+index e69de29..61b35f1 100644
+Binary files a/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 and b/work_dir/ntu60_cv/actclr_joint/pretext/val/events.out.tfevents.1709001251.STRUCT-TitanX7 differ
+
+[02.27.24|11:05:40] Load weights from /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt.
+[02.27.24|11:05:40] Parameters:
+{'work_dir': './work_dir/ntu60_cv/actclr_joint/pretext/', 'config': './config/ntu60/pretext/pretext_actclr_xview_joint.yaml', 'phase': 'train', 'save_result': True, 'start_epoch': 0, 'num_epoch': 350, 'use_gpu': True, 'device': [4], 'log_interval': 100, 'save_interval': 5, 'eval_interval': -1, 'save_log': True, 'print_log': True, 'pavi_log': False, 'knn_interval': 5, 'train_feeder': 'feeder.ntu_feeder.Feeder_triple', 'test_feeder': 'feeder.feeder', 'num_worker': 4, 'train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'test_feeder_args': {}, 'mem_train_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_test_feeder': 'feeder.ntu_feeder.Feeder_single', 'mem_train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'mem_test_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/val_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/val_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'batch_size': 128, 'test_batch_size': 128, 'debug': False, 'model': 'net.actclr.actclr', 'model_args': {'base_encoder': 'net.st_gcn.Model', 'pretrain': True, 'feature_dim': 128, 'queue_size': 65536, 'momentum': 0.999, 'Temperature': 0.07, 'mlp': True, 'in_channels': 3, 'hidden_channels': 16, 'hidden_dim': 256, 'num_class': 60, 'dropout': 0.5, 'mode': 'joint', 'graph_args': {'layout': 'ntu-rgb+d', 'strategy': 'spatial'}, 'edge_importance_weighting': True}, 'weights': '/mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt', 'ignore_weights': ['queue'], 'rename_weights': ['encoder_q.encoder_k'], 'knn_k': [10, 20, 40], 'knn_classes': 60, 'knn_t': 0.1, 'KNN_show': [50, 100, 150, 200, 250, 300], 'base_lr': 0.4, 'step': [250], 'optimizer': 'SGD', 'nesterov': False, 'weight_decay': 0.0001, 'stream': 'joint', 'mining_epoch': 500, 'topk': 1}
+
+[02.27.24|11:05:40] ---------- Networks initialized -------------
+[02.27.24|11:05:40] [Network] Total number of parameters : 1.840 M
+[02.27.24|11:05:40] -----------------------------------------------
+[02.27.24|11:05:43] Training epoch: 1
+[02.27.24|11:05:48] 	Iter 0 Done. | loss: 2.8665 | lr: 0.400000
