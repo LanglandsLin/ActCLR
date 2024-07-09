@@ -374,7 +374,7 @@ class actclr(nn.Module):
         
         randidx, im_pc, mask = self.ske_swap(im_p)
         p, c = self._mask_pool((pm.view(N, M, -1, (T + 3) // 4, V)/0.1).exp(), mask, randidx)
-        kc = k * c + k[randidx] * p
+        kc = k * c[:,None] + k[randidx] * p[:,None]
         kc = F.normalize(kc, dim=1)
         [pc] = self.encoder_q(im_pc)
         pc = F.normalize(pc, dim=1)
