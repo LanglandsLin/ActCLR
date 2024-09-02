@@ -13,7 +13,7 @@ import torch.optim as optim
 import torch.distributed as dist
 
 # torchlight
-import torchlight
+import torchlight as torchlight
 from torchlight import str2bool
 from torchlight import DictAction
 from torchlight import import_class

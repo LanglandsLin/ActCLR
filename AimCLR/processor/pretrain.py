@@ -78,6 +78,10 @@ class PT_Processor(Processor):
             data2 = data2.float().to(self.dev, non_blocking=True)
             data3 = data3.float().to(self.dev, non_blocking=True)
             label = label.long().to(self.dev, non_blocking=True)
+            
+            data1 = self.view_gen(data1)
+            data2 = self.view_gen(data2)
+            data3 = self.view_gen(data3)
 
             # forward
             output, target = self.model(data1, data2, data3)
@@ -99,6 +103,32 @@ class PT_Processor(Processor):
         self.epoch_info['train_mean_loss']= np.mean(loss_value)
         self.train_writer.add_scalar('loss', self.epoch_info['train_mean_loss'], epoch)
         self.show_epoch_info()
+        
+    def view_gen(self, data):
+        if self.arg.stream == 'joint':
+            pass
+        elif self.arg.stream == 'motion':
+            motion = torch.zeros_like(data)
+
+            motion[:, :, :-1, :, :] = data[:, :, 1:, :, :] - data[:, :, :-1, :, :]
+
+            data = motion
+        elif self.arg.stream == 'bone':
+            Bone = [(1, 2), (2, 21), (3, 21), (4, 3), (5, 21), (6, 5), (7, 6), (8, 7), (9, 21),
+                    (10, 9), (11, 10), (12, 11), (13, 1), (14, 13), (15, 14), (16, 15), (17, 1),
+                    (18, 17), (19, 18), (20, 19), (21, 21), (22, 23), (23, 8), (24, 25), (25, 12)]
+
+            bone = torch.zeros_like(data)
+
+            for v1, v2 in Bone:
+                bone[:, :, :, v1 - 1, :] = data[:, :, :, v1 - 1, :] - data[:, :, :, v2 - 1, :]
+                bone[:, :, :, v1 - 1, :] = data[:, :, :, v1 - 1, :] - data[:, :, :, v2 - 1, :]
+
+            data = bone
+        else:
+            raise ValueError
+
+        return data
 
     @staticmethod
     def get_parser(add_help=False):
