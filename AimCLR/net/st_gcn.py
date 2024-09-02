@@ -70,7 +70,6 @@ class Model(nn.Module):
             st_gcn(hidden_channels * 4, hidden_channels * 4, kernel_size, 1, **kwargs),
             st_gcn(hidden_channels * 4, hidden_dim, kernel_size, 1, **kwargs),
         ))
-        # self.fc = nn.Linear(hidden_dim, num_class)
         self.fc = nn.Conv2d(hidden_dim, num_class, 1, 1)
         self.dropout = Simam_Drop(num_point=25, keep_prob=0.7)
         self.sigmoid = nn.Sigmoid()
@@ -83,8 +82,6 @@ class Model(nn.Module):
             ])
         else:
             self.edge_importance = [1] * len(self.st_gcn_networks)
-
-        # self.mlp = Mlp(hidden_dim)
         
     def forward(self, x, drop=False):
 
@@ -196,8 +193,6 @@ class st_gcn(nn.Module):
             nn.Dropout(dropout, inplace=True),
         )
 
-        # self.mlp = Mlp(out_channels)
-
         if not residual:
             self.residual = lambda x: 0
 
@@ -221,6 +216,5 @@ class st_gcn(nn.Module):
         res = self.residual(x)
         x, A = self.gcn(x, A)
         x = self.tcn(x) + res
-        # x = self.mlp(x)
 
         return self.relu(x), A
