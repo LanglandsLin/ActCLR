@@ -22,6 +22,19 @@ $ pip install -r requirements.txt
 
 This work is a two-phase training, the first phase is trained using the AimCLR method, you can refer to the code of [AimCLR](https://github.com/Levigty/AimCLR).
 
+```bash
+$ cd ./AimCLR
+
+# train on NTU RGB+D xview joint stream
+$ python main.py pretrain_aimclr --config config/ntu60/pretext/pretext_aimclr_xview_joint.yaml
+
+# train on NTU RGB+D xview motion stream
+$ python main.py pretrain_aimclr --config config/ntu60/pretext/pretext_aimclr_xview_motion.yaml
+
+# train on NTU RGB+D xview bone stream
+$ python main.py pretrain_aimclr --config config/ntu60/pretext/pretext_aimclr_xview_bone.yaml
+```
+
 The second phase of training builds on the pre-trained parameters of the first phase. Example for unsupervised pre-training of **3s-ActCLR**. You can change some settings of `.yaml` files in `config/ntu60/pretext` folder.
 ```bash
 # train on NTU RGB+D xview joint stream
