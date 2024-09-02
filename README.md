@@ -46,6 +46,8 @@ $ CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nnodes=1 --nproc_per_node=4 main.py pr
 The linear evaluation process can be executed by running the script located in the `AimCLR` directory.
 Example for linear evaluation of **3s-ActCLR**. You can change `.yaml` files in `config/ntu60/linear_eval` folder.
 ```bash
+$ cd ./AimCLR
+
 # Linear_eval on NTU RGB+D xview
 $ python main.py linear_evaluation --config config/ntu60/linear_eval/linear_eval_actclr_xview_joint.yaml
 ```
