@@ -77,10 +77,10 @@ class actclr(nn.Module):
 
             if mlp:  # hack: brute-force replacement
                 dim_mlp = self.encoder_q.fc.weight.shape[1]
-                self.encoder_q.fc = nn.Sequential(nn.Linear(dim_mlp, dim_mlp),
-                                                  nn.ReLU(),
-                                                  self.encoder_q.fc)
-                self.encoder_k.fc = nn.Sequential(nn.Linear(dim_mlp, dim_mlp),
+                self.encoder_q.fc = nn.Sequential(nn.Conv2d(dim_mlp, dim_mlp, kernel_size=1),
+                                    nn.ReLU(),
+                                    self.encoder_q.fc)
+                self.encoder_k.fc = nn.Sequential(nn.Conv2d(dim_mlp, dim_mlp, kernel_size=1),
                                                   nn.ReLU(),
                                                   self.encoder_k.fc)
 

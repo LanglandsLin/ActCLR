@@ -38,7 +38,8 @@ $ python main.py pretrain_aimclr --config config/ntu60/pretext/pretext_aimclr_xv
 The second phase of training builds on the pre-trained parameters of the first phase. Example for unsupervised pre-training of **3s-ActCLR**. You can change some settings of `.yaml` files in `config/ntu60/pretext` folder.
 ```bash
 # train on NTU RGB+D xview joint stream
-$ CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nnodes=1 --nproc_per_node=4 main.py pretrain_actclr --config ./config/ntu60/pretext/pretext_actclr_xview_joint.yaml
+$ CUDA_VISIBLE_DEVICES=7 torchrun --nnodes=1 --nproc_per_node=1 main.py pretrain_actclr --config ./config/ntu60/pretext/pretext_actclr_xview_joint_gpu_1.yaml
+$ CUDA_VISIBLE_DEVICES=7 python -m torch.distributed.launch --nproc_per_node=1 --master_port 11234 main.py pretrain_actclr --config ./config/ntu60/pretext/pretext_actclr_xview_joint_gpu_1.yaml
 ```
 
 ## Linear Evaluation

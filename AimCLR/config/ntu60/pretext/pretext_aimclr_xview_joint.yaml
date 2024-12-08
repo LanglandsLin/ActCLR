@@ -1,4 +1,4 @@
-work_dir: /mnt/netdisk/linlilang/AimCLR-main/work_dir/ntu60_cv/aimclr_joint/pretext/dim_1024
+work_dir: /mnt/netdisk/linlilang/ActCLR/AimCLR/work_dir/ntu60_cv/aimclr_joint/pretext/
 
 # feeder
 train_feeder: feeder.ntu_feeder.Feeder_triple
@@ -14,14 +14,14 @@ model: net.aimclr.AimCLR
 model_args:
   base_encoder: net.st_gcn.Model
   pretrain: True
-  feature_dim: 512
-  queue_size: 32768
+  feature_dim: 128
+  queue_size: 65536
   momentum: 0.999
   Temperature: 0.07
   mlp: True
   in_channels: 3
   hidden_channels: 16 # 1/4 x channels of standard stgcn
-  hidden_dim: 1024
+  hidden_dim: 256
   num_class: 60
   dropout: 0.5
   graph_args:
@@ -37,9 +37,9 @@ optimizer: SGD
 step: [250]
 
 # training
-device: [3,4]
-batch_size: 128
-test_batch_size: 128
+device: [6]
+batch_size: 256
+test_batch_size: 256
 num_epoch: 300
 start_epoch: 0
 stream: 'joint'
@@ -49,5 +49,5 @@ topk: 1
 mining_epoch: 150
 
 # log
-save_interval: 1
+save_interval: 100
 eval_interval: -1

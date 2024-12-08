@@ -1,4 +1,4 @@
-# command line: main.py pretrain_actclr --config ./config/ntu60/pretext/pretext_actclr_xview_joint.yaml
+# command line: main.py --local_rank=0 pretrain_actclr --config ./config/ntu60/pretext/pretext_actclr_xview_joint_gpu_1.yaml
 
 KNN_show:
 - 50
@@ -9,7 +9,7 @@ KNN_show:
 - 300
 base_lr: 0.1
 batch_size: 128
-config: ./config/ntu60/pretext/pretext_actclr_xview_joint.yaml
+config: ./config/ntu60/pretext/pretext_actclr_xview_joint_gpu_1.yaml
 debug: false
 device:
 - 4
@@ -87,5 +87,5 @@ train_feeder_args:
     temperal_padding_ratio: 6
 use_gpu: true
 weight_decay: 0.0001
-weights: /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt
+weights: /mnt/netdisk/linlilang/ActCLR/AimCLR/work_dir/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt
 work_dir: ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1

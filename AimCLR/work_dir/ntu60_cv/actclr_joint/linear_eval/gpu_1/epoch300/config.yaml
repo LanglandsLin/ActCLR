@@ -1,0 +1,77 @@
+# command line: main.py linear_evaluation --config config/ntu60/linear_eval/linear_eval_actclr_xview_joint.yaml
+
+base_lr: 24.0
+batch_size: 1024
+config: config/ntu60/linear_eval/linear_eval_actclr_xview_joint.yaml
+debug: false
+device:
+- 7
+eval_interval: 5
+ignore_weights:
+- encoder_q.fc
+- encoder_k
+- queue
+- mu
+- kappa
+- alpha
+- encoder_q.slot_attn
+- to_q
+- to_v
+- to_k
+- slot_attn
+- decoder_r
+- encoder_q.dense
+- decoder_m
+- prototypes
+log_interval: 100
+mining_epoch: 1000000.0
+model: net.aimclr.AimCLR
+model_args:
+    base_encoder: net.st_gcn.Model
+    dropout: 0.5
+    edge_importance_weighting: true
+    graph_args:
+        layout: ntu-rgb+d
+        strategy: spatial
+    hidden_channels: 16
+    hidden_dim: 256
+    in_channels: 3
+    num_class: 60
+    pretrain: false
+nesterov: false
+num_epoch: 100
+num_worker: 4
+optimizer: SGD
+pavi_log: false
+phase: train
+print_log: true
+save_interval: -1
+save_log: true
+save_result: true
+show_topk:
+- 1
+- 5
+start_epoch: 0
+step:
+- 80
+stream: joint
+test_batch_size: 1024
+test_feeder: feeder.ntu_feeder.Feeder_single
+test_feeder_args:
+    data_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/val_position.npy
+    label_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/val_label.pkl
+    mmap: true
+    shear_amplitude: -1
+    temperal_padding_ratio: -1
+topk: 1
+train_feeder: feeder.ntu_feeder.Feeder_single
+train_feeder_args:
+    data_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy
+    label_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl
+    mmap: true
+    shear_amplitude: -1
+    temperal_padding_ratio: -1
+use_gpu: true
+weight_decay: 0.0
+weights: /mnt/netdisk/linlilang/ActCLR/work_dir/ntu60_cv/actclr_joint/pretext/gpu_1/epoch300_model.pt
+work_dir: ./work_dir/ntu60_cv/actclr_joint/linear_eval/gpu_1/epoch300

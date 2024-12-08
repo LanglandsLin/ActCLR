@@ -95,7 +95,7 @@ class Processor(IO):
                 pin_memory=True,    # set True when memory is abundant
                 num_workers=self.arg.num_worker * torchlight.ngpu(
                     self.arg.device),
-                drop_last=False,
+                drop_last=True,
                 worker_init_fn=init_seed)
                 
         if self.arg.test_feeder_args:

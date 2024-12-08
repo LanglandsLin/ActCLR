@@ -1,0 +1,59 @@
+# command line: main.py pretrain_aimclr --config config/ntu60/pretext/pretext_aimclr_xview_joint.yaml
+
+base_lr: 0.1
+batch_size: 256
+config: config/ntu60/pretext/pretext_aimclr_xview_joint.yaml
+debug: false
+device:
+- 6
+eval_interval: -1
+ignore_weights: []
+log_interval: 100
+mining_epoch: 150
+model: net.aimclr.AimCLR
+model_args:
+    Temperature: 0.07
+    base_encoder: net.st_gcn.Model
+    dropout: 0.5
+    edge_importance_weighting: true
+    feature_dim: 128
+    graph_args:
+        layout: ntu-rgb+d
+        strategy: spatial
+    hidden_channels: 16
+    hidden_dim: 256
+    in_channels: 3
+    mlp: true
+    momentum: 0.999
+    num_class: 60
+    pretrain: true
+    queue_size: 65536
+nesterov: false
+num_epoch: 300
+num_worker: 4
+optimizer: SGD
+pavi_log: false
+phase: train
+print_log: true
+save_interval: 100
+save_log: true
+save_result: true
+start_epoch: 0
+step:
+- 250
+stream: joint
+test_batch_size: 256
+test_feeder: feeder.feeder
+test_feeder_args: {}
+topk: 1
+train_feeder: feeder.ntu_feeder.Feeder_triple
+train_feeder_args:
+    data_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy
+    label_path: /mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl
+    mmap: true
+    shear_amplitude: 0.5
+    temperal_padding_ratio: 6
+use_gpu: true
+weight_decay: 0.0001
+weights: null
+work_dir: /mnt/netdisk/linlilang/ActCLR/AimCLR/work_dir/ntu60_cv/aimclr_joint/pretext/

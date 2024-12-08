@@ -1,5 +1,5 @@
 work_dir: ./work_dir/ntu60_cv/actclr_joint/pretext/gpu_1
-weights:  /mnt/netdisk/linlilang/ActCLR/weights/AimCLR/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt
+weights:  /mnt/netdisk/linlilang/ActCLR/AimCLR/work_dir/ntu60_cv/aimclr_joint/pretext/epoch300_model.pt
 
 ignore_weights: [queue]
 rename_weights: [encoder_q.encoder_k]

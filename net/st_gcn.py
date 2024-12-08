@@ -58,7 +58,7 @@ class Model(nn.Module):
             st_gcn(hidden_channels * 4, hidden_channels * 4, kernel_size, 1, **kwargs),
             st_gcn(hidden_channels * 4, hidden_dim, kernel_size, 1, **kwargs),
         ))
-        self.fc = nn.Linear(hidden_dim, num_class)
+        self.fc = nn.Conv2d(hidden_dim, num_class, 1, 1)
 
         # initialize parameters for edge importance weighting
         if edge_importance_weighting:
@@ -85,7 +85,7 @@ class Model(nn.Module):
         y.requires_grad = True
         with TemporaryGrad():
             z = F.avg_pool2d(y, y.size()[2:])
-            z = z.view(N, M, -1).mean(dim=1)
+            z = z.view(N, M, -1, 1, 1).mean(dim=1)
             z = self.fc(z)
             s = (F.normalize(z,dim=-1) * F.normalize(mean_feat,dim=-1)).sum(-1).mean()
             (1-s).backward()
@@ -119,12 +119,12 @@ class Model(nn.Module):
         if key:
             m = self._generate_mask(x, N, M, mean_feat)
             pc, _ = self._mask_pool(x, m)
-            pc = pc.view(N, M, -1).mean(dim=1)
+            pc = pc.view(N, M, -1, 1, 1).mean(dim=1)
             pc = self.fc(pc)
             pc = pc.view(pc.size(0), -1)
             
             x = F.avg_pool2d(x, x.size()[2:])
-            x = x.view(N, M, -1).mean(dim=1)
+            x = x.view(N, M, -1, 1, 1).mean(dim=1)
 
             # prediction
             x = self.fc(x)
@@ -135,7 +135,7 @@ class Model(nn.Module):
         else:
                 
             x = F.avg_pool2d(x, x.size()[2:])
-            x = x.view(N, M, -1).mean(dim=1)
+            x = x.view(N, M, -1, 1, 1).mean(dim=1)
 
             # prediction
             x = self.fc(x)

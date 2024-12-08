@@ -1,4 +1,4 @@
-work_dir: /mnt/netdisk/linlilang/AimCLR-main/work_dir/ntu60_cs/aimclr_joint/pretext/dim_512
+work_dir: /mnt/netdisk/linlilang/AimCLR-main/work_dir/ntu60_cs/aimclr_joint/pretext/
 
 # feeder
 train_feeder: feeder.ntu_feeder.Feeder_triple

@@ -1,4 +1,4 @@
-work_dir:  ./work_dir/ntu60_cs/aimclr_joint/linear_eval/label_percent_0.01
+work_dir:  ./work_dir/ntu60_cs/aimclr_joint/linear_eval/
 
 # weights: /data/gty/released_model/ntu60_xview_joint.pt
 weights:   /mnt/netdisk/linlilang/NoisyDINO/work_dir/contra_recon/ntu60_cs/aimclr_joint/pretext/epoch350_model.pt

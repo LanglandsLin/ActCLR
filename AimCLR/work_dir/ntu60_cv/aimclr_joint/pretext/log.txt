@@ -1,0 +1,1089 @@
+[10.27.24|07:55:17] Parameters:
+{'work_dir': '/mnt/netdisk/linlilang/ActCLR/AimCLR/work_dir/ntu60_cv/aimclr_joint/pretext/', 'config': 'config/ntu60/pretext/pretext_aimclr_xview_joint.yaml', 'phase': 'train', 'save_result': True, 'start_epoch': 0, 'num_epoch': 300, 'use_gpu': True, 'device': [6], 'log_interval': 100, 'save_interval': 1, 'eval_interval': -1, 'save_log': True, 'print_log': True, 'pavi_log': False, 'train_feeder': 'feeder.ntu_feeder.Feeder_triple', 'test_feeder': 'feeder.feeder', 'num_worker': 4, 'train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'test_feeder_args': {}, 'batch_size': 128, 'test_batch_size': 128, 'debug': False, 'model': 'net.aimclr.AimCLR', 'model_args': {'base_encoder': 'net.st_gcn.Model', 'pretrain': True, 'feature_dim': 128, 'queue_size': 32768, 'momentum': 0.999, 'Temperature': 0.07, 'mlp': True, 'in_channels': 3, 'hidden_channels': 16, 'hidden_dim': 256, 'num_class': 60, 'dropout': 0.5, 'graph_args': {'layout': 'ntu-rgb+d', 'strategy': 'spatial'}, 'edge_importance_weighting': True}, 'weights': None, 'ignore_weights': [], 'base_lr': 0.1, 'step': [250], 'optimizer': 'SGD', 'nesterov': False, 'weight_decay': 0.0001, 'stream': 'joint', 'mining_epoch': 150, 'topk': 1}
+
+[10.27.24|07:55:17] ---------- Networks initialized -------------
+[10.27.24|07:55:17] [Network] Total number of parameters : 1.840 M
+[10.27.24|07:55:17] -----------------------------------------------
+[10.27.24|07:55:17] Training epoch: 1
+[10.27.24|07:55:22] 	Iter 0 Done. | loss: 23.2853 | lr: 0.100000
+[10.27.24|07:55:56] Parameters:
+{'work_dir': '/mnt/netdisk/linlilang/ActCLR/AimCLR/work_dir/ntu60_cv/aimclr_joint/pretext/', 'config': 'config/ntu60/pretext/pretext_aimclr_xview_joint.yaml', 'phase': 'train', 'save_result': True, 'start_epoch': 0, 'num_epoch': 300, 'use_gpu': True, 'device': [6], 'log_interval': 100, 'save_interval': 1, 'eval_interval': -1, 'save_log': True, 'print_log': True, 'pavi_log': False, 'train_feeder': 'feeder.ntu_feeder.Feeder_triple', 'test_feeder': 'feeder.feeder', 'num_worker': 4, 'train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'test_feeder_args': {}, 'batch_size': 256, 'test_batch_size': 256, 'debug': False, 'model': 'net.aimclr.AimCLR', 'model_args': {'base_encoder': 'net.st_gcn.Model', 'pretrain': True, 'feature_dim': 128, 'queue_size': 32768, 'momentum': 0.999, 'Temperature': 0.07, 'mlp': True, 'in_channels': 3, 'hidden_channels': 16, 'hidden_dim': 256, 'num_class': 60, 'dropout': 0.5, 'graph_args': {'layout': 'ntu-rgb+d', 'strategy': 'spatial'}, 'edge_importance_weighting': True}, 'weights': None, 'ignore_weights': [], 'base_lr': 0.1, 'step': [250], 'optimizer': 'SGD', 'nesterov': False, 'weight_decay': 0.0001, 'stream': 'joint', 'mining_epoch': 150, 'topk': 1}
+
+[10.27.24|07:55:56] ---------- Networks initialized -------------
+[10.27.24|07:55:56] [Network] Total number of parameters : 1.840 M
+[10.27.24|07:55:56] -----------------------------------------------
+[10.27.24|07:55:56] Training epoch: 1
+[10.27.24|07:55:57] 	Iter 0 Done. | loss: 23.3235 | lr: 0.100000
+[10.27.24|07:56:42] 	Iter 100 Done. | loss: 20.0186 | lr: 0.100000
+[10.27.24|08:00:00] Parameters:
+{'work_dir': '/mnt/netdisk/linlilang/ActCLR/AimCLR/work_dir/ntu60_cv/aimclr_joint/pretext/', 'config': 'config/ntu60/pretext/pretext_aimclr_xview_joint.yaml', 'phase': 'train', 'save_result': True, 'start_epoch': 0, 'num_epoch': 300, 'use_gpu': True, 'device': [6], 'log_interval': 100, 'save_interval': 1, 'eval_interval': -1, 'save_log': True, 'print_log': True, 'pavi_log': False, 'train_feeder': 'feeder.ntu_feeder.Feeder_triple', 'test_feeder': 'feeder.feeder', 'num_worker': 4, 'train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'test_feeder_args': {}, 'batch_size': 256, 'test_batch_size': 256, 'debug': False, 'model': 'net.aimclr.AimCLR', 'model_args': {'base_encoder': 'net.st_gcn.Model', 'pretrain': True, 'feature_dim': 128, 'queue_size': 65536, 'momentum': 0.999, 'Temperature': 0.07, 'mlp': True, 'in_channels': 3, 'hidden_channels': 16, 'hidden_dim': 256, 'num_class': 60, 'dropout': 0.5, 'graph_args': {'layout': 'ntu-rgb+d', 'strategy': 'spatial'}, 'edge_importance_weighting': True}, 'weights': None, 'ignore_weights': [], 'base_lr': 0.1, 'step': [250], 'optimizer': 'SGD', 'nesterov': False, 'weight_decay': 0.0001, 'stream': 'joint', 'mining_epoch': 150, 'topk': 1}
+
+[10.27.24|08:00:00] ---------- Networks initialized -------------
+[10.27.24|08:00:00] [Network] Total number of parameters : 1.840 M
+[10.27.24|08:00:00] -----------------------------------------------
+[10.27.24|08:00:00] Training epoch: 1
+[10.27.24|08:00:02] 	Iter 0 Done. | loss: 23.3859 | lr: 0.100000
+[10.27.24|08:00:34] 	Iter 100 Done. | loss: 20.0716 | lr: 0.100000
+[10.27.24|08:03:33] Parameters:
+{'work_dir': '/mnt/netdisk/linlilang/ActCLR/AimCLR/work_dir/ntu60_cv/aimclr_joint/pretext/', 'config': 'config/ntu60/pretext/pretext_aimclr_xview_joint.yaml', 'phase': 'train', 'save_result': True, 'start_epoch': 0, 'num_epoch': 300, 'use_gpu': True, 'device': [6], 'log_interval': 100, 'save_interval': 1, 'eval_interval': -1, 'save_log': True, 'print_log': True, 'pavi_log': False, 'train_feeder': 'feeder.ntu_feeder.Feeder_triple', 'test_feeder': 'feeder.feeder', 'num_worker': 4, 'train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'test_feeder_args': {}, 'batch_size': 256, 'test_batch_size': 256, 'debug': False, 'model': 'net.aimclr.AimCLR', 'model_args': {'base_encoder': 'net.st_gcn.Model', 'pretrain': True, 'feature_dim': 128, 'queue_size': 65536, 'momentum': 0.999, 'Temperature': 0.07, 'mlp': True, 'in_channels': 3, 'hidden_channels': 16, 'hidden_dim': 256, 'num_class': 60, 'dropout': 0.5, 'graph_args': {'layout': 'ntu-rgb+d', 'strategy': 'spatial'}, 'edge_importance_weighting': True}, 'weights': None, 'ignore_weights': [], 'base_lr': 0.1, 'step': [250], 'optimizer': 'SGD', 'nesterov': False, 'weight_decay': 0.0001, 'stream': 'joint', 'mining_epoch': 150, 'topk': 1}
+
+[10.27.24|08:03:33] ---------- Networks initialized -------------
+[10.27.24|08:03:33] [Network] Total number of parameters : 1.840 M
+[10.27.24|08:03:33] -----------------------------------------------
+[10.27.24|08:03:33] Training epoch: 1
+[10.27.24|08:03:34] 	Iter 0 Done. | loss: 23.3859 | lr: 0.100000
+[10.27.24|08:04:06] 	Iter 100 Done. | loss: 20.0716 | lr: 0.100000
+[10.27.24|08:04:21] 	train_mean_loss: 18.969178511171926
+[10.27.24|08:04:23] The model has been saved as /mnt/netdisk/linlilang/ActCLR/AimCLR/work_dir/ntu60_cv/aimclr_joint/pretext//epoch1_model.pt.
+[10.27.24|08:04:23] Training epoch: 2
+[10.27.24|08:04:41] 	Iter 200 Done. | loss: 21.4436 | lr: 0.100000
+[10.27.24|08:05:20] Parameters:
+{'work_dir': '/mnt/netdisk/linlilang/ActCLR/AimCLR/work_dir/ntu60_cv/aimclr_joint/pretext/', 'config': 'config/ntu60/pretext/pretext_aimclr_xview_joint.yaml', 'phase': 'train', 'save_result': True, 'start_epoch': 0, 'num_epoch': 300, 'use_gpu': True, 'device': [6], 'log_interval': 100, 'save_interval': 100, 'eval_interval': -1, 'save_log': True, 'print_log': True, 'pavi_log': False, 'train_feeder': 'feeder.ntu_feeder.Feeder_triple', 'test_feeder': 'feeder.feeder', 'num_worker': 4, 'train_feeder_args': {'data_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU60_frame50/xview/train_position.npy', 'label_path': '/mnt/netdisk/linlilang/CrosSCLR/data/NTU-RGB-D/xview/train_label.pkl', 'shear_amplitude': 0.5, 'temperal_padding_ratio': 6, 'mmap': True}, 'test_feeder_args': {}, 'batch_size': 256, 'test_batch_size': 256, 'debug': False, 'model': 'net.aimclr.AimCLR', 'model_args': {'base_encoder': 'net.st_gcn.Model', 'pretrain': True, 'feature_dim': 128, 'queue_size': 65536, 'momentum': 0.999, 'Temperature': 0.07, 'mlp': True, 'in_channels': 3, 'hidden_channels': 16, 'hidden_dim': 256, 'num_class': 60, 'dropout': 0.5, 'graph_args': {'layout': 'ntu-rgb+d', 'strategy': 'spatial'}, 'edge_importance_weighting': True}, 'weights': None, 'ignore_weights': [], 'base_lr': 0.1, 'step': [250], 'optimizer': 'SGD', 'nesterov': False, 'weight_decay': 0.0001, 'stream': 'joint', 'mining_epoch': 150, 'topk': 1}
+
+[10.27.24|08:05:20] ---------- Networks initialized -------------
+[10.27.24|08:05:20] [Network] Total number of parameters : 1.840 M
+[10.27.24|08:05:20] -----------------------------------------------
+[10.27.24|08:05:20] Training epoch: 1
+[10.27.24|08:05:21] 	Iter 0 Done. | loss: 23.3859 | lr: 0.100000
+[10.27.24|08:05:54] 	Iter 100 Done. | loss: 20.0716 | lr: 0.100000
+[10.27.24|08:06:09] 	train_mean_loss: 18.969178511171926
+[10.27.24|08:06:09] Training epoch: 2
+[10.27.24|08:06:27] 	Iter 200 Done. | loss: 21.4436 | lr: 0.100000
+[10.27.24|08:06:56] 	train_mean_loss: 21.55672127859933
+[10.27.24|08:06:56] Training epoch: 3
+[10.27.24|08:06:59] 	Iter 300 Done. | loss: 21.9813 | lr: 0.100000
+[10.27.24|08:07:30] 	Iter 400 Done. | loss: 21.9952 | lr: 0.100000
+[10.27.24|08:07:42] 	train_mean_loss: 21.993784495762416
+[10.27.24|08:07:42] Training epoch: 4
+[10.27.24|08:08:02] 	Iter 500 Done. | loss: 21.9808 | lr: 0.100000
+[10.27.24|08:08:29] 	train_mean_loss: 21.977637673721834
+[10.27.24|08:08:29] Training epoch: 5
+[10.27.24|08:08:34] 	Iter 600 Done. | loss: 21.9576 | lr: 0.100000
+[10.27.24|08:09:06] 	Iter 700 Done. | loss: 21.9218 | lr: 0.100000
+[10.27.24|08:09:16] 	train_mean_loss: 21.93601757490716
+[10.27.24|08:09:16] Training epoch: 6
+[10.27.24|08:09:38] 	Iter 800 Done. | loss: 21.8626 | lr: 0.100000
+[10.27.24|08:10:03] 	train_mean_loss: 21.851830385169205
+[10.27.24|08:10:03] Training epoch: 7
+[10.27.24|08:10:10] 	Iter 900 Done. | loss: 21.7527 | lr: 0.100000
+[10.27.24|08:10:41] 	Iter 1000 Done. | loss: 21.5337 | lr: 0.100000
+[10.27.24|08:10:50] 	train_mean_loss: 21.63524003580314
+[10.27.24|08:10:50] Training epoch: 8
+[10.27.24|08:11:14] 	Iter 1100 Done. | loss: 21.2684 | lr: 0.100000
+[10.27.24|08:11:38] 	train_mean_loss: 21.293817740719334
+[10.27.24|08:11:38] Training epoch: 9
+[10.27.24|08:11:46] 	Iter 1200 Done. | loss: 21.0909 | lr: 0.100000
+[10.27.24|08:12:17] 	Iter 1300 Done. | loss: 20.8768 | lr: 0.100000
+[10.27.24|08:12:24] 	train_mean_loss: 21.004904818372662
+[10.27.24|08:12:24] Training epoch: 10
+[10.27.24|08:12:49] 	Iter 1400 Done. | loss: 20.7410 | lr: 0.100000
+[10.27.24|08:13:11] 	train_mean_loss: 20.713477232018295
+[10.27.24|08:13:11] Training epoch: 11
+[10.27.24|08:13:22] 	Iter 1500 Done. | loss: 20.3274 | lr: 0.100000
+[10.27.24|08:13:53] 	Iter 1600 Done. | loss: 20.1293 | lr: 0.100000
+[10.27.24|08:13:59] 	train_mean_loss: 20.330075828396545
+[10.27.24|08:13:59] Training epoch: 12
+[10.27.24|08:14:26] 	Iter 1700 Done. | loss: 20.0665 | lr: 0.100000
+[10.27.24|08:14:46] 	train_mean_loss: 20.116097184265552
+[10.27.24|08:14:46] Training epoch: 13
+[10.27.24|08:14:58] 	Iter 1800 Done. | loss: 20.2380 | lr: 0.100000
+[10.27.24|08:15:30] 	Iter 1900 Done. | loss: 19.9050 | lr: 0.100000
+[10.27.24|08:15:33] 	train_mean_loss: 19.945005416870117
+[10.27.24|08:15:33] Training epoch: 14
+[10.27.24|08:16:02] 	Iter 2000 Done. | loss: 19.6194 | lr: 0.100000
+[10.27.24|08:16:20] 	train_mean_loss: 19.783073386367487
+[10.27.24|08:16:21] Training epoch: 15
+[10.27.24|08:16:37] 	Iter 2100 Done. | loss: 20.1499 | lr: 0.100000
+[10.27.24|08:17:08] 	Iter 2200 Done. | loss: 20.5038 | lr: 0.100000
+[10.27.24|08:17:09] 	train_mean_loss: 20.18255536085894
+[10.27.24|08:17:09] Training epoch: 16
+[10.27.24|08:17:40] 	Iter 2300 Done. | loss: 20.0548 | lr: 0.100000
+[10.27.24|08:17:56] 	train_mean_loss: 20.219325630032287
+[10.27.24|08:17:56] Training epoch: 17
+[10.27.24|08:18:12] 	Iter 2400 Done. | loss: 20.0760 | lr: 0.100000
+[10.27.24|08:18:43] 	train_mean_loss: 20.13655614528526
+[10.27.24|08:18:45] Training epoch: 18
+[10.27.24|08:18:48] 	Iter 2500 Done. | loss: 20.0818 | lr: 0.100000
+[10.27.24|08:19:20] 	Iter 2600 Done. | loss: 20.3075 | lr: 0.100000
+[10.27.24|08:19:34] 	train_mean_loss: 19.933971885110246
+[10.27.24|08:19:34] Training epoch: 19
+[10.27.24|08:19:52] 	Iter 2700 Done. | loss: 21.0559 | lr: 0.100000
+[10.27.24|08:20:22] 	train_mean_loss: 20.131757165298982
+[10.27.24|08:20:22] Training epoch: 20
+[10.27.24|08:20:25] 	Iter 2800 Done. | loss: 21.3034 | lr: 0.100000
+[10.27.24|08:20:56] 	Iter 2900 Done. | loss: 21.4029 | lr: 0.100000
+[10.27.24|08:21:09] 	train_mean_loss: 20.9292938725478
+[10.27.24|08:21:10] Training epoch: 21
+[10.27.24|08:21:30] 	Iter 3000 Done. | loss: 21.1509 | lr: 0.100000
+[10.27.24|08:21:58] 	train_mean_loss: 20.313112674116276
+[10.27.24|08:21:58] Training epoch: 22
+[10.27.24|08:22:03] 	Iter 3100 Done. | loss: 19.7370 | lr: 0.100000
+[10.27.24|08:22:34] 	Iter 3200 Done. | loss: 18.5936 | lr: 0.100000
+[10.27.24|08:22:45] 	train_mean_loss: 19.34443625625299
+[10.27.24|08:22:45] Training epoch: 23
+[10.27.24|08:23:07] 	Iter 3300 Done. | loss: 18.7738 | lr: 0.100000
+[10.27.24|08:23:32] 	train_mean_loss: 19.05410350098902
+[10.27.24|08:23:32] Training epoch: 24
+[10.27.24|08:23:39] 	Iter 3400 Done. | loss: 19.3745 | lr: 0.100000
+[10.27.24|08:24:12] 	Iter 3500 Done. | loss: 18.1217 | lr: 0.100000
+[10.27.24|08:24:21] 	train_mean_loss: 18.588368668848155
+[10.27.24|08:24:21] Training epoch: 25
+[10.27.24|08:24:45] 	Iter 3600 Done. | loss: 18.0524 | lr: 0.100000
+[10.27.24|08:25:09] 	train_mean_loss: 18.17797022449727
+[10.27.24|08:25:09] Training epoch: 26
+[10.27.24|08:25:18] 	Iter 3700 Done. | loss: 18.7413 | lr: 0.100000
+[10.27.24|08:25:49] 	Iter 3800 Done. | loss: 19.4787 | lr: 0.100000
+[10.27.24|08:25:56] 	train_mean_loss: 19.086655804900087
+[10.27.24|08:25:56] Training epoch: 27
+[10.27.24|08:26:22] 	Iter 3900 Done. | loss: 19.1458 | lr: 0.100000
+[10.27.24|08:26:45] 	train_mean_loss: 19.225619024159958
+[10.27.24|08:26:45] Training epoch: 28
+[10.27.24|08:26:56] 	Iter 4000 Done. | loss: 18.5795 | lr: 0.100000
+[10.27.24|08:27:28] 	Iter 4100 Done. | loss: 18.0244 | lr: 0.100000
+[10.27.24|08:27:32] 	train_mean_loss: 18.120916288726185
+[10.27.24|08:27:32] Training epoch: 29
+[10.27.24|08:28:00] 	Iter 4200 Done. | loss: 17.7464 | lr: 0.100000
+[10.27.24|08:28:20] 	train_mean_loss: 17.9308696409472
+[10.27.24|08:28:20] Training epoch: 30
+[10.27.24|08:28:33] 	Iter 4300 Done. | loss: 18.2326 | lr: 0.100000
+[10.27.24|08:29:04] 	Iter 4400 Done. | loss: 18.0554 | lr: 0.100000
+[10.27.24|08:29:07] 	train_mean_loss: 18.076480593000138
+[10.27.24|08:29:07] Training epoch: 31
+[10.27.24|08:29:36] 	Iter 4500 Done. | loss: 18.0532 | lr: 0.100000
+[10.27.24|08:29:54] 	train_mean_loss: 18.124064906113812
+[10.27.24|08:29:54] Training epoch: 32
+[10.27.24|08:30:09] 	Iter 4600 Done. | loss: 18.2134 | lr: 0.100000
+[10.27.24|08:30:40] 	Iter 4700 Done. | loss: 18.3214 | lr: 0.100000
+[10.27.24|08:30:41] 	train_mean_loss: 18.255238604383404
+[10.27.24|08:30:41] Training epoch: 33
+[10.27.24|08:31:13] 	Iter 4800 Done. | loss: 18.3555 | lr: 0.100000
+[10.27.24|08:31:32] 	train_mean_loss: 18.371385989545963
+[10.27.24|08:31:34] Training epoch: 34
+[10.27.24|08:31:51] 	Iter 4900 Done. | loss: 18.3438 | lr: 0.100000
+[10.27.24|08:32:22] 	train_mean_loss: 18.41348053808926
+[10.27.24|08:32:22] Training epoch: 35
+[10.27.24|08:32:24] 	Iter 5000 Done. | loss: 18.2929 | lr: 0.100000
+[10.27.24|08:32:56] 	Iter 5100 Done. | loss: 18.3001 | lr: 0.100000
+[10.27.24|08:33:10] 	train_mean_loss: 18.334152377381617
+[10.27.24|08:33:10] Training epoch: 36
+[10.27.24|08:33:29] 	Iter 5200 Done. | loss: 18.3385 | lr: 0.100000
+[10.27.24|08:33:57] 	train_mean_loss: 18.27100282785844
+[10.27.24|08:33:57] Training epoch: 37
+[10.27.24|08:34:01] 	Iter 5300 Done. | loss: 18.2978 | lr: 0.100000
+[10.27.24|08:34:33] 	Iter 5400 Done. | loss: 18.1956 | lr: 0.100000
+[10.27.24|08:34:45] 	train_mean_loss: 18.237451825823104
+[10.27.24|08:34:45] Training epoch: 38
+[10.27.24|08:35:05] 	Iter 5500 Done. | loss: 18.2425 | lr: 0.100000
+[10.27.24|08:35:33] 	train_mean_loss: 18.281993956792924
+[10.27.24|08:35:33] Training epoch: 39
+[10.27.24|08:35:38] 	Iter 5600 Done. | loss: 18.2402 | lr: 0.100000
+[10.27.24|08:36:10] 	Iter 5700 Done. | loss: 18.5815 | lr: 0.100000
+[10.27.24|08:36:20] 	train_mean_loss: 18.387173970540363
+[10.27.24|08:36:20] Training epoch: 40
+[10.27.24|08:36:42] 	Iter 5800 Done. | loss: 18.5020 | lr: 0.100000
+[10.27.24|08:37:07] 	train_mean_loss: 18.57031032017299
+[10.27.24|08:37:07] Training epoch: 41
+[10.27.24|08:37:14] 	Iter 5900 Done. | loss: 18.7318 | lr: 0.100000
+[10.27.24|08:37:46] 	Iter 6000 Done. | loss: 19.0109 | lr: 0.100000
+[10.27.24|08:37:54] 	train_mean_loss: 18.800783559578615
+[10.27.24|08:37:54] Training epoch: 42
+[10.27.24|08:38:18] 	Iter 6100 Done. | loss: 18.9740 | lr: 0.100000
+[10.27.24|08:38:41] 	train_mean_loss: 19.046305286641022
+[10.27.24|08:38:41] Training epoch: 43
+[10.27.24|08:38:50] 	Iter 6200 Done. | loss: 19.1816 | lr: 0.100000
+[10.27.24|08:39:22] 	Iter 6300 Done. | loss: 18.9462 | lr: 0.100000
+[10.27.24|08:39:28] 	train_mean_loss: 19.040803558972417
+[10.27.24|08:39:28] Training epoch: 44
+[10.27.24|08:39:54] 	Iter 6400 Done. | loss: 18.5864 | lr: 0.100000
+[10.27.24|08:40:15] 	train_mean_loss: 18.50798205940091
+[10.27.24|08:40:15] Training epoch: 45
+[10.27.24|08:40:26] 	Iter 6500 Done. | loss: 18.2156 | lr: 0.100000
+[10.27.24|08:40:57] 	Iter 6600 Done. | loss: 17.5990 | lr: 0.100000
+[10.27.24|08:41:02] 	train_mean_loss: 17.978620256696427
+[10.27.24|08:41:02] Training epoch: 46
+[10.27.24|08:41:30] 	Iter 6700 Done. | loss: 17.6024 | lr: 0.100000
+[10.27.24|08:41:49] 	train_mean_loss: 17.688605795101243
+[10.27.24|08:41:49] Training epoch: 47
+[10.27.24|08:42:02] 	Iter 6800 Done. | loss: 17.4706 | lr: 0.100000
+[10.27.24|08:42:34] 	Iter 6900 Done. | loss: 17.3587 | lr: 0.100000
+[10.27.24|08:42:36] 	train_mean_loss: 17.44887166444947
+[10.27.24|08:42:36] Training epoch: 48
+[10.27.24|08:43:06] 	Iter 7000 Done. | loss: 17.2543 | lr: 0.100000
+[10.27.24|08:43:23] 	train_mean_loss: 17.331390303008412
+[10.27.24|08:43:23] Training epoch: 49
+[10.27.24|08:43:38] 	Iter 7100 Done. | loss: 17.2517 | lr: 0.100000
+[10.27.24|08:44:10] 	Iter 7200 Done. | loss: 17.2030 | lr: 0.100000
+[10.27.24|08:44:11] 	train_mean_loss: 17.2079222542899
+[10.27.24|08:44:11] Training epoch: 50
+[10.27.24|08:44:42] 	Iter 7300 Done. | loss: 17.2956 | lr: 0.100000
+[10.27.24|08:44:58] 	train_mean_loss: 17.157364877713782
+[10.27.24|08:44:59] Training epoch: 51
+[10.27.24|08:45:16] 	Iter 7400 Done. | loss: 17.1573 | lr: 0.100000
+[10.27.24|08:45:48] 	train_mean_loss: 17.183792996568744
+[10.27.24|08:45:49] Training epoch: 52
+[10.27.24|08:45:51] 	Iter 7500 Done. | loss: 17.1425 | lr: 0.100000
+[10.27.24|08:46:22] 	Iter 7600 Done. | loss: 17.1586 | lr: 0.100000
+[10.27.24|08:46:35] 	train_mean_loss: 17.266236467426324
+[10.27.24|08:46:35] Training epoch: 53
+[10.27.24|08:46:54] 	Iter 7700 Done. | loss: 17.3621 | lr: 0.100000
+[10.27.24|08:47:22] 	train_mean_loss: 17.413571610742686
+[10.27.24|08:47:22] Training epoch: 54
+[10.27.24|08:47:26] 	Iter 7800 Done. | loss: 17.5015 | lr: 0.100000
+[10.27.24|08:47:57] 	Iter 7900 Done. | loss: 17.6835 | lr: 0.100000
+[10.27.24|08:48:09] 	train_mean_loss: 17.574047451927548
+[10.27.24|08:48:09] Training epoch: 55
+[10.27.24|08:48:30] 	Iter 8000 Done. | loss: 17.3601 | lr: 0.100000
+[10.27.24|08:48:56] 	train_mean_loss: 17.26478758312407
+[10.27.24|08:48:56] Training epoch: 56
+[10.27.24|08:49:02] 	Iter 8100 Done. | loss: 17.0412 | lr: 0.100000
+[10.27.24|08:49:33] 	Iter 8200 Done. | loss: 16.8403 | lr: 0.100000
+[10.27.24|08:49:43] 	train_mean_loss: 16.896198571133777
+[10.27.24|08:49:43] Training epoch: 57
+[10.27.24|08:50:06] 	Iter 8300 Done. | loss: 16.6702 | lr: 0.100000
+[10.27.24|08:50:30] 	train_mean_loss: 16.75378385530848
+[10.27.24|08:50:30] Training epoch: 58
+[10.27.24|08:50:38] 	Iter 8400 Done. | loss: 16.7119 | lr: 0.100000
+[10.27.24|08:51:10] 	Iter 8500 Done. | loss: 16.6089 | lr: 0.100000
+[10.27.24|08:51:18] 	train_mean_loss: 16.682553155081614
+[10.27.24|08:51:18] Training epoch: 59
+[10.27.24|08:51:42] 	Iter 8600 Done. | loss: 16.6739 | lr: 0.100000
+[10.27.24|08:52:05] 	train_mean_loss: 16.735394393505693
+[10.27.24|08:52:05] Training epoch: 60
+[10.27.24|08:52:14] 	Iter 8700 Done. | loss: 16.7143 | lr: 0.100000
+[10.27.24|08:52:48] 	Iter 8800 Done. | loss: 16.9476 | lr: 0.100000
+[10.27.24|08:52:55] 	train_mean_loss: 16.87991479627129
+[10.27.24|08:52:55] Training epoch: 61
+[10.27.24|08:53:21] 	Iter 8900 Done. | loss: 16.9087 | lr: 0.100000
+[10.27.24|08:53:42] 	train_mean_loss: 16.986914200036704
+[10.27.24|08:53:42] Training epoch: 62
+[10.27.24|08:53:54] 	Iter 9000 Done. | loss: 17.0800 | lr: 0.100000
+[10.27.24|08:54:25] 	Iter 9100 Done. | loss: 16.9744 | lr: 0.100000
+[10.27.24|08:54:29] 	train_mean_loss: 17.0228829416288
+[10.27.24|08:54:29] Training epoch: 63
+[10.27.24|08:54:57] 	Iter 9200 Done. | loss: 17.0126 | lr: 0.100000
+[10.27.24|08:55:16] 	train_mean_loss: 17.028948725486288
+[10.27.24|08:55:16] Training epoch: 64
+[10.27.24|08:55:30] 	Iter 9300 Done. | loss: 16.8898 | lr: 0.100000
+[10.27.24|08:56:01] 	Iter 9400 Done. | loss: 16.7072 | lr: 0.100000
+[10.27.24|08:56:04] 	train_mean_loss: 16.867850842119076
+[10.27.24|08:56:04] Training epoch: 65
+[10.27.24|08:56:33] 	Iter 9500 Done. | loss: 16.4046 | lr: 0.100000
+[10.27.24|08:56:51] 	train_mean_loss: 16.44807327685713
+[10.27.24|08:56:51] Training epoch: 66
+[10.27.24|08:57:06] 	Iter 9600 Done. | loss: 16.3981 | lr: 0.100000
+[10.27.24|08:57:38] 	Iter 9700 Done. | loss: 15.9420 | lr: 0.100000
+[10.27.24|08:57:38] 	train_mean_loss: 16.11523471235418
+[10.27.24|08:57:38] Training epoch: 67
+[10.27.24|08:58:10] 	Iter 9800 Done. | loss: 15.9519 | lr: 0.100000
+[10.27.24|08:58:25] 	train_mean_loss: 15.943265454298785
+[10.27.24|08:58:25] Training epoch: 68
+[10.27.24|08:58:43] 	Iter 9900 Done. | loss: 15.7318 | lr: 0.100000
+[10.27.24|08:59:12] 	train_mean_loss: 15.873837347744274
+[10.27.24|08:59:12] Training epoch: 69
+[10.27.24|08:59:15] 	Iter 10000 Done. | loss: 15.8497 | lr: 0.100000
+[10.27.24|08:59:46] 	Iter 10100 Done. | loss: 15.9131 | lr: 0.100000
+[10.27.24|08:59:59] 	train_mean_loss: 15.853110216101822
+[10.27.24|08:59:59] Training epoch: 70
+[10.27.24|09:00:18] 	Iter 10200 Done. | loss: 15.9655 | lr: 0.100000
+[10.27.24|09:00:46] 	train_mean_loss: 15.861462054609442
+[10.27.24|09:00:46] Training epoch: 71
+[10.27.24|09:00:51] 	Iter 10300 Done. | loss: 15.8410 | lr: 0.100000
+[10.27.24|09:01:22] 	Iter 10400 Done. | loss: 15.8101 | lr: 0.100000
+[10.27.24|09:01:34] 	train_mean_loss: 15.870341287989195
+[10.27.24|09:01:34] Training epoch: 72
+[10.27.24|09:01:54] 	Iter 10500 Done. | loss: 15.8062 | lr: 0.100000
+[10.27.24|09:02:21] 	train_mean_loss: 15.890369317969498
+[10.27.24|09:02:21] Training epoch: 73
+[10.27.24|09:02:27] 	Iter 10600 Done. | loss: 15.8628 | lr: 0.100000
+[10.27.24|09:02:59] 	Iter 10700 Done. | loss: 15.9389 | lr: 0.100000
+[10.27.24|09:03:09] 	train_mean_loss: 15.886347102470138
+[10.27.24|09:03:09] Training epoch: 74
+[10.27.24|09:03:31] 	Iter 10800 Done. | loss: 15.8253 | lr: 0.100000
+[10.27.24|09:03:56] 	train_mean_loss: 15.867965827993794
+[10.27.24|09:03:56] Training epoch: 75
+[10.27.24|09:04:04] 	Iter 10900 Done. | loss: 15.7021 | lr: 0.100000
+[10.27.24|09:04:35] 	Iter 11000 Done. | loss: 15.8256 | lr: 0.100000
+[10.27.24|09:04:45] 	train_mean_loss: 15.788785272715042
+[10.27.24|09:04:45] Training epoch: 76
+[10.27.24|09:05:09] 	Iter 11100 Done. | loss: 15.8850 | lr: 0.100000
+[10.27.24|09:05:32] 	train_mean_loss: 15.723668630431298
+[10.27.24|09:05:32] Training epoch: 77
+[10.27.24|09:05:42] 	Iter 11200 Done. | loss: 15.6270 | lr: 0.100000
+[10.27.24|09:06:13] 	Iter 11300 Done. | loss: 15.4706 | lr: 0.100000
+[10.27.24|09:06:19] 	train_mean_loss: 15.65837336559685
+[10.27.24|09:06:19] Training epoch: 78
+[10.27.24|09:06:46] 	Iter 11400 Done. | loss: 15.7609 | lr: 0.100000
+[10.27.24|09:07:06] 	train_mean_loss: 15.66195941457943
+[10.27.24|09:07:06] Training epoch: 79
+[10.27.24|09:07:18] 	Iter 11500 Done. | loss: 15.7941 | lr: 0.100000
+[10.27.24|09:07:50] 	Iter 11600 Done. | loss: 15.5588 | lr: 0.100000
+[10.27.24|09:07:53] 	train_mean_loss: 15.701303968624194
+[10.27.24|09:07:53] Training epoch: 80
+[10.27.24|09:08:22] 	Iter 11700 Done. | loss: 15.7491 | lr: 0.100000
+[10.27.24|09:08:40] 	train_mean_loss: 15.745473381613387
+[10.27.24|09:08:40] Training epoch: 81
+[10.27.24|09:08:54] 	Iter 11800 Done. | loss: 15.7531 | lr: 0.100000
+[10.27.24|09:09:25] 	Iter 11900 Done. | loss: 15.8650 | lr: 0.100000
+[10.27.24|09:09:29] 	train_mean_loss: 15.770569729967182
+[10.27.24|09:09:29] Training epoch: 82
+[10.27.24|09:10:00] 	Iter 12000 Done. | loss: 15.6327 | lr: 0.100000
+[10.27.24|09:10:17] 	train_mean_loss: 15.717718422818345
+[10.27.24|09:10:17] Training epoch: 83
+[10.27.24|09:10:32] 	Iter 12100 Done. | loss: 15.4426 | lr: 0.100000
+[10.27.24|09:11:03] 	Iter 12200 Done. | loss: 15.4804 | lr: 0.100000
+[10.27.24|09:11:04] 	train_mean_loss: 15.568689962633613
+[10.27.24|09:11:04] Training epoch: 84
+[10.27.24|09:11:36] 	Iter 12300 Done. | loss: 15.5175 | lr: 0.100000
+[10.27.24|09:11:51] 	train_mean_loss: 15.483881963353578
+[10.27.24|09:11:51] Training epoch: 85
+[10.27.24|09:12:09] 	Iter 12400 Done. | loss: 15.4137 | lr: 0.100000
+[10.27.24|09:12:38] 	train_mean_loss: 15.48043103120765
+[10.27.24|09:12:38] Training epoch: 86
+[10.27.24|09:12:41] 	Iter 12500 Done. | loss: 15.5059 | lr: 0.100000
+[10.27.24|09:13:13] 	Iter 12600 Done. | loss: 15.5203 | lr: 0.100000
+[10.27.24|09:13:26] 	train_mean_loss: 15.493388701458366
+[10.27.24|09:13:26] Training epoch: 87
+[10.27.24|09:13:45] 	Iter 12700 Done. | loss: 15.3254 | lr: 0.100000
+[10.27.24|09:14:13] 	train_mean_loss: 15.466639350060703
+[10.27.24|09:14:13] Training epoch: 88
+[10.27.24|09:14:17] 	Iter 12800 Done. | loss: 15.4572 | lr: 0.100000
+[10.27.24|09:14:50] 	Iter 12900 Done. | loss: 15.4815 | lr: 0.100000
+[10.27.24|09:15:01] 	train_mean_loss: 15.434533138664401
+[10.27.24|09:15:01] Training epoch: 89
+[10.27.24|09:15:22] 	Iter 13000 Done. | loss: 15.3794 | lr: 0.100000
+[10.27.24|09:15:48] 	train_mean_loss: 15.362917322690794
+[10.27.24|09:15:48] Training epoch: 90
+[10.27.24|09:15:55] 	Iter 13100 Done. | loss: 15.1592 | lr: 0.100000
+[10.27.24|09:16:26] 	Iter 13200 Done. | loss: 15.3318 | lr: 0.100000
+[10.27.24|09:16:37] 	train_mean_loss: 15.292631298506342
+[10.27.24|09:16:37] Training epoch: 91
+[10.27.24|09:17:00] 	Iter 13300 Done. | loss: 15.2652 | lr: 0.100000
+[10.27.24|09:17:24] 	train_mean_loss: 15.270689302561234
+[10.27.24|09:17:24] Training epoch: 92
+[10.27.24|09:17:32] 	Iter 13400 Done. | loss: 15.2266 | lr: 0.100000
+[10.27.24|09:18:03] 	Iter 13500 Done. | loss: 15.1877 | lr: 0.100000
+[10.27.24|09:18:11] 	train_mean_loss: 15.237426958927491
+[10.27.24|09:18:11] Training epoch: 93
+[10.27.24|09:18:35] 	Iter 13600 Done. | loss: 15.1543 | lr: 0.100000
+[10.27.24|09:18:58] 	train_mean_loss: 15.20491496884093
+[10.27.24|09:18:58] Training epoch: 94
+[10.27.24|09:19:08] 	Iter 13700 Done. | loss: 15.2058 | lr: 0.100000
+[10.27.24|09:19:39] 	Iter 13800 Done. | loss: 15.1639 | lr: 0.100000
+[10.27.24|09:19:45] 	train_mean_loss: 15.19017642533698
+[10.27.24|09:19:45] Training epoch: 95
+[10.27.24|09:20:12] 	Iter 13900 Done. | loss: 15.0956 | lr: 0.100000
+[10.27.24|09:20:32] 	train_mean_loss: 15.173870930055372
+[10.27.24|09:20:32] Training epoch: 96
+[10.27.24|09:20:44] 	Iter 14000 Done. | loss: 15.2329 | lr: 0.100000
+[10.27.24|09:21:15] 	Iter 14100 Done. | loss: 15.1016 | lr: 0.100000
+[10.27.24|09:21:19] 	train_mean_loss: 15.137919056172274
+[10.27.24|09:21:19] Training epoch: 97
+[10.27.24|09:21:48] 	Iter 14200 Done. | loss: 15.1919 | lr: 0.100000
+[10.27.24|09:22:06] 	train_mean_loss: 15.133483328786838
+[10.27.24|09:22:06] Training epoch: 98
+[10.27.24|09:22:20] 	Iter 14300 Done. | loss: 15.2157 | lr: 0.100000
+[10.27.24|09:22:52] 	Iter 14400 Done. | loss: 15.1128 | lr: 0.100000
+[10.27.24|09:22:54] 	train_mean_loss: 15.139442943391346
+[10.27.24|09:22:54] Training epoch: 99
+[10.27.24|09:23:24] 	Iter 14500 Done. | loss: 14.9966 | lr: 0.100000
+[10.27.24|09:23:41] 	train_mean_loss: 15.129547080215143
+[10.27.24|09:23:41] Training epoch: 100
+[10.27.24|09:23:57] 	Iter 14600 Done. | loss: 15.1437 | lr: 0.100000
+[10.27.24|09:24:28] 	train_mean_loss: 15.103682900772613
+[10.27.24|09:24:29] The model has been saved as /mnt/netdisk/linlilang/ActCLR/AimCLR/work_dir/ntu60_cv/aimclr_joint/pretext//epoch100_model.pt.
+[10.27.24|09:24:30] Training epoch: 101
+[10.27.24|09:24:31] 	Iter 14700 Done. | loss: 15.0792 | lr: 0.100000
+[10.27.24|09:25:03] 	Iter 14800 Done. | loss: 14.9471 | lr: 0.100000
+[10.27.24|09:25:17] 	train_mean_loss: 15.039006843047888
+[10.27.24|09:25:17] Training epoch: 102
+[10.27.24|09:25:35] 	Iter 14900 Done. | loss: 15.0745 | lr: 0.100000
+[10.27.24|09:26:04] 	train_mean_loss: 14.960875725259585
+[10.27.24|09:26:04] Training epoch: 103
+[10.27.24|09:26:07] 	Iter 15000 Done. | loss: 15.0907 | lr: 0.100000
+[10.27.24|09:26:38] 	Iter 15100 Done. | loss: 14.9385 | lr: 0.100000
+[10.27.24|09:26:51] 	train_mean_loss: 14.879691727307378
+[10.27.24|09:26:51] Training epoch: 104
+[10.27.24|09:27:11] 	Iter 15200 Done. | loss: 14.8750 | lr: 0.100000
+[10.27.24|09:27:39] 	train_mean_loss: 14.856875503955244
+[10.27.24|09:27:41] Training epoch: 105
+[10.27.24|09:27:46] 	Iter 15300 Done. | loss: 14.7779 | lr: 0.100000
+[10.27.24|09:28:17] 	Iter 15400 Done. | loss: 14.7153 | lr: 0.100000
+[10.27.24|09:28:28] 	train_mean_loss: 14.82861193183328
+[10.27.24|09:28:28] Training epoch: 106
+[10.27.24|09:28:50] 	Iter 15500 Done. | loss: 14.8078 | lr: 0.100000
+[10.27.24|09:29:16] 	train_mean_loss: 14.7842347865202
+[10.27.24|09:29:16] Training epoch: 107
+[10.27.24|09:29:22] 	Iter 15600 Done. | loss: 14.7969 | lr: 0.100000
+[10.27.24|09:29:54] 	Iter 15700 Done. | loss: 14.5913 | lr: 0.100000
+[10.27.24|09:30:04] 	train_mean_loss: 14.723960013616653
+[10.27.24|09:30:05] Training epoch: 108
+[10.27.24|09:30:30] 	Iter 15800 Done. | loss: 14.6540 | lr: 0.100000
+[10.27.24|09:30:54] 	train_mean_loss: 14.656572841462635
+[10.27.24|09:30:54] Training epoch: 109
+[10.27.24|09:31:03] 	Iter 15900 Done. | loss: 14.6176 | lr: 0.100000
+[10.27.24|09:31:34] 	Iter 16000 Done. | loss: 14.6719 | lr: 0.100000
+[10.27.24|09:31:41] 	train_mean_loss: 14.586502522838359
+[10.27.24|09:31:41] Training epoch: 110
+[10.27.24|09:32:06] 	Iter 16100 Done. | loss: 14.5427 | lr: 0.100000
+[10.27.24|09:32:28] 	train_mean_loss: 14.531038615168358
+[10.27.24|09:32:30] Training epoch: 111
+[10.27.24|09:32:43] 	Iter 16200 Done. | loss: 14.5269 | lr: 0.100000
+[10.27.24|09:33:14] 	Iter 16300 Done. | loss: 14.3576 | lr: 0.100000
+[10.27.24|09:33:20] 	train_mean_loss: 14.476629198813924
+[10.27.24|09:33:20] Training epoch: 112
+[10.27.24|09:33:46] 	Iter 16400 Done. | loss: 14.6101 | lr: 0.100000
+[10.27.24|09:34:06] 	train_mean_loss: 14.420234764514326
+[10.27.24|09:34:06] Training epoch: 113
+[10.27.24|09:34:19] 	Iter 16500 Done. | loss: 14.2149 | lr: 0.100000
+[10.27.24|09:34:50] 	Iter 16600 Done. | loss: 14.5293 | lr: 0.100000
+[10.27.24|09:34:54] 	train_mean_loss: 14.366041916568262
+[10.27.24|09:34:54] Training epoch: 114
+[10.27.24|09:35:23] 	Iter 16700 Done. | loss: 14.4866 | lr: 0.100000
+[10.27.24|09:35:41] 	train_mean_loss: 14.31328551623286
+[10.27.24|09:35:41] Training epoch: 115
+[10.27.24|09:35:56] 	Iter 16800 Done. | loss: 14.3611 | lr: 0.100000
+[10.27.24|09:36:27] 	Iter 16900 Done. | loss: 14.1293 | lr: 0.100000
+[10.27.24|09:36:29] 	train_mean_loss: 14.282505106763775
+[10.27.24|09:36:29] Training epoch: 116
+[10.27.24|09:36:59] 	Iter 17000 Done. | loss: 14.2619 | lr: 0.100000
+[10.27.24|09:37:15] 	train_mean_loss: 14.222764754781918
+[10.27.24|09:37:16] Training epoch: 117
+[10.27.24|09:37:32] 	Iter 17100 Done. | loss: 14.3155 | lr: 0.100000
+[10.27.24|09:38:02] 	train_mean_loss: 14.178209752452616
+[10.27.24|09:38:03] Training epoch: 118
+[10.27.24|09:38:04] 	Iter 17200 Done. | loss: 14.1492 | lr: 0.100000
+[10.27.24|09:38:35] 	Iter 17300 Done. | loss: 14.1097 | lr: 0.100000
+[10.27.24|09:38:50] 	train_mean_loss: 14.102886154538108
+[10.27.24|09:38:50] Training epoch: 119
+[10.27.24|09:39:08] 	Iter 17400 Done. | loss: 14.0343 | lr: 0.100000
+[10.27.24|09:39:37] 	train_mean_loss: 14.01144317704804
+[10.27.24|09:39:37] Training epoch: 120
+[10.27.24|09:39:40] 	Iter 17500 Done. | loss: 14.0437 | lr: 0.100000
+[10.27.24|09:40:11] 	Iter 17600 Done. | loss: 13.9161 | lr: 0.100000
+[10.27.24|09:40:23] 	train_mean_loss: 13.965582808669733
+[10.27.24|09:40:23] Training epoch: 121
+[10.27.24|09:40:43] 	Iter 17700 Done. | loss: 13.9915 | lr: 0.100000
+[10.27.24|09:41:10] 	train_mean_loss: 13.919150235701581
+[10.27.24|09:41:10] Training epoch: 122
+[10.27.24|09:41:16] 	Iter 17800 Done. | loss: 13.7869 | lr: 0.100000
+[10.27.24|09:41:47] 	Iter 17900 Done. | loss: 13.9546 | lr: 0.100000
+[10.27.24|09:41:58] 	train_mean_loss: 13.86959832379607
+[10.27.24|09:41:59] Training epoch: 123
+[10.27.24|09:42:22] 	Iter 18000 Done. | loss: 13.7768 | lr: 0.100000
+[10.27.24|09:42:48] 	train_mean_loss: 13.809965386682627
+[10.27.24|09:42:48] Training epoch: 124
+[10.27.24|09:42:55] 	Iter 18100 Done. | loss: 13.7391 | lr: 0.100000
+[10.27.24|09:43:26] 	Iter 18200 Done. | loss: 13.5603 | lr: 0.100000
+[10.27.24|09:43:35] 	train_mean_loss: 13.755942811771314
+[10.27.24|09:43:35] Training epoch: 125
+[10.27.24|09:43:59] 	Iter 18300 Done. | loss: 13.7645 | lr: 0.100000
+[10.27.24|09:44:22] 	train_mean_loss: 13.698988719862335
+[10.27.24|09:44:23] Training epoch: 126
+[10.27.24|09:44:34] 	Iter 18400 Done. | loss: 13.6125 | lr: 0.100000
+[10.27.24|09:45:06] 	Iter 18500 Done. | loss: 13.5703 | lr: 0.100000
+[10.27.24|09:45:13] 	train_mean_loss: 13.637165912965528
+[10.27.24|09:45:13] Training epoch: 127
+[10.27.24|09:45:38] 	Iter 18600 Done. | loss: 13.3915 | lr: 0.100000
+[10.27.24|09:46:00] 	train_mean_loss: 13.544480174577155
+[10.27.24|09:46:00] Training epoch: 128
+[10.27.24|09:46:10] 	Iter 18700 Done. | loss: 13.4581 | lr: 0.100000
+[10.27.24|09:46:41] 	Iter 18800 Done. | loss: 13.3309 | lr: 0.100000
+[10.27.24|09:46:46] 	train_mean_loss: 13.477161232306033
+[10.27.24|09:46:46] Training epoch: 129
+[10.27.24|09:47:14] 	Iter 18900 Done. | loss: 13.3642 | lr: 0.100000
+[10.27.24|09:47:33] 	train_mean_loss: 13.419579629184437
+[10.27.24|09:47:33] Training epoch: 130
+[10.27.24|09:47:46] 	Iter 19000 Done. | loss: 13.4641 | lr: 0.100000
+[10.27.24|09:48:17] 	Iter 19100 Done. | loss: 13.3184 | lr: 0.100000
+[10.27.24|09:48:20] 	train_mean_loss: 13.359692884951222
+[10.27.24|09:48:20] Training epoch: 131
+[10.27.24|09:48:49] 	Iter 19200 Done. | loss: 13.2974 | lr: 0.100000
+[10.27.24|09:49:07] 	train_mean_loss: 13.3085264478411
+[10.27.24|09:49:07] Training epoch: 132
+[10.27.24|09:49:22] 	Iter 19300 Done. | loss: 13.2570 | lr: 0.100000
+[10.27.24|09:49:54] 	Iter 19400 Done. | loss: 13.2071 | lr: 0.100000
+[10.27.24|09:49:55] 	train_mean_loss: 13.247715041750954
+[10.27.24|09:49:55] Training epoch: 133
+[10.27.24|09:50:26] 	Iter 19500 Done. | loss: 13.1714 | lr: 0.100000
+[10.27.24|09:50:42] 	train_mean_loss: 13.19117613552379
+[10.27.24|09:50:42] Training epoch: 134
+[10.27.24|09:50:58] 	Iter 19600 Done. | loss: 13.2962 | lr: 0.100000
+[10.27.24|09:51:29] 	train_mean_loss: 13.118070576466671
+[10.27.24|09:51:29] Training epoch: 135
+[10.27.24|09:51:31] 	Iter 19700 Done. | loss: 13.0514 | lr: 0.100000
+[10.27.24|09:52:02] 	Iter 19800 Done. | loss: 13.1119 | lr: 0.100000
+[10.27.24|09:52:17] 	train_mean_loss: 13.03784532611873
+[10.27.24|09:52:18] Training epoch: 136
+[10.27.24|09:52:37] 	Iter 19900 Done. | loss: 12.9755 | lr: 0.100000
+[10.27.24|09:53:05] 	train_mean_loss: 12.961491980520236
+[10.27.24|09:53:05] Training epoch: 137
+[10.27.24|09:53:09] 	Iter 20000 Done. | loss: 12.9179 | lr: 0.100000
+[10.27.24|09:53:40] 	Iter 20100 Done. | loss: 12.8252 | lr: 0.100000
+[10.27.24|09:53:52] 	train_mean_loss: 12.8903365751513
+[10.27.24|09:53:53] Training epoch: 138
+[10.27.24|09:54:13] 	Iter 20200 Done. | loss: 12.8822 | lr: 0.100000
+[10.27.24|09:54:39] 	train_mean_loss: 12.820567818726001
+[10.27.24|09:54:41] Training epoch: 139
+[10.27.24|09:54:49] 	Iter 20300 Done. | loss: 12.6518 | lr: 0.100000
+[10.27.24|09:55:20] 	Iter 20400 Done. | loss: 12.7152 | lr: 0.100000
+[10.27.24|09:55:31] 	train_mean_loss: 12.732542167715474
+[10.27.24|09:55:31] Training epoch: 140
+[10.27.24|09:55:53] 	Iter 20500 Done. | loss: 12.6596 | lr: 0.100000
+[10.27.24|09:56:18] 	train_mean_loss: 12.665284331963987
+[10.27.24|09:56:18] Training epoch: 141
+[10.27.24|09:56:25] 	Iter 20600 Done. | loss: 12.6086 | lr: 0.100000
+[10.27.24|09:56:57] 	Iter 20700 Done. | loss: 12.5323 | lr: 0.100000
+[10.27.24|09:57:06] 	train_mean_loss: 12.58211562098289
+[10.27.24|09:57:06] Training epoch: 142
+[10.27.24|09:57:30] 	Iter 20800 Done. | loss: 12.5441 | lr: 0.100000
+[10.27.24|09:57:53] 	train_mean_loss: 12.516881352379208
+[10.27.24|09:57:53] Training epoch: 143
+[10.27.24|09:58:02] 	Iter 20900 Done. | loss: 12.2899 | lr: 0.100000
+[10.27.24|09:58:33] 	Iter 21000 Done. | loss: 12.4732 | lr: 0.100000
+[10.27.24|09:58:40] 	train_mean_loss: 12.452883383043769
+[10.27.24|09:58:40] Training epoch: 144
+[10.27.24|09:59:06] 	Iter 21100 Done. | loss: 12.4150 | lr: 0.100000
+[10.27.24|09:59:27] 	train_mean_loss: 12.37696040406519
+[10.27.24|09:59:27] Training epoch: 145
+[10.27.24|09:59:38] 	Iter 21200 Done. | loss: 12.3021 | lr: 0.100000
+[10.27.24|10:00:10] 	Iter 21300 Done. | loss: 12.2168 | lr: 0.100000
+[10.27.24|10:00:15] 	train_mean_loss: 12.306485104723041
+[10.27.24|10:00:15] Training epoch: 146
+[10.27.24|10:00:43] 	Iter 21400 Done. | loss: 12.1345 | lr: 0.100000
+[10.27.24|10:01:02] 	train_mean_loss: 12.253924914768763
+[10.27.24|10:01:02] Training epoch: 147
+[10.27.24|10:01:15] 	Iter 21500 Done. | loss: 12.2399 | lr: 0.100000
+[10.27.24|10:01:46] 	Iter 21600 Done. | loss: 12.2667 | lr: 0.100000
+[10.27.24|10:01:49] 	train_mean_loss: 12.20791582509774
+[10.27.24|10:01:49] Training epoch: 148
+[10.27.24|10:02:18] 	Iter 21700 Done. | loss: 12.0655 | lr: 0.100000
+[10.27.24|10:02:36] 	train_mean_loss: 12.119009991081393
+[10.27.24|10:02:36] Training epoch: 149
+[10.27.24|10:02:51] 	Iter 21800 Done. | loss: 12.0667 | lr: 0.100000
+[10.27.24|10:03:22] 	Iter 21900 Done. | loss: 11.9987 | lr: 0.100000
+[10.27.24|10:03:23] 	train_mean_loss: 12.063047460958261
+[10.27.24|10:03:23] Training epoch: 150
+[10.27.24|10:03:54] 	Iter 22000 Done. | loss: 11.9610 | lr: 0.100000
+[10.27.24|10:04:10] 	train_mean_loss: 11.991025820881331
+[10.27.24|10:04:10] Training epoch: 151
+[10.27.24|10:04:27] 	Iter 22100 Done. | loss: 12.2753 | lr: 0.100000
+[10.27.24|10:04:58] 	train_mean_loss: 12.261015256245932
+[10.27.24|10:04:58] Training epoch: 152
+[10.27.24|10:05:00] 	Iter 22200 Done. | loss: 12.2267 | lr: 0.100000
+[10.27.24|10:05:31] 	Iter 22300 Done. | loss: 12.1197 | lr: 0.100000
+[10.27.24|10:05:45] 	train_mean_loss: 12.174993690179319
+[10.27.24|10:05:45] Training epoch: 153
+[10.27.24|10:06:04] 	Iter 22400 Done. | loss: 12.3720 | lr: 0.100000
+[10.27.24|10:06:32] 	train_mean_loss: 12.111985109290298
+[10.27.24|10:06:32] Training epoch: 154
+[10.27.24|10:06:36] 	Iter 22500 Done. | loss: 11.9365 | lr: 0.100000
+[10.27.24|10:07:10] 	Iter 22600 Done. | loss: 12.0516 | lr: 0.100000
+[10.27.24|10:07:22] 	train_mean_loss: 12.055103840471125
+[10.27.24|10:07:22] Training epoch: 155
+[10.27.24|10:07:43] 	Iter 22700 Done. | loss: 11.9065 | lr: 0.100000
+[10.27.24|10:08:09] 	train_mean_loss: 12.014524531202252
+[10.27.24|10:08:09] Training epoch: 156
+[10.27.24|10:08:15] 	Iter 22800 Done. | loss: 11.9637 | lr: 0.100000
+[10.27.24|10:08:47] 	Iter 22900 Done. | loss: 12.0396 | lr: 0.100000
+[10.27.24|10:08:57] 	train_mean_loss: 11.96693315311354
+[10.27.24|10:08:57] Training epoch: 157
+[10.27.24|10:09:19] 	Iter 23000 Done. | loss: 11.8975 | lr: 0.100000
+[10.27.24|10:09:43] 	train_mean_loss: 11.90751146459255
+[10.27.24|10:09:44] Training epoch: 158
+[10.27.24|10:09:51] 	Iter 23100 Done. | loss: 11.6486 | lr: 0.100000
+[10.27.24|10:10:23] 	Iter 23200 Done. | loss: 11.7623 | lr: 0.100000
+[10.27.24|10:10:31] 	train_mean_loss: 11.869077857659788
+[10.27.24|10:10:31] Training epoch: 159
+[10.27.24|10:10:55] 	Iter 23300 Done. | loss: 11.6009 | lr: 0.100000
+[10.27.24|10:11:18] 	train_mean_loss: 11.817981739433444
+[10.27.24|10:11:18] Training epoch: 160
+[10.27.24|10:11:28] 	Iter 23400 Done. | loss: 11.8336 | lr: 0.100000
+[10.27.24|10:12:01] 	Iter 23500 Done. | loss: 11.8239 | lr: 0.100000
+[10.27.24|10:12:07] 	train_mean_loss: 11.76101759826245
+[10.27.24|10:12:07] Training epoch: 161
+[10.27.24|10:12:34] 	Iter 23600 Done. | loss: 11.8619 | lr: 0.100000
+[10.27.24|10:12:54] 	train_mean_loss: 11.729804356892904
+[10.27.24|10:12:54] Training epoch: 162
+[10.27.24|10:13:06] 	Iter 23700 Done. | loss: 11.5334 | lr: 0.100000
+[10.27.24|10:13:38] 	Iter 23800 Done. | loss: 11.7381 | lr: 0.100000
+[10.27.24|10:13:42] 	train_mean_loss: 11.676066359695124
+[10.27.24|10:13:42] Training epoch: 163
+[10.27.24|10:14:10] 	Iter 23900 Done. | loss: 11.6688 | lr: 0.100000
+[10.27.24|10:14:29] 	train_mean_loss: 11.619338807605562
+[10.27.24|10:14:29] Training epoch: 164
+[10.27.24|10:14:43] 	Iter 24000 Done. | loss: 11.4172 | lr: 0.100000
+[10.27.24|10:15:14] 	Iter 24100 Done. | loss: 11.5869 | lr: 0.100000
+[10.27.24|10:15:17] 	train_mean_loss: 11.574223888163663
+[10.27.24|10:15:17] Training epoch: 165
+[10.27.24|10:15:47] 	Iter 24200 Done. | loss: 11.4310 | lr: 0.100000
+[10.27.24|10:16:04] 	train_mean_loss: 11.540468741436394
+[10.27.24|10:16:04] Training epoch: 166
+[10.27.24|10:16:19] 	Iter 24300 Done. | loss: 11.5545 | lr: 0.100000
+[10.27.24|10:16:52] 	Iter 24400 Done. | loss: 11.6192 | lr: 0.100000
+[10.27.24|10:16:52] 	train_mean_loss: 11.49842306383613
+[10.27.24|10:16:52] Training epoch: 167
+[10.27.24|10:17:24] 	Iter 24500 Done. | loss: 11.5494 | lr: 0.100000
+[10.27.24|10:17:39] 	train_mean_loss: 11.438329936695748
+[10.27.24|10:17:39] Training epoch: 168
+[10.27.24|10:17:57] 	Iter 24600 Done. | loss: 11.4325 | lr: 0.100000
+[10.27.24|10:18:27] 	train_mean_loss: 11.394286914747589
+[10.27.24|10:18:27] Training epoch: 169
+[10.27.24|10:18:29] 	Iter 24700 Done. | loss: 11.2532 | lr: 0.100000
+[10.27.24|10:19:01] 	Iter 24800 Done. | loss: 11.3817 | lr: 0.100000
+[10.27.24|10:19:14] 	train_mean_loss: 11.332450477444397
+[10.27.24|10:19:14] Training epoch: 170
+[10.27.24|10:19:33] 	Iter 24900 Done. | loss: 11.3640 | lr: 0.100000
+[10.27.24|10:20:01] 	train_mean_loss: 11.296457978332935
+[10.27.24|10:20:01] Training epoch: 171
+[10.27.24|10:20:05] 	Iter 25000 Done. | loss: 11.0959 | lr: 0.100000
+[10.27.24|10:20:37] 	Iter 25100 Done. | loss: 11.2065 | lr: 0.100000
+[10.27.24|10:20:48] 	train_mean_loss: 11.269556142845932
+[10.27.24|10:20:48] Training epoch: 172
+[10.27.24|10:21:09] 	Iter 25200 Done. | loss: 11.3722 | lr: 0.100000
+[10.27.24|10:21:35] 	train_mean_loss: 11.210883588207011
+[10.27.24|10:21:35] Training epoch: 173
+[10.27.24|10:21:42] 	Iter 25300 Done. | loss: 10.9352 | lr: 0.100000
+[10.27.24|10:22:14] 	Iter 25400 Done. | loss: 11.2722 | lr: 0.100000
+[10.27.24|10:22:23] 	train_mean_loss: 11.162355195908319
+[10.27.24|10:22:23] Training epoch: 174
+[10.27.24|10:22:47] 	Iter 25500 Done. | loss: 11.3460 | lr: 0.100000
+[10.27.24|10:23:12] 	train_mean_loss: 11.121085153955992
+[10.27.24|10:23:12] Training epoch: 175
+[10.27.24|10:23:20] 	Iter 25600 Done. | loss: 10.8597 | lr: 0.100000
+[10.27.24|10:23:51] 	Iter 25700 Done. | loss: 11.1829 | lr: 0.100000
+[10.27.24|10:23:59] 	train_mean_loss: 11.064829936643847
+[10.27.24|10:23:59] Training epoch: 176
+[10.27.24|10:24:24] 	Iter 25800 Done. | loss: 11.1260 | lr: 0.100000
+[10.27.24|10:24:47] 	train_mean_loss: 11.011861587057309
+[10.27.24|10:24:47] Training epoch: 177
+[10.27.24|10:24:57] 	Iter 25900 Done. | loss: 10.8113 | lr: 0.100000
+[10.27.24|10:25:28] 	Iter 26000 Done. | loss: 10.9785 | lr: 0.100000
+[10.27.24|10:25:34] 	train_mean_loss: 10.969453876521312
+[10.27.24|10:25:34] Training epoch: 178
+[10.27.24|10:26:01] 	Iter 26100 Done. | loss: 10.9811 | lr: 0.100000
+[10.27.24|10:26:22] 	train_mean_loss: 10.903358135093637
+[10.27.24|10:26:22] Training epoch: 179
+[10.27.24|10:26:33] 	Iter 26200 Done. | loss: 10.7933 | lr: 0.100000
+[10.27.24|10:27:06] 	Iter 26300 Done. | loss: 11.2525 | lr: 0.100000
+[10.27.24|10:27:10] 	train_mean_loss: 10.876189835217534
+[10.27.24|10:27:10] Training epoch: 180
+[10.27.24|10:27:39] 	Iter 26400 Done. | loss: 10.9628 | lr: 0.100000
+[10.27.24|10:27:58] 	train_mean_loss: 10.807538045506899
+[10.27.24|10:27:58] Training epoch: 181
+[10.27.24|10:28:11] 	Iter 26500 Done. | loss: 10.7285 | lr: 0.100000
+[10.27.24|10:28:43] 	Iter 26600 Done. | loss: 10.9856 | lr: 0.100000
+[10.27.24|10:28:45] 	train_mean_loss: 10.762533025676701
+[10.27.24|10:28:45] Training epoch: 182
+[10.27.24|10:29:15] 	Iter 26700 Done. | loss: 10.8343 | lr: 0.100000
+[10.27.24|10:29:32] 	train_mean_loss: 10.729079434660827
+[10.27.24|10:29:32] Training epoch: 183
+[10.27.24|10:29:48] 	Iter 26800 Done. | loss: 10.4577 | lr: 0.100000
+[10.27.24|10:30:19] 	Iter 26900 Done. | loss: 10.9792 | lr: 0.100000
+[10.27.24|10:30:19] 	train_mean_loss: 10.674745391015293
+[10.27.24|10:30:19] Training epoch: 184
+[10.27.24|10:30:51] 	Iter 27000 Done. | loss: 10.6686 | lr: 0.100000
+[10.27.24|10:31:06] 	train_mean_loss: 10.631617293065908
+[10.27.24|10:31:06] Training epoch: 185
+[10.27.24|10:31:23] 	Iter 27100 Done. | loss: 10.6051 | lr: 0.100000
+[10.27.24|10:31:53] 	train_mean_loss: 10.604595709820183
+[10.27.24|10:31:54] Training epoch: 186
+[10.27.24|10:31:56] 	Iter 27200 Done. | loss: 10.4605 | lr: 0.100000
+[10.27.24|10:32:28] 	Iter 27300 Done. | loss: 10.7860 | lr: 0.100000
+[10.27.24|10:32:41] 	train_mean_loss: 10.545829046340216
+[10.27.24|10:32:41] Training epoch: 187
+[10.27.24|10:33:00] 	Iter 27400 Done. | loss: 10.4887 | lr: 0.100000
+[10.27.24|10:33:28] 	train_mean_loss: 10.507366070131056
+[10.27.24|10:33:28] Training epoch: 188
+[10.27.24|10:33:33] 	Iter 27500 Done. | loss: 10.2737 | lr: 0.100000
+[10.27.24|10:34:04] 	Iter 27600 Done. | loss: 10.3980 | lr: 0.100000
+[10.27.24|10:34:15] 	train_mean_loss: 10.44990264477373
+[10.27.24|10:34:15] Training epoch: 189
+[10.27.24|10:34:36] 	Iter 27700 Done. | loss: 10.4107 | lr: 0.100000
+[10.27.24|10:35:02] 	train_mean_loss: 10.39686410605502
+[10.27.24|10:35:02] Training epoch: 190
+[10.27.24|10:35:08] 	Iter 27800 Done. | loss: 10.2099 | lr: 0.100000
+[10.27.24|10:35:40] 	Iter 27900 Done. | loss: 10.5087 | lr: 0.100000
+[10.27.24|10:35:49] 	train_mean_loss: 10.35898850239864
+[10.27.24|10:35:49] Training epoch: 191
+[10.27.24|10:36:13] 	Iter 28000 Done. | loss: 10.2221 | lr: 0.100000
+[10.27.24|10:36:37] 	train_mean_loss: 10.33186640058245
+[10.27.24|10:36:37] Training epoch: 192
+[10.27.24|10:36:45] 	Iter 28100 Done. | loss: 10.3146 | lr: 0.100000
+[10.27.24|10:37:16] 	Iter 28200 Done. | loss: 10.5147 | lr: 0.100000
+[10.27.24|10:37:24] 	train_mean_loss: 10.294145207826784
+[10.27.24|10:37:24] Training epoch: 193
+[10.27.24|10:37:49] 	Iter 28300 Done. | loss: 10.1958 | lr: 0.100000
+[10.27.24|10:38:11] 	train_mean_loss: 10.246914967387712
+[10.27.24|10:38:11] Training epoch: 194
+[10.27.24|10:38:22] 	Iter 28400 Done. | loss: 10.1843 | lr: 0.100000
+[10.27.24|10:38:55] 	Iter 28500 Done. | loss: 10.3328 | lr: 0.100000
+[10.27.24|10:39:01] 	train_mean_loss: 10.188071036825376
+[10.27.24|10:39:01] Training epoch: 195
+[10.27.24|10:39:27] 	Iter 28600 Done. | loss: 10.0097 | lr: 0.100000
+[10.27.24|10:39:48] 	train_mean_loss: 10.148440964367925
+[10.27.24|10:39:48] Training epoch: 196
+[10.27.24|10:40:00] 	Iter 28700 Done. | loss: 9.8856 | lr: 0.100000
+[10.27.24|10:40:32] 	Iter 28800 Done. | loss: 10.3047 | lr: 0.100000
+[10.27.24|10:40:36] 	train_mean_loss: 10.100432908453909
+[10.27.24|10:40:36] Training epoch: 197
+[10.27.24|10:41:04] 	Iter 28900 Done. | loss: 10.2798 | lr: 0.100000
+[10.27.24|10:41:23] 	train_mean_loss: 10.063048888225945
+[10.27.24|10:41:23] Training epoch: 198
+[10.27.24|10:41:37] 	Iter 29000 Done. | loss: 9.8397 | lr: 0.100000
+[10.27.24|10:42:08] 	Iter 29100 Done. | loss: 10.4088 | lr: 0.100000
+[10.27.24|10:42:10] 	train_mean_loss: 10.017419925352343
+[10.27.24|10:42:10] Training epoch: 199
+[10.27.24|10:42:41] 	Iter 29200 Done. | loss: 9.8152 | lr: 0.100000
+[10.27.24|10:42:58] 	train_mean_loss: 9.97269088719167
+[10.27.24|10:42:58] Training epoch: 200
+[10.27.24|10:43:14] 	Iter 29300 Done. | loss: 9.5988 | lr: 0.100000
+[10.27.24|10:43:45] 	train_mean_loss: 9.947797308162768
+[10.27.24|10:43:46] The model has been saved as /mnt/netdisk/linlilang/ActCLR/AimCLR/work_dir/ntu60_cv/aimclr_joint/pretext//epoch200_model.pt.
+[10.27.24|10:43:46] Training epoch: 201
+[10.27.24|10:43:47] 	Iter 29400 Done. | loss: 9.8232 | lr: 0.100000
+[10.27.24|10:44:19] 	Iter 29500 Done. | loss: 9.9627 | lr: 0.100000
+[10.27.24|10:44:34] 	train_mean_loss: 9.898530051821755
+[10.27.24|10:44:34] Training epoch: 202
+[10.27.24|10:44:52] 	Iter 29600 Done. | loss: 9.6523 | lr: 0.100000
+[10.27.24|10:45:21] 	train_mean_loss: 9.851591603285602
+[10.27.24|10:45:22] Training epoch: 203
+[10.27.24|10:45:25] 	Iter 29700 Done. | loss: 9.7240 | lr: 0.100000
+[10.27.24|10:45:56] 	Iter 29800 Done. | loss: 10.1754 | lr: 0.100000
+[10.27.24|10:46:09] 	train_mean_loss: 9.819036379963363
+[10.27.24|10:46:09] Training epoch: 204
+[10.27.24|10:46:29] 	Iter 29900 Done. | loss: 9.9324 | lr: 0.100000
+[10.27.24|10:46:57] 	train_mean_loss: 9.74636545635405
+[10.27.24|10:46:57] Training epoch: 205
+[10.27.24|10:47:02] 	Iter 30000 Done. | loss: 9.7712 | lr: 0.100000
+[10.27.24|10:47:33] 	Iter 30100 Done. | loss: 9.8411 | lr: 0.100000
+[10.27.24|10:47:44] 	train_mean_loss: 9.73060925152837
+[10.27.24|10:47:44] Training epoch: 206
+[10.27.24|10:48:05] 	Iter 30200 Done. | loss: 9.6567 | lr: 0.100000
+[10.27.24|10:48:31] 	train_mean_loss: 9.702973307395467
+[10.27.24|10:48:31] Training epoch: 207
+[10.27.24|10:48:38] 	Iter 30300 Done. | loss: 9.3980 | lr: 0.100000
+[10.27.24|10:49:09] 	Iter 30400 Done. | loss: 9.8103 | lr: 0.100000
+[10.27.24|10:49:18] 	train_mean_loss: 9.658693540663947
+[10.27.24|10:49:18] Training epoch: 208
+[10.27.24|10:49:42] 	Iter 30500 Done. | loss: 9.5491 | lr: 0.100000
+[10.27.24|10:50:05] 	train_mean_loss: 9.641654248140297
+[10.27.24|10:50:05] Training epoch: 209
+[10.27.24|10:50:14] 	Iter 30600 Done. | loss: 9.4937 | lr: 0.100000
+[10.27.24|10:50:46] 	Iter 30700 Done. | loss: 9.7265 | lr: 0.100000
+[10.27.24|10:50:53] 	train_mean_loss: 9.605567341759091
+[10.27.24|10:50:53] Training epoch: 210
+[10.27.24|10:51:19] 	Iter 30800 Done. | loss: 9.4179 | lr: 0.100000
+[10.27.24|10:51:41] 	train_mean_loss: 9.567741394042969
+[10.27.24|10:51:41] Training epoch: 211
+[10.27.24|10:51:52] 	Iter 30900 Done. | loss: 9.6138 | lr: 0.100000
+[10.27.24|10:52:24] 	Iter 31000 Done. | loss: 9.6120 | lr: 0.100000
+[10.27.24|10:52:29] 	train_mean_loss: 9.528282879161186
+[10.27.24|10:52:29] Training epoch: 212
+[10.27.24|10:52:56] 	Iter 31100 Done. | loss: 9.6281 | lr: 0.100000
+[10.27.24|10:53:16] 	train_mean_loss: 9.462104862239086
+[10.27.24|10:53:16] Training epoch: 213
+[10.27.24|10:53:29] 	Iter 31200 Done. | loss: 9.2159 | lr: 0.100000
+[10.27.24|10:54:01] 	Iter 31300 Done. | loss: 9.6017 | lr: 0.100000
+[10.27.24|10:54:04] 	train_mean_loss: 9.447880550306671
+[10.27.24|10:54:05] Training epoch: 214
+[10.27.24|10:54:34] 	Iter 31400 Done. | loss: 9.5690 | lr: 0.100000
+[10.27.24|10:54:52] 	train_mean_loss: 9.413122138198542
+[10.27.24|10:54:52] Training epoch: 215
+[10.27.24|10:55:07] 	Iter 31500 Done. | loss: 9.4008 | lr: 0.100000
+[10.27.24|10:55:39] 	Iter 31600 Done. | loss: 9.6917 | lr: 0.100000
+[10.27.24|10:55:41] 	train_mean_loss: 9.395751719572106
+[10.27.24|10:55:41] Training epoch: 216
+[10.27.24|10:56:12] 	Iter 31700 Done. | loss: 9.3886 | lr: 0.100000
+[10.27.24|10:56:28] 	train_mean_loss: 9.321965606845154
+[10.27.24|10:56:28] Training epoch: 217
+[10.27.24|10:56:45] 	Iter 31800 Done. | loss: 9.3514 | lr: 0.100000
+[10.27.24|10:57:15] 	train_mean_loss: 9.335559066461057
+[10.27.24|10:57:15] Training epoch: 218
+[10.27.24|10:57:17] 	Iter 31900 Done. | loss: 9.1143 | lr: 0.100000
+[10.27.24|10:57:49] 	Iter 32000 Done. | loss: 9.3489 | lr: 0.100000
+[10.27.24|10:58:03] 	train_mean_loss: 9.267625185908104
+[10.27.24|10:58:03] Training epoch: 219
+[10.27.24|10:58:21] 	Iter 32100 Done. | loss: 9.3383 | lr: 0.100000
+[10.27.24|10:58:50] 	train_mean_loss: 9.243119311170513
+[10.27.24|10:58:50] Training epoch: 220
+[10.27.24|10:58:54] 	Iter 32200 Done. | loss: 8.8922 | lr: 0.100000
+[10.27.24|10:59:25] 	Iter 32300 Done. | loss: 9.1187 | lr: 0.100000
+[10.27.24|10:59:38] 	train_mean_loss: 9.188813099244825
+[10.27.24|10:59:38] Training epoch: 221
+[10.27.24|10:59:59] 	Iter 32400 Done. | loss: 9.1769 | lr: 0.100000
+[10.27.24|11:00:27] 	train_mean_loss: 9.172688490679475
+[10.27.24|11:00:27] Training epoch: 222
+[10.27.24|11:00:32] 	Iter 32500 Done. | loss: 8.7626 | lr: 0.100000
+[10.27.24|11:01:04] 	Iter 32600 Done. | loss: 9.1818 | lr: 0.100000
+[10.27.24|11:01:14] 	train_mean_loss: 9.124520230455463
+[10.27.24|11:01:14] Training epoch: 223
+[10.27.24|11:01:36] 	Iter 32700 Done. | loss: 9.0386 | lr: 0.100000
+[10.27.24|11:02:01] 	train_mean_loss: 9.115896322289291
+[10.27.24|11:02:02] Training epoch: 224
+[10.27.24|11:02:09] 	Iter 32800 Done. | loss: 8.8739 | lr: 0.100000
+[10.27.24|11:02:40] 	Iter 32900 Done. | loss: 9.0910 | lr: 0.100000
+[10.27.24|11:02:49] 	train_mean_loss: 9.063936454098242
+[10.27.24|11:02:49] Training epoch: 225
+[10.27.24|11:03:13] 	Iter 33000 Done. | loss: 8.9729 | lr: 0.100000
+[10.27.24|11:03:37] 	train_mean_loss: 9.047839891342889
+[10.27.24|11:03:37] Training epoch: 226
+[10.27.24|11:03:46] 	Iter 33100 Done. | loss: 8.8696 | lr: 0.100000
+[10.27.24|11:04:17] 	Iter 33200 Done. | loss: 9.1489 | lr: 0.100000
+[10.27.24|11:04:24] 	train_mean_loss: 9.007885147925137
+[10.27.24|11:04:24] Training epoch: 227
+[10.27.24|11:04:50] 	Iter 33300 Done. | loss: 8.9227 | lr: 0.100000
+[10.27.24|11:05:11] 	train_mean_loss: 8.955252511160714
+[10.27.24|11:05:11] Training epoch: 228
+[10.27.24|11:05:22] 	Iter 33400 Done. | loss: 8.9524 | lr: 0.100000
+[10.27.24|11:05:54] 	Iter 33500 Done. | loss: 9.2105 | lr: 0.100000
+[10.27.24|11:05:59] 	train_mean_loss: 8.9290866397676
+[10.27.24|11:05:59] Training epoch: 229
+[10.27.24|11:06:26] 	Iter 33600 Done. | loss: 8.8546 | lr: 0.100000
+[10.27.24|11:06:46] 	train_mean_loss: 8.888216537683189
+[10.27.24|11:06:46] Training epoch: 230
+[10.27.24|11:06:59] 	Iter 33700 Done. | loss: 8.9589 | lr: 0.100000
+[10.27.24|11:07:31] 	Iter 33800 Done. | loss: 9.0755 | lr: 0.100000
+[10.27.24|11:07:34] 	train_mean_loss: 8.869012093057437
+[10.27.24|11:07:34] Training epoch: 231
+[10.27.24|11:08:03] 	Iter 33900 Done. | loss: 8.9099 | lr: 0.100000
+[10.27.24|11:08:21] 	train_mean_loss: 8.835500068405048
+[10.27.24|11:08:21] Training epoch: 232
+[10.27.24|11:08:36] 	Iter 34000 Done. | loss: 8.6256 | lr: 0.100000
+[10.27.24|11:09:07] 	Iter 34100 Done. | loss: 9.0285 | lr: 0.100000
+[10.27.24|11:09:08] 	train_mean_loss: 8.79573273172184
+[10.27.24|11:09:08] Training epoch: 233
+[10.27.24|11:09:40] 	Iter 34200 Done. | loss: 9.0904 | lr: 0.100000
+[10.27.24|11:09:56] 	train_mean_loss: 8.756868394864659
+[10.27.24|11:09:56] Training epoch: 234
+[10.27.24|11:10:12] 	Iter 34300 Done. | loss: 8.5700 | lr: 0.100000
+[10.27.24|11:10:42] 	train_mean_loss: 8.692254527085492
+[10.27.24|11:10:42] Training epoch: 235
+[10.27.24|11:10:44] 	Iter 34400 Done. | loss: 8.3991 | lr: 0.100000
+[10.27.24|11:11:15] 	Iter 34500 Done. | loss: 8.8931 | lr: 0.100000
+[10.27.24|11:11:29] 	train_mean_loss: 8.695472185303565
+[10.27.24|11:11:29] Training epoch: 236
+[10.27.24|11:11:48] 	Iter 34600 Done. | loss: 8.4429 | lr: 0.100000
+[10.27.24|11:12:20] 	train_mean_loss: 8.686141714757802
+[10.27.24|11:12:21] Training epoch: 237
+[10.27.24|11:12:32] 	Iter 34700 Done. | loss: 8.3930 | lr: 0.100000
+[10.27.24|11:13:17] 	Iter 34800 Done. | loss: 8.4914 | lr: 0.100000
+[10.27.24|11:13:29] 	train_mean_loss: 8.64774513893387
+[10.27.24|11:13:29] Training epoch: 238
+[10.27.24|11:13:49] 	Iter 34900 Done. | loss: 8.3487 | lr: 0.100000
+[10.27.24|11:14:16] 	train_mean_loss: 8.570044569417734
+[10.27.24|11:14:16] Training epoch: 239
+[10.27.24|11:14:22] 	Iter 35000 Done. | loss: 8.5918 | lr: 0.100000
+[10.27.24|11:14:53] 	Iter 35100 Done. | loss: 8.4015 | lr: 0.100000
+[10.27.24|11:15:03] 	train_mean_loss: 8.576636204103224
+[10.27.24|11:15:03] Training epoch: 240
+[10.27.24|11:15:25] 	Iter 35200 Done. | loss: 8.6260 | lr: 0.100000
+[10.27.24|11:15:50] 	train_mean_loss: 8.569347329691153
+[10.27.24|11:15:50] Training epoch: 241
+[10.27.24|11:15:58] 	Iter 35300 Done. | loss: 8.3072 | lr: 0.100000
+[10.27.24|11:16:29] 	Iter 35400 Done. | loss: 8.7106 | lr: 0.100000
+[10.27.24|11:16:38] 	train_mean_loss: 8.498432441633575
+[10.27.24|11:16:38] Training epoch: 242
+[10.27.24|11:17:02] 	Iter 35500 Done. | loss: 8.5817 | lr: 0.100000
+[10.27.24|11:17:26] 	train_mean_loss: 8.476080349513463
+[10.27.24|11:17:26] Training epoch: 243
+[10.27.24|11:17:35] 	Iter 35600 Done. | loss: 8.2668 | lr: 0.100000
+[10.27.24|11:18:06] 	Iter 35700 Done. | loss: 8.5905 | lr: 0.100000
+[10.27.24|11:18:13] 	train_mean_loss: 8.43013418937216
+[10.27.24|11:18:13] Training epoch: 244
+[10.27.24|11:18:39] 	Iter 35800 Done. | loss: 8.4895 | lr: 0.100000
+[10.27.24|11:19:00] 	train_mean_loss: 8.447878941386735
+[10.27.24|11:19:00] Training epoch: 245
+[10.27.24|11:19:12] 	Iter 35900 Done. | loss: 8.2740 | lr: 0.100000
+[10.27.24|11:19:44] 	Iter 36000 Done. | loss: 8.5336 | lr: 0.100000
+[10.27.24|11:19:48] 	train_mean_loss: 8.38380073041332
+[10.27.24|11:19:48] Training epoch: 246
+[10.27.24|11:20:16] 	Iter 36100 Done. | loss: 8.3618 | lr: 0.100000
+[10.27.24|11:20:35] 	train_mean_loss: 8.350773120413022
+[10.27.24|11:20:35] Training epoch: 247
+[10.27.24|11:20:48] 	Iter 36200 Done. | loss: 8.1900 | lr: 0.100000
+[10.27.24|11:21:20] 	Iter 36300 Done. | loss: 8.5455 | lr: 0.100000
+[10.27.24|11:21:22] 	train_mean_loss: 8.33100126876312
+[10.27.24|11:21:22] Training epoch: 248
+[10.27.24|11:21:52] 	Iter 36400 Done. | loss: 8.2019 | lr: 0.100000
+[10.27.24|11:22:10] 	train_mean_loss: 8.291076027617162
+[10.27.24|11:22:10] Training epoch: 249
+[10.27.24|11:22:26] 	Iter 36500 Done. | loss: 8.4141 | lr: 0.100000
+[10.27.24|11:22:57] 	Iter 36600 Done. | loss: 8.6059 | lr: 0.100000
+[10.27.24|11:22:58] 	train_mean_loss: 8.291152506458516
+[10.27.24|11:22:58] Training epoch: 250
+[10.27.24|11:23:31] 	Iter 36700 Done. | loss: 8.5158 | lr: 0.100000
+[10.27.24|11:23:46] 	train_mean_loss: 8.258352221274862
+[10.27.24|11:23:46] Training epoch: 251
+[10.27.24|11:24:04] 	Iter 36800 Done. | loss: 7.6114 | lr: 0.010000
+[10.27.24|11:24:34] 	train_mean_loss: 7.738278943665174
+[10.27.24|11:24:34] Training epoch: 252
+[10.27.24|11:24:36] 	Iter 36900 Done. | loss: 7.4566 | lr: 0.010000
+[10.27.24|11:25:08] 	Iter 37000 Done. | loss: 7.5731 | lr: 0.010000
+[10.27.24|11:25:22] 	train_mean_loss: 7.628712868203922
+[10.27.24|11:25:22] Training epoch: 253
+[10.27.24|11:25:41] 	Iter 37100 Done. | loss: 7.5635 | lr: 0.010000
+[10.27.24|11:26:10] 	train_mean_loss: 7.579971047485767
+[10.27.24|11:26:10] Training epoch: 254
+[10.27.24|11:26:14] 	Iter 37200 Done. | loss: 7.1932 | lr: 0.010000
+[10.27.24|11:26:46] 	Iter 37300 Done. | loss: 7.5993 | lr: 0.010000
+[10.27.24|11:26:57] 	train_mean_loss: 7.54683425799519
+[10.27.24|11:26:57] Training epoch: 255
+[10.27.24|11:27:18] 	Iter 37400 Done. | loss: 7.4043 | lr: 0.010000
+[10.27.24|11:27:45] 	train_mean_loss: 7.533001993789154
+[10.27.24|11:27:45] Training epoch: 256
+[10.27.24|11:27:51] 	Iter 37500 Done. | loss: 7.2019 | lr: 0.010000
+[10.27.24|11:28:23] 	Iter 37600 Done. | loss: 7.4738 | lr: 0.010000
+[10.27.24|11:28:32] 	train_mean_loss: 7.49185645499197
+[10.27.24|11:28:32] Training epoch: 257
+[10.27.24|11:28:55] 	Iter 37700 Done. | loss: 7.5386 | lr: 0.010000
+[10.27.24|11:29:20] 	train_mean_loss: 7.474086521434135
+[10.27.24|11:29:20] Training epoch: 258
+[10.27.24|11:29:27] 	Iter 37800 Done. | loss: 7.0172 | lr: 0.010000
+[10.27.24|11:29:59] 	Iter 37900 Done. | loss: 7.5364 | lr: 0.010000
+[10.27.24|11:30:07] 	train_mean_loss: 7.469937749460441
+[10.27.24|11:30:07] Training epoch: 259
+[10.27.24|11:30:31] 	Iter 38000 Done. | loss: 7.2325 | lr: 0.010000
+[10.27.24|11:30:55] 	train_mean_loss: 7.432800724392846
+[10.27.24|11:30:55] Training epoch: 260
+[10.27.24|11:31:04] 	Iter 38100 Done. | loss: 7.2849 | lr: 0.010000
+[10.27.24|11:31:36] 	Iter 38200 Done. | loss: 7.8262 | lr: 0.010000
+[10.27.24|11:31:42] 	train_mean_loss: 7.405911786215646
+[10.27.24|11:31:42] Training epoch: 261
+[10.27.24|11:32:09] 	Iter 38300 Done. | loss: 7.4561 | lr: 0.010000
+[10.27.24|11:32:30] 	train_mean_loss: 7.391877900986445
+[10.27.24|11:32:30] Training epoch: 262
+[10.27.24|11:32:42] 	Iter 38400 Done. | loss: 7.3241 | lr: 0.010000
+[10.27.24|11:33:14] 	Iter 38500 Done. | loss: 7.7521 | lr: 0.010000
+[10.27.24|11:33:18] 	train_mean_loss: 7.367115783042649
+[10.27.24|11:33:18] Training epoch: 263
+[10.27.24|11:33:46] 	Iter 38600 Done. | loss: 7.3581 | lr: 0.010000
+[10.27.24|11:34:06] 	train_mean_loss: 7.356252692994618
+[10.27.24|11:34:06] Training epoch: 264
+[10.27.24|11:34:19] 	Iter 38700 Done. | loss: 7.3197 | lr: 0.010000
+[10.27.24|11:34:51] 	Iter 38800 Done. | loss: 7.7750 | lr: 0.010000
+[10.27.24|11:34:53] 	train_mean_loss: 7.346715281609775
+[10.27.24|11:34:53] Training epoch: 265
+[10.27.24|11:35:23] 	Iter 38900 Done. | loss: 7.2445 | lr: 0.010000
+[10.27.24|11:35:41] 	train_mean_loss: 7.322312702127054
+[10.27.24|11:35:41] Training epoch: 266
+[10.27.24|11:35:56] 	Iter 39000 Done. | loss: 7.1995 | lr: 0.010000
+[10.27.24|11:36:27] 	Iter 39100 Done. | loss: 8.0150 | lr: 0.010000
+[10.27.24|11:36:28] 	train_mean_loss: 7.303714907899195
+[10.27.24|11:36:28] Training epoch: 267
+[10.27.24|11:37:00] 	Iter 39200 Done. | loss: 7.1024 | lr: 0.010000
+[10.27.24|11:37:15] 	train_mean_loss: 7.283959278444043
+[10.27.24|11:37:15] Training epoch: 268
+[10.27.24|11:37:32] 	Iter 39300 Done. | loss: 7.1231 | lr: 0.010000
+[10.27.24|11:38:02] 	train_mean_loss: 7.278387040508036
+[10.27.24|11:38:02] Training epoch: 269
+[10.27.24|11:38:05] 	Iter 39400 Done. | loss: 6.7833 | lr: 0.010000
+[10.27.24|11:38:37] 	Iter 39500 Done. | loss: 7.4310 | lr: 0.010000
+[10.27.24|11:38:50] 	train_mean_loss: 7.257656389353227
+[10.27.24|11:38:50] Training epoch: 270
+[10.27.24|11:39:10] 	Iter 39600 Done. | loss: 7.2197 | lr: 0.010000
+[10.27.24|11:39:38] 	train_mean_loss: 7.258949441974666
+[10.27.24|11:39:38] Training epoch: 271
+[10.27.24|11:39:42] 	Iter 39700 Done. | loss: 6.9789 | lr: 0.010000
+[10.27.24|11:40:14] 	Iter 39800 Done. | loss: 7.4342 | lr: 0.010000
+[10.27.24|11:40:25] 	train_mean_loss: 7.246291319529216
+[10.27.24|11:40:25] Training epoch: 272
+[10.27.24|11:40:47] 	Iter 39900 Done. | loss: 7.0013 | lr: 0.010000
+[10.27.24|11:41:13] 	train_mean_loss: 7.2185450638232584
+[10.27.24|11:41:13] Training epoch: 273
+[10.27.24|11:41:19] 	Iter 40000 Done. | loss: 6.9479 | lr: 0.010000
+[10.27.24|11:41:51] 	Iter 40100 Done. | loss: 7.3580 | lr: 0.010000
+[10.27.24|11:42:01] 	train_mean_loss: 7.200765953582971
+[10.27.24|11:42:01] Training epoch: 274
+[10.27.24|11:42:23] 	Iter 40200 Done. | loss: 6.9536 | lr: 0.010000
+[10.27.24|11:42:48] 	train_mean_loss: 7.194004006937248
+[10.27.24|11:42:48] Training epoch: 275
+[10.27.24|11:42:56] 	Iter 40300 Done. | loss: 6.9198 | lr: 0.010000
+[10.27.24|11:43:28] 	Iter 40400 Done. | loss: 7.6039 | lr: 0.010000
+[10.27.24|11:43:35] 	train_mean_loss: 7.199597832296981
+[10.27.24|11:43:35] Training epoch: 276
+[10.27.24|11:44:00] 	Iter 40500 Done. | loss: 7.3656 | lr: 0.010000
+[10.27.24|11:44:23] 	train_mean_loss: 7.165865009333811
+[10.27.24|11:44:23] Training epoch: 277
+[10.27.24|11:44:33] 	Iter 40600 Done. | loss: 6.8834 | lr: 0.010000
+[10.27.24|11:45:04] 	Iter 40700 Done. | loss: 7.6611 | lr: 0.010000
+[10.27.24|11:45:10] 	train_mean_loss: 7.147944038417063
+[10.27.24|11:45:10] Training epoch: 278
+[10.27.24|11:45:42] 	Iter 40800 Done. | loss: 7.1638 | lr: 0.010000
+[10.27.24|11:46:03] 	train_mean_loss: 7.144998647728745
+[10.27.24|11:46:03] Training epoch: 279
+[10.27.24|11:46:15] 	Iter 40900 Done. | loss: 7.0920 | lr: 0.010000
+[10.27.24|12:05:21] 	Iter 41000 Done. | loss: 7.4799 | lr: 0.010000
+[10.27.24|12:05:25] 	train_mean_loss: 7.133150434818398
+[10.27.24|12:05:25] Training epoch: 280
+[10.27.24|12:05:53] 	Iter 41100 Done. | loss: 7.0816 | lr: 0.010000
+[10.27.24|12:06:12] 	train_mean_loss: 7.117389237799612
+[10.27.24|12:06:12] Training epoch: 281
+[10.27.24|12:06:26] 	Iter 41200 Done. | loss: 6.9750 | lr: 0.010000
+[10.27.24|12:06:59] 	Iter 41300 Done. | loss: 7.7197 | lr: 0.010000
+[10.27.24|12:07:02] 	train_mean_loss: 7.1103689848971205
+[10.27.24|12:07:02] Training epoch: 282
+[10.27.24|12:07:34] 	Iter 41400 Done. | loss: 6.8681 | lr: 0.010000
+[10.27.24|12:07:51] 	train_mean_loss: 7.092545817498447
+[10.27.24|12:07:51] Training epoch: 283
+[10.27.24|12:08:06] 	Iter 41500 Done. | loss: 7.1070 | lr: 0.010000
+[10.27.24|12:08:37] 	Iter 41600 Done. | loss: 7.6572 | lr: 0.010000
+[10.27.24|12:08:38] 	train_mean_loss: 7.094411155804485
+[10.27.24|12:08:38] Training epoch: 284
+[10.27.24|12:09:10] 	Iter 41700 Done. | loss: 6.8582 | lr: 0.010000
+[10.27.24|12:09:24] 	train_mean_loss: 7.079952956867867
+[10.27.24|12:09:24] Training epoch: 285
+[10.27.24|12:09:42] 	Iter 41800 Done. | loss: 6.8246 | lr: 0.010000
+[10.27.24|12:10:11] 	train_mean_loss: 7.054483086073479
+[10.27.24|12:10:11] Training epoch: 286
+[10.27.24|12:10:14] 	Iter 41900 Done. | loss: 6.7845 | lr: 0.010000
+[10.27.24|12:10:45] 	Iter 42000 Done. | loss: 7.1688 | lr: 0.010000
+[10.27.24|12:10:58] 	train_mean_loss: 7.049664708221851
+[10.27.24|12:10:58] Training epoch: 287
+[10.27.24|12:11:17] 	Iter 42100 Done. | loss: 6.9426 | lr: 0.010000
+[10.27.24|12:11:45] 	train_mean_loss: 7.044346916432283
+[10.27.24|12:11:45] Training epoch: 288
+[10.27.24|12:11:50] 	Iter 42200 Done. | loss: 6.7785 | lr: 0.010000
+[10.27.24|12:12:21] 	Iter 42300 Done. | loss: 7.1726 | lr: 0.010000
+[10.27.24|12:12:32] 	train_mean_loss: 7.047245139167423
+[10.27.24|12:12:32] Training epoch: 289
+[10.27.24|12:12:53] 	Iter 42400 Done. | loss: 6.9288 | lr: 0.010000
+[10.27.24|12:13:19] 	train_mean_loss: 7.029503948834478
+[10.27.24|12:13:19] Training epoch: 290
+[10.27.24|12:13:25] 	Iter 42500 Done. | loss: 6.7618 | lr: 0.010000
+[10.27.24|12:13:56] 	Iter 42600 Done. | loss: 7.2459 | lr: 0.010000
+[10.27.24|12:14:05] 	train_mean_loss: 7.00431439341331
+[10.27.24|12:14:05] Training epoch: 291
+[10.27.24|12:14:28] 	Iter 42700 Done. | loss: 6.9173 | lr: 0.010000
+[10.27.24|12:14:52] 	train_mean_loss: 6.9913159454760905
+[10.27.24|12:14:52] Training epoch: 292
+[10.27.24|12:15:00] 	Iter 42800 Done. | loss: 6.8018 | lr: 0.010000
+[10.27.24|12:15:31] 	Iter 42900 Done. | loss: 7.3826 | lr: 0.010000
+[10.27.24|12:15:38] 	train_mean_loss: 6.982239239880828
+[10.27.24|12:15:38] Training epoch: 293
+[10.27.24|12:16:03] 	Iter 43000 Done. | loss: 6.8379 | lr: 0.010000
+[10.27.24|12:16:25] 	train_mean_loss: 6.984046212669943
+[10.27.24|12:16:25] Training epoch: 294
+[10.27.24|12:16:35] 	Iter 43100 Done. | loss: 6.8852 | lr: 0.010000
+[10.27.24|12:17:06] 	Iter 43200 Done. | loss: 7.2112 | lr: 0.010000
+[10.27.24|12:17:11] 	train_mean_loss: 6.963456497711389
+[10.27.24|12:17:11] Training epoch: 295
+[10.27.24|12:17:38] 	Iter 43300 Done. | loss: 6.7742 | lr: 0.010000
+[10.27.24|12:17:58] 	train_mean_loss: 6.944679759797596
+[10.27.24|12:17:58] Training epoch: 296
+[10.27.24|12:18:10] 	Iter 43400 Done. | loss: 6.7237 | lr: 0.010000
+[10.27.24|12:18:41] 	Iter 43500 Done. | loss: 7.2349 | lr: 0.010000
+[10.27.24|12:18:45] 	train_mean_loss: 6.948516037999367
+[10.27.24|12:18:45] Training epoch: 297
+[10.27.24|12:19:14] 	Iter 43600 Done. | loss: 6.9994 | lr: 0.010000
+[10.27.24|12:19:32] 	train_mean_loss: 6.93637059334995
+[10.27.24|12:19:32] Training epoch: 298
+[10.27.24|12:19:46] 	Iter 43700 Done. | loss: 6.7871 | lr: 0.010000
+[10.27.24|12:20:18] 	Iter 43800 Done. | loss: 7.5661 | lr: 0.010000
+[10.27.24|12:20:19] 	train_mean_loss: 6.911487728560052
+[10.27.24|12:20:19] Training epoch: 299
+[10.27.24|12:20:50] 	Iter 43900 Done. | loss: 6.8725 | lr: 0.010000
+[10.27.24|12:21:07] 	train_mean_loss: 6.91668837411063
+[10.27.24|12:21:07] Training epoch: 300
+[10.27.24|12:21:22] 	Iter 44000 Done. | loss: 6.5256 | lr: 0.010000
+[10.27.24|12:21:54] 	train_mean_loss: 6.884511532426691
+[10.27.24|12:21:55] The model has been saved as /mnt/netdisk/linlilang/ActCLR/AimCLR/work_dir/ntu60_cv/aimclr_joint/pretext//epoch300_model.pt.
